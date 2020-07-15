@@ -1,0 +1,123 @@
+{
+    "vtubers": [
+        {
+            "name": "Tokino Sora",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCp6993wxpyDPHUpavwDFqgg"
+            }],
+            "twitter_handle": "tokino_sora",
+            "tags": ["Hololive"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Roboco",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCDqI2jOz0weumE8s7paEk6g"
+            }],
+            "twitter_handle": "robocosan",
+            "tags": ["Hololive"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sakura Miko",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC-hM6YJuNYVAmUWxeIr9FeA"
+            }],
+            "twitter_handle": "sakuramiko35",
+            "tags": ["Hololive"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hoshimachi Suisei",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC5CwaMl1eIgY8h02uZw7u8A"
+            }],
+            "twitter_handle": "suisei_hosimati",
+            "tags": ["Hololive"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yozora Mel",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCD8HOxPs4Xvsm8H0ZxXGiBw"
+            }],
+            "twitter_handle": "yozoramel",
+            "tags": ["Hololive", "Hololive 1st Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Aki Rosenthal",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCFTLzh12_nrtzqBPsTCqenA"
+            }, {
+                "platform": "Youtube",
+                "id": "UCLbtM3JZfRTg8v2KGag-RMw"
+            }],
+            "twitter_handle": "akirosenthal",
+            "tags": ["Hololive", "Hololive 1st Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Natsuiro Matsuri",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCQ0UDLQCjY0rmuxCDE38FGg"
+            }],
+            "twitter_handle": "natsuiromatsuri",
+            "tags": ["Hololive", "Hololive 1st Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shirakami Fubuki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCdn5BQ06XqgXoAxIhbqw5Rg"
+            }],
+            "twitter_handle": "shirakamifubuki",
+            "tags": ["Hololive", "Hololive 1st Gen", "Hololive Gamers"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Akai Haato",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1CfXB_kRs3C-zaeTG3oGyg"
+            }, {
+                "platform": "Youtube",
+                "id": "UCHj_mh57PVMXhAUDphUQDFA"
+            }],
+            "twitter_handle": "akaihaato",
+            "tags": ["Hololive", "Hololive 1st Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yuduki Choco",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1suqwovbL1kzsoaZgFZLKg"
+            }, {
+                "platform": "Youtube",
+                "id": "UCp3tgHXw_HI0QMk1K8qh3gQ"
+            }],
+            "twitter_handle": "yuzukichococh",
+            "tags": ["Hololive", "Hololive 2nd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Amano Pikamee",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCajhBT4nMrg3DLS-bLL2RCg"
+            }],
+            "twitter_handle": "amanopikamee",
+            "tags": ["VOMS"],
+            "languages": ["ja", "en"]
+        }
+    ]
+}
