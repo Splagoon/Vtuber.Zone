@@ -1,8 +1,8 @@
-module Vtubers.Core.Redis
+module Vtuber.Zone.Core.Redis
 
 open StackExchange.Redis
 open MBrace.FsPickler
-open Vtubers.Core.Util
+open Vtuber.Zone.Core.Util
 
 let redis = ConnectionMultiplexer.Connect("127.0.0.1:6379")
 let pickler = FsPickler.CreateBinarySerializer()

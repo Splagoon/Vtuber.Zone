@@ -1,8 +1,8 @@
 ﻿open Google.Apis.Services
 open Google.Apis.YouTube.v3
-open Vtubers.Core
-open Vtubers.Core.Util
-open Vtubers.Core.Redis
+open Vtuber.Zone.Core
+open Vtuber.Zone.Core.Util
+open Vtuber.Zone.Core.Redis
 
 [<EntryPoint>]
 let main _ =

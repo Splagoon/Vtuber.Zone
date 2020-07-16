@@ -1,4 +1,4 @@
-﻿namespace Vtubers.Core
+﻿namespace Vtuber.Zone.Core
 
 open System.IO
 open FSharp.Json
