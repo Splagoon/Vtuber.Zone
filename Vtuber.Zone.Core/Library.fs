@@ -1,5 +1,6 @@
 ﻿namespace Vtuber.Zone.Core
 
+open System
 open System.IO
 open FSharp.Json
 
@@ -19,14 +20,17 @@ type Stream =
     { Channel: Channel
       Url: string
       ThumbnailUrl: string
-      Title: string }
+      Title: string
+      Viewers: int
+      StartTime: DateTimeOffset }
 
 type Vtuber =
     { Name: string
       Channels: Channel list
-      TwitterHandle: string option
+      TwitterHandle: string
       Tags: string list
       Languages: string list }
+    member this.Id = this.Name.ToLower().Replace(" ", "-")
 
 type Config =
     { Vtubers: Vtuber list }
@@ -36,3 +40,20 @@ type Config =
 
         File.ReadAllText("../settings.json")
         |> Json.deserializeEx<Config> jsonConfig
+
+type Secrets =
+    { Twitter:
+        {| ConsumerKey: string
+           ConsumerSecret: string
+           UserAccessToken: string
+           UserAccessSecret: string |}
+      Youtube:
+        {| ApiKey: string |}
+      Redis:
+        {| Url: string |}}
+    static member Load() =
+        let jsonConfig =
+            JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
+        
+        File.ReadAllText("../secrets.json")
+        |> Json.deserializeEx<Secrets> jsonConfig

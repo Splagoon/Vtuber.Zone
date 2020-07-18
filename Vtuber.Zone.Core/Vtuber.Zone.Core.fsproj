@@ -4,11 +4,14 @@
     <RootNamespace>Vtuber.Zone</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Util.fs" />
-    <Compile Include="Library.fs" />
     <Content Include="../settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="../secrets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Util.fs" />
+    <Compile Include="Library.fs" />
     <Compile Include="Redis.fs" />
   </ItemGroup>
   <ItemGroup>

@@ -32,3 +32,5 @@ bin
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+/secrets.json

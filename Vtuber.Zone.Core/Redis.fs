@@ -3,17 +3,55 @@ module Vtuber.Zone.Core.Redis
 open StackExchange.Redis
 open MBrace.FsPickler
 open Vtuber.Zone.Core.Util
+open Vtuber.Zone.Core
 
-let redis = ConnectionMultiplexer.Connect("127.0.0.1:6379")
+let secrets = Secrets.Load().Redis
+let redis =
+    ConnectionMultiplexer.Connect(secrets.Url)
+
 let pickler = FsPickler.CreateBinarySerializer()
 
 let DB = redis.GetDatabase()
 
-module public Stream =
-    let key : RedisKey = ~~"vtubers.streams"
-    let put streams =
-        let value : RedisValue array =
-            streams
-            |> Seq.map (pickler.Pickle >> (~~))
-            |> Seq.toArray
-        DB.SetAdd(key, value) |> ignore
+let AllStreamsByViewersKey: RedisKey = ~~ "vtuber.zone.all-streams.by-viewers"
+
+let AllStreamsByStartTimeKey: RedisKey =
+    ~~ "vtuber.zone.all-streams.by-start-time"
+
+let invalidateStreamIndexes () =
+    DB.KeyDelete
+        ([| AllStreamsByViewersKey
+            AllStreamsByStartTimeKey |])
+    |> ignore
+
+let putPlatformStreams platform (streams: Stream seq) =
+    let viewersKey, startTimeKey: RedisKey * RedisKey =
+        match platform with
+        | Platform.Youtube -> "youtube"
+        | Platform.Twitch -> "twitch"
+        | _ -> failwithf "unknown stream provider %A" platform
+        |> fun p ->
+            p
+            |> sprintf "vtuber.zone.streams.%s.by-viewers"
+            |> (~~),
+            p
+            |> sprintf "vtuber.zone.streams.%s.by-start-time"
+            |> (~~)
+
+    DB.KeyDelete([| viewersKey; startTimeKey |])
+    |> ignore
+
+    let streamsByViewers, streamsByStartTime =
+        seq {
+            for stream in streams ->
+                let value: RedisValue = stream |> pickler.Pickle |> (~~)
+                SortedSetEntry(value, stream.Viewers |> float),
+                SortedSetEntry(value, stream.StartTime.ToUnixTimeSeconds() |> float)
+        }
+        |> Seq.toArray
+        |> Array.unzip
+
+    DB.SortedSetAdd(viewersKey, streamsByViewers)
+    |> ignore
+    DB.SortedSetAdd(startTimeKey, streamsByStartTime)
+    |> ignore
