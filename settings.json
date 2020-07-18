@@ -1,6 +1,39 @@
 {
     "vtubers": [
         {
+            "name": "Kizuna AI",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC4YaOt1yT-ZeyB0OmxHgolA"
+            }, {
+                "platform": "Youtube",
+                "id": "UCbFwe3COkDrbNsbMyGNCsDg"
+            }],
+            "twitter_handle": "aichan_nel",
+            "tags": [],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Love-chan",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCYm8zALd2uHqyy6C1tb4_zA"
+            }],
+            "twitter_handle": "lovechan_lp",
+            "tags": ["love-pii"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Aipii",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCYm8zALd2uHqyy6C1tb4_zA"
+            }],
+            "twitter_handle": "aipii_lp",
+            "tags": ["love-pii"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Tokino Sora",
             "channels": [{
                 "platform": "Youtube",
@@ -110,14 +143,104 @@
             "languages": ["ja"]
         },
         {
+            "name": "Oozora Subaru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCvzGlP9oQwU--Y0r9id_jnA"
+            }],
+            "twitter_handle": "oozorasubaru",
+            "tags": ["Hololive", "Hololive 2nd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Minato Aqua",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1opHUrw8rvnsadT-iGp7Cg"
+            }],
+            "twitter_handle": "minatoaqua",
+            "tags": ["Hololive", "Hololive 2nd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Murasaki Shion",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCXTpFs_3PqI41qX2d9tL2Rw"
+            }],
+            "twitter_handle": "murasakishionch",
+            "tags": ["Hololive", "Hololive 2nd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nakiri Ayame",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC7fk0CB07ly8oSl0aqKkqFg"
+            }],
+            "twitter_handle": "nakiriayame",
+            "tags": ["Hololive", "Hololive 2nd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ookami Mio",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCp-5t9SrOQwXMU7iIjQfARg"
+            }],
+            "twitter_handle": "ookamimio",
+            "tags": ["Hololive", "Hololive Gamers"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nekomata Okayu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCvaTdHTWBGv3MKj3KVqJVCw"
+            }],
+            "twitter_handle": "nekomataokayu",
+            "tags": ["Hololive", "Hololive Gamers"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Inugami Korone",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UChAnqc_AY5_I3Px5dig3X1Q"
+            }],
+            "twitter_handle": "inugamikorone",
+            "tags": ["Hololive", "Hololive Gamers"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
                 "id": "UCajhBT4nMrg3DLS-bLL2RCg"
             }],
             "twitter_handle": "amanopikamee",
-            "tags": ["VOMS"],
+            "tags": ["VOMS Project"],
             "languages": ["ja", "en"]
+        },
+        {
+            "name": "Hikasa Tomoshika",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC3vzVK_N_SUVKqbX69L_X4g"
+            }],
+            "twitter_handle": "Tomoshika_H",
+            "tags": ["VOMS Project"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Jitomi Monoe",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCaFhsCKSSS821N-EcWmPkUQ"
+            }],
+            "twitter_handle": "Jitomi_Monoe",
+            "tags": ["VOMS Project"],
+            "languages": ["ja"]
         }
     ]
 }
