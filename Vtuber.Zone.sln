@@ -7,6 +7,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core", "Vtuber.
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YT", "Vtuber.Zone.YT\Vtuber.Zone.YT.fsproj", "{B92DA02F-E4EC-41F8-982C-E8CB0111985E}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Vtuber.Zone.Twitter\Vtuber.Zone.Twitter.fsproj", "{945FA695-BC17-42B5-AF44-25C75A26B74E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{B92DA02F-E4EC-41F8-982C-E8CB0111985E}.Release|x64.Build.0 = Release|Any CPU
 		{B92DA02F-E4EC-41F8-982C-E8CB0111985E}.Release|x86.ActiveCfg = Release|Any CPU
 		{B92DA02F-E4EC-41F8-982C-E8CB0111985E}.Release|x86.Build.0 = Release|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Debug|x64.Build.0 = Debug|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Debug|x86.Build.0 = Debug|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Release|x64.ActiveCfg = Release|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Release|x64.Build.0 = Release|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Release|x86.ActiveCfg = Release|Any CPU
+		{945FA695-BC17-42B5-AF44-25C75A26B74E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
