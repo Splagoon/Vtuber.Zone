@@ -216,6 +216,116 @@
             "languages": ["ja"]
         },
         {
+            "name": "AZKi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC0TXe_LYZ4scaW2XMyi5_kw"
+            }],
+            "twitter_handle": "AZKi_VDiVA",
+            "tags": ["Hololive", "upd8", "INoNaKa MUSIC"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Usada Pekora",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1DCedRgGHBdm81E1llLhOQ"
+            }],
+            "twitter_handle": "usadapekora",
+            "tags": ["Hololive", "Hololive 3rd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Uruha Rushia",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCl_gCybOJRIgOXw6Qb4qJzQ"
+            }],
+            "twitter_handle": "uruharushia",
+            "tags": ["Hololive", "Hololive 3rd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shiranui Flare",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCvInZx9h3jC2JzsIzoOebWg"
+            }],
+            "twitter_handle": "shiranuiflare",
+            "tags": ["Hololive", "Hololive 3rd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shirogane Noel",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCdyqAaZDKHXg4Ahi7VENThQ"
+            }],
+            "twitter_handle": "shiroganenoel",
+            "tags": ["Hololive", "Hololive 3rd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Houshou Marine",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCCzUftO8KOVkV4wQG1vkUvg"
+            }],
+            "twitter_handle": "houshoumarine",
+            "tags": ["Hololive", "Hololive 3rd Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Tsunomaki Watame",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCqm3BQLlJfvkTsX_hvm0UmA"
+            }],
+            "twitter_handle": "tsunomakiwatame",
+            "tags": ["Hololive", "Hololive 4th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Tokoyami Towa",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1uv2Oq6kNxgATlCiez59hw"
+            }],
+            "twitter_handle": "tokoyamitowa",
+            "tags": ["Hololive", "Hololive 4th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kiryu Coco",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCS9uQI-jC3DE0L4IpXyvr6w"
+            }],
+            "twitter_handle": "kiryucoco",
+            "tags": ["Hololive", "Hololive 4th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Amane Kanata",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCZlDXzGoo7d44bwdNObFacg"
+            }],
+            "twitter_handle": "amanekanatach",
+            "tags": ["Hololive", "Hololive 4th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Himemori Luna",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCa9Y57gfeY0Zro_noHRVrnw"
+            }],
+            "twitter_handle": "himemoriluna",
+            "tags": ["Hololive", "Hololive 4th Gen"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
@@ -252,6 +362,16 @@
                 "id": "UC8NZiqKx6fsDT3AVcMiVFyA"
             }],
             "twitter_handle": "norioo_",
+            "tags": [],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shigure Ui",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCt30jJgChL8qeT9VPadidSw"
+            }],
+            "twitter_handle": "ui_shig",
             "tags": [],
             "languages": ["ja"]
         }
