@@ -2,7 +2,18 @@
 
 open System
 open System.IO
+open System.Reflection
 open FSharp.Json
+
+module ConfigUtils =
+    let basePath = AppDomain.CurrentDomain.BaseDirectory
+    let jsonConfig =
+        JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
+
+    let loadFile<'a> filePath =
+        Path.Combine(basePath, filePath)
+        |> File.ReadAllText
+        |> Json.deserializeEx<'a> jsonConfig
 
 type Platform =
     | Unknown = 0
@@ -35,11 +46,10 @@ type Vtuber =
 type Config =
     { Vtubers: Vtuber list }
     static member Load() =
-        let jsonConfig =
-            JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
-
-        File.ReadAllText("../settings.json")
-        |> Json.deserializeEx<Config> jsonConfig
+        ConfigUtils.loadFile<Config> "settings.json"
+        |> fun c ->
+            printfn "Loaded %d vtubers" c.Vtubers.Length
+            c
 
 type Secrets =
     { Twitter:
@@ -52,8 +62,4 @@ type Secrets =
       Redis:
         {| Url: string |}}
     static member Load() =
-        let jsonConfig =
-            JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
-        
-        File.ReadAllText("../secrets.json")
-        |> Json.deserializeEx<Secrets> jsonConfig
+        ConfigUtils.loadFile<Secrets> "secrets.json"
