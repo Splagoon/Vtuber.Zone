@@ -17,7 +17,7 @@ let main _ =
         secrets.UserAccessSecret) |> ignore
 
     // matches youtu.be/xyz and youtube.com/watch?v=xyz links
-    let youtubeRegex = Regex(@"^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/watch\?v=)(\w+)", RegexOptions.Compiled ||| RegexOptions.IgnoreCase)
+    let youtubeRegex = Regex(@"^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/watch\?v=)([\w-]+)", RegexOptions.Compiled ||| RegexOptions.IgnoreCase)
 
     let readTweet vtuber (tweet : ITweet) =
         if not tweet.Retweeted then
