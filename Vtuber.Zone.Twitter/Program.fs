@@ -34,8 +34,8 @@ let main _ =
                     |> Seq.map (fun id -> SortedSetEntry(id |> RedisValue, timestamp))
                     |> Seq.toArray
                 DB.SortedSetAdd(key, values) |> ignore
-                // Only keep 10 most recently observed videos
-                DB.SortedSetRemoveRangeByRank(key, -10L, 0L) |> ignore
+                // Only keep 5 most recently observed videos
+                DB.SortedSetRemoveRangeByRank(key, 0L, -5L) |> ignore
 
     let stream = Stream.CreateFilteredStream()
 
@@ -52,5 +52,6 @@ let main _ =
         stream.AddFollow(Nullable user.Id, readTweet vtuber)
         printfn "Following %s (@%s): %d" vtuber.Name user.ScreenName user.Id
 
+    printfn "Now listening for tweets..."
     stream.StartStreamMatchingAnyCondition() // does not return
     0 // return an integer exit code

@@ -1,4 +1,7 @@
 {
+    "youtube": {
+        "batch_size": 50
+    },
     "vtubers": [
         {
             "name": "Kizuna AI",
@@ -240,6 +243,16 @@
             }],
             "twitter_handle": "Jitomi_Monoe",
             "tags": ["VOMS Project"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Inuyama Tamaki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC8NZiqKx6fsDT3AVcMiVFyA"
+            }],
+            "twitter_handle": "norioo_",
+            "tags": [],
             "languages": ["ja"]
         }
     ]

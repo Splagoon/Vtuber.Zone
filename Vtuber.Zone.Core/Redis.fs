@@ -25,7 +25,7 @@ let invalidateStreamIndexes () =
     |> ignore
 
 let putPlatformStreams platform (streams: Stream seq) =
-    let viewersKey, startTimeKey: RedisKey * RedisKey =
+    let viewersKey, startTimeKey =
         match platform with
         | Platform.Youtube -> "youtube"
         | Platform.Twitch -> "twitch"
@@ -33,19 +33,24 @@ let putPlatformStreams platform (streams: Stream seq) =
         |> fun p ->
             p
             |> sprintf "vtuber.zone.streams.%s.by-viewers"
-            |> (~~),
+            |> RedisKey,
             p
             |> sprintf "vtuber.zone.streams.%s.by-start-time"
-            |> (~~)
+            |> RedisKey
 
     DB.KeyDelete([| viewersKey; startTimeKey |])
     |> ignore
+
+    let getViewers stream =
+        match stream.Viewers with
+        | Some v -> float v
+        | None -> 0.
 
     let streamsByViewers, streamsByStartTime =
         seq {
             for stream in streams ->
                 let value: RedisValue = stream |> pickler.Pickle |> (~~)
-                SortedSetEntry(value, stream.Viewers |> float),
+                SortedSetEntry(value, stream |> getViewers),
                 SortedSetEntry(value, stream.StartTime.ToUnixTimeSeconds() |> float)
         }
         |> Seq.toArray
@@ -55,3 +60,4 @@ let putPlatformStreams platform (streams: Stream seq) =
     |> ignore
     DB.SortedSetAdd(startTimeKey, streamsByStartTime)
     |> ignore
+    invalidateStreamIndexes ()

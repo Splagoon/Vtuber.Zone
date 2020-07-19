@@ -2,11 +2,11 @@
 
 open System
 open System.IO
-open System.Reflection
 open FSharp.Json
 
 module ConfigUtils =
     let basePath = AppDomain.CurrentDomain.BaseDirectory
+
     let jsonConfig =
         JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
 
@@ -32,7 +32,7 @@ type Stream =
       Url: string
       ThumbnailUrl: string
       Title: string
-      Viewers: int
+      Viewers: uint64 option
       StartTime: DateTimeOffset }
 
 type Vtuber =
@@ -44,7 +44,8 @@ type Vtuber =
     member this.Id = this.Name.ToLower().Replace(" ", "-")
 
 type Config =
-    { Vtubers: Vtuber list }
+    { Youtube: {| BatchSize: int |}
+      Vtubers: Vtuber list }
     static member Load() =
         ConfigUtils.loadFile<Config> "settings.json"
         |> fun c ->
@@ -52,14 +53,10 @@ type Config =
             c
 
 type Secrets =
-    { Twitter:
-        {| ConsumerKey: string
-           ConsumerSecret: string
-           UserAccessToken: string
-           UserAccessSecret: string |}
-      Youtube:
-        {| ApiKey: string |}
-      Redis:
-        {| Url: string |}}
-    static member Load() =
-        ConfigUtils.loadFile<Secrets> "secrets.json"
+    { Twitter: {| ConsumerKey: string
+                  ConsumerSecret: string
+                  UserAccessToken: string
+                  UserAccessSecret: string |}
+      Youtube: {| ApiKey: string |}
+      Redis: {| Url: string |} }
+    static member Load() = ConfigUtils.loadFile<Secrets> "secrets.json"
