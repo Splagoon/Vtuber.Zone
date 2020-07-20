@@ -20,7 +20,7 @@ let main _ =
     let youtubeRegex = Regex(@"^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/watch\?v=)([\w-]+)", RegexOptions.Compiled ||| RegexOptions.IgnoreCase)
 
     let readTweet vtuber (tweet : ITweet) =
-        if not tweet.Retweeted then
+        if not tweet.IsRetweet then
             let videoIds =
                 seq { for url in tweet.Urls -> youtubeRegex.Match(url.ExpandedURL, 0) }
                 |> Seq.filter (fun m -> m.Success && m.Groups.[1].Success)
@@ -35,7 +35,7 @@ let main _ =
                     |> Seq.toArray
                 DB.SortedSetAdd(key, values) |> ignore
                 // Only keep 5 most recently observed videos
-                DB.SortedSetRemoveRangeByRank(key, 0L, -5L) |> ignore
+                DB.SortedSetRemoveRangeByRank(key, 0L, -6L) |> ignore
 
     let stream = Stream.CreateFilteredStream()
 
