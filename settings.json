@@ -326,6 +326,146 @@
             "languages": ["ja"]
         },
         {
+            "name": "Artia",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "artia_hololive"
+            }],
+            "twitter_handle": "Artia_Hololive",
+            "tags": ["Hololive", "Hololive China", "Hololive China 2nd Gen"],
+            "languages": ["zh", "en"]
+        },
+        {
+            "name": "Airani Iofifteen",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCAoy6rzhSf4ydcYjJw3WoVg"
+            }],
+            "twitter_handle": "airaniiofifteen",
+            "tags": ["Hololive", "Hololive Indonesia", "Hololive Indonesia 1st Gen"],
+            "languages": ["id", "jp", "en"]
+        },
+        {
+            "name": "Moona Hoshinova",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCP0BspO_AMEe3aQqqpo89Dg"
+            }],
+            "twitter_handle": "moonahoshinova",
+            "tags": ["Hololive", "Hololive Indonesia", "Hololive Indonesia 1st Gen"],
+            "languages": ["id", "jp", "en"]
+        },
+        {
+            "name": "Ayunda Risu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCOyYb1c43VlX9rc_lT6NKQw"
+            }],
+            "twitter_handle": "ayunda_risu",
+            "tags": ["Hololive", "Hololive Indonesia", "Hololive Indonesia 1st Gen"],
+            "languages": ["id", "en", "jp"]
+        },
+        {
+            "name": "Hanasaki Miyabi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC6t3-_N8A6ME1JShZHHqOMw"
+            }],
+            "twitter_handle": "miyabihanasaki",
+            "tags": ["Hololive", "Holostars", "Holostars 1st Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Kanade Izuru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCZgOv3YDEs-ZnZWDYVwJdmA"
+            }],
+            "twitter_handle": "kanadeizuru",
+            "tags": ["Hololive", "Holostars", "Holostars 1st Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Arurandeisu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCKeAhJvy8zgXWbh9duVjIaQ"
+            }],
+            "twitter_handle": "arurandeisu",
+            "tags": ["Hololive", "Holostars", "Holostars 1st Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Rikka",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC9mf_ZVpouoILRY9NUIaK-w"
+            }],
+            "twitter_handle": "rikkaroid",
+            "tags": ["Hololive", "Holostars", "Holostars 1st Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Astel Leda",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCNVEsYbiZjH5QLmGeSgTSzg"
+            }],
+            "twitter_handle": "astelleda",
+            "tags": ["Hololive", "Holostars", "Holostars 2nd Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Kishido Temma",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCGNI4MENvnsymYjKiZwv9eg"
+            }],
+            "twitter_handle": "kishidotemma",
+            "tags": ["Hololive", "Holostars", "Holostars 2nd Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Yukoku Roberu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCANDOlYTJT7N5jlRC3zfzVA"
+            }],
+            "twitter_handle": "yukokuroberu",
+            "tags": ["Hololive", "Holostars", "Holostars 2nd Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Tsukishita Kaoru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCsehvfwaWF6nWuFnXI0AqZQ"
+            }],
+            "twitter_handle": "tsukishitakaoru",
+            "tags": ["Hololive", "Holostars", "Holostars 3rd Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Kageyama Shien",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UChSvpZYRPh0FvG4SJGSga3g"
+            }],
+            "twitter_handle": "kageyamashien",
+            "tags": ["Hololive", "Holostars", "Holostars 3rd Gen"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Aragami Oga",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCwL7dgTxKo8Y4RFIKWaf8gA"
+            }],
+            "twitter_handle": "aragamioga",
+            "tags": ["Hololive", "Holostars", "Holostars 3rd Gen"],
+            "languages": ["jp"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
