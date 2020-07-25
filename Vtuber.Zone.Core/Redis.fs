@@ -11,6 +11,7 @@ let redis =
 
 let pickler = FsPickler.CreateBinarySerializer()
 
+let Server = redis.GetEndPoints() |> Seq.exactlyOne |> redis.GetServer
 let DB = redis.GetDatabase()
 
 let AllStreamsByViewersKey: RedisKey = ~~ "vtuber.zone.all-streams.by-viewers"

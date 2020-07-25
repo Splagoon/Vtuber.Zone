@@ -4,16 +4,23 @@ open System
 open System.IO
 open FSharp.Json
 
-module ConfigUtils =
-    let basePath = AppDomain.CurrentDomain.BaseDirectory
-
+module JsonUtils =
     let jsonConfig =
         JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
 
-    let loadFile<'a> filePath =
-        Path.Combine(basePath, filePath)
-        |> File.ReadAllText
-        |> Json.deserializeEx<'a> jsonConfig
+    let deserialize<'a> = Json.deserializeEx<'a> jsonConfig
+    let serialize<'a> (obj : 'a) = obj |> Json.serializeEx jsonConfig
+
+module ConfigUtils =
+    let basePath = AppDomain.CurrentDomain.BaseDirectory
+
+    let loadFile filePath =
+      Path.Combine(basePath, filePath)
+      |> File.ReadAllText
+
+    let loadJson<'a> =
+        loadFile
+        >> JsonUtils.deserialize<'a>
 
 type Platform =
     | Unknown = 0
@@ -47,7 +54,7 @@ type Config =
     { Youtube: {| BatchSize: int |}
       Vtubers: Vtuber list }
     static member Load() =
-        ConfigUtils.loadFile<Config> "settings.json"
+        ConfigUtils.loadJson<Config> "settings.json"
         |> fun c ->
             printfn "Loaded %d vtubers" c.Vtubers.Length
             c
@@ -59,4 +66,4 @@ type Secrets =
                   UserAccessSecret: string |}
       Youtube: {| ApiKey: string |}
       Redis: {| Url: string |} }
-    static member Load() = ConfigUtils.loadFile<Secrets> "secrets.json"
+    static member Load() = ConfigUtils.loadJson<Secrets> "secrets.json"
