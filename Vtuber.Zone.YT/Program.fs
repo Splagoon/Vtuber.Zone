@@ -31,15 +31,19 @@ let main _ =
         | _ -> None
 
     let getStreams (videoIds : string seq) =
-        let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
-        printf "Searching for %d videoId(s)..." (videoIds |> Seq.length)
-        req.Id <- videoIds |> Repeatable
-        // TODO: batching?
-        let results = req.Execute().Items
-        printfn "got %d result(s)" results.Count
-        results
-        |> Seq.map videoToStream
-        |> Seq.choose id
+        if Seq.isEmpty videoIds
+        then
+            Seq.empty
+        else
+            let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
+            printf "Searching for %d videoId(s)..." (videoIds |> Seq.length)
+            req.Id <- videoIds |> Repeatable
+            // TODO: batching?
+            let results = req.Execute().Items
+            printfn "got %d result(s)" results.Count
+            results
+            |> Seq.map videoToStream
+            |> Seq.choose id
 
     let getFoundVideos (vtuber : Vtuber) =
         let redisKey = sprintf "vtuber.zone.twitter-yt-links.%s" vtuber.Id |> RedisKey
