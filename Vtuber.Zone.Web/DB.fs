@@ -12,7 +12,7 @@ let private getAllStreamsScript =
 
 let private getAllStreams sortKey =
     printfn "getting streams!"
-    let key = sprintf "vtuber.zone.streams.all.%s" sortKey
+    let key = sprintf "vtuber.zone.all-streams.%s" sortKey
     let keyPattern = sprintf "vtuber.zone.streams.*.%s" sortKey
     let castToByteArrayArray : RedisResult -> byte array array = RedisResult.op_Explicit
     getAllStreamsScript.Evaluate
