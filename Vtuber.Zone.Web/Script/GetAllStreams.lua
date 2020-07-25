@@ -11,7 +11,7 @@ if redis.call("EXISTS", @key) == 0 then
         end
     until cursor == "0"
     if #all_keys == 0 then
-        return nil
+        return {}
     end
     local args = {"ZUNIONSTORE", @key, #all_keys, unpack(all_keys)}
     redis.call(unpack(args))
