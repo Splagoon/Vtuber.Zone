@@ -24,6 +24,7 @@ let routes =
     GET >=> choose
       [ path "/streams/live" >=> request getLiveStreams ]
   ] >=> setMimeType "application/json; charset=utf-8"
+    >=> setHeader  "Access-Control-Allow-Origin" "*"
 
 [<EntryPoint>]
 let main _ =

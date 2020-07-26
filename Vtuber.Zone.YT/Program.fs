@@ -35,15 +35,17 @@ let main _ =
         then
             Seq.empty
         else
-            let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
-            printf "Searching for %d videoId(s)..." (videoIds |> Seq.length)
-            req.Id <- videoIds |> Repeatable
-            // TODO: batching?
-            let results = req.Execute().Items
-            printfn "got %d result(s)" results.Count
-            results
-            |> Seq.map videoToStream
-            |> Seq.choose id
+            seq {
+                for batch in videoIds |> Seq.chunkBySize config.Youtube.BatchSize do
+                    let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
+                    printf "Searching for %d videoId(s)..." batch.Length
+                    req.Id <- batch |> Repeatable
+                    let results = req.Execute().Items
+                    printfn "got %d result(s)" results.Count
+                    yield! results
+                    |> Seq.map videoToStream
+                    |> Seq.choose id
+            }
 
     let getFoundVideos (vtuber : Vtuber) =
         let redisKey = sprintf "vtuber.zone.twitter-yt-links.%s" vtuber.Id |> RedisKey
