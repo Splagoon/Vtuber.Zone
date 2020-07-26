@@ -466,6 +466,86 @@
             "languages": ["jp"]
         },
         {
+            "name": "Tsukino Mito",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCD-miitqNY3nyukJ4Fnf4_A"
+            }],
+            "twitter_handle": "MitoTsukino",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Yuuki Chihiro",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCLO9QDxVL4bnvRRsz6K4bsQ"
+            }],
+            "twitter_handle": "Chihiro_yuki23",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Elu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCYKP16oMX9KKPbrNgo_Kgag"
+            }],
+            "twitter_handle": "Elu_World",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Higuchi Kaede",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCsg-YqdqQ-KFF0LNk23BY4A"
+            }],
+            "twitter_handle": "HiguchiKaede",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Shizuka Rin",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC6oDys1BGgBsIC3WhG1BovQ"
+            }],
+            "twitter_handle": "ShizuRin23",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Shibuya Hajime",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCeK9HFcRZoTrvqcUCtccMoQ"
+            }],
+            "twitter_handle": "sibuya_hajime",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Suzuya Aki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCpnvhOIJ6BN-vPkYU9ls-Eg"
+            }],
+            "twitter_handle": "aki_suzuya",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
+            "name": "Moira",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCvmppcdYf4HOv-tFQhHHJMA"
+            }],
+            "twitter_handle": "Moiramoimoimoi",
+            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "languages": ["jp"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
