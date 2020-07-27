@@ -45,7 +45,7 @@ let main _ =
         then
             Seq.empty, Seq.empty
         else
-            let unified = seq {
+            let unified = (seq {
                 for batch in videoIds |> Seq.chunkBySize config.Youtube.BatchSize do
                     let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
                     printf "Searching for %d videoId(s)..." batch.Length
@@ -54,7 +54,7 @@ let main _ =
                     printfn "got %d result(s)" results.Count
                     yield! results
                     |> Seq.map videoToStream
-            }
+            } |> Seq.toList)
             unified |> Seq.map fst |> Seq.choose id, unified |> Seq.map snd |> Seq.choose id
 
     let getFoundVideos (vtuber : Vtuber) =
