@@ -22,7 +22,7 @@ let main _ =
         | "live" ->
             (Some { Channel = { Platform = Platform.Youtube
                                 Id = video.Snippet.ChannelId }
-                    Url = sprintf "https://youtube.com/watch?v=%s" video.Id
+                    Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
                     ThumbnailUrl = video.Snippet.Thumbnails.High.Url
                     Title = video.Snippet.Title
                     Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
@@ -71,7 +71,7 @@ let main _ =
         DB.KeyDelete(tmpKey) |> ignore
         goodIds
 
-    let rec loop _ =
+    let rec loop () =
         let streams, badIds =
             config.Vtubers
             |> Seq.collect getFoundVideos

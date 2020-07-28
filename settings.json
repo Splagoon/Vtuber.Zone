@@ -582,7 +582,7 @@
                 "id": "UC8NZiqKx6fsDT3AVcMiVFyA"
             }],
             "twitter_handle": "norioo_",
-            "tags": [],
+            "tags": ["Indie"],
             "languages": ["ja"]
         },
         {
@@ -592,8 +592,21 @@
                 "id": "UCt30jJgChL8qeT9VPadidSw"
             }],
             "twitter_handle": "ui_shig",
-            "tags": [],
+            "tags": ["Indie"],
             "languages": ["ja"]
+        },
+        {
+            "name": "Mocca Liebeskind",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "moccachan"
+            }, {
+                "platform": "Youtube",
+                "id": "UCxUedKT3-N99UffOHoQ0o4w"
+            }],
+            "twitter_handle": "moccaliebeskind",
+            "tags": ["Indie"],
+            "languages": ["en", "de"]
         }
     ]
 }

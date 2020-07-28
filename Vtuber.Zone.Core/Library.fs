@@ -65,5 +65,7 @@ type Secrets =
                   UserAccessToken: string
                   UserAccessSecret: string |}
       Youtube: {| ApiKey: string |}
+      Twitch: {| ClientId: string
+                 ClientSecret: string |}
       Redis: {| Url: string |} }
     static member Load() = ConfigUtils.loadJson<Secrets> "secrets.json"

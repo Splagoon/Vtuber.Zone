@@ -11,6 +11,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Vtub
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Web", "Vtuber.Zone.Web\Vtuber.Zone.Web.fsproj", "{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitch", "Vtuber.Zone.Twitch\Vtuber.Zone.Twitch.fsproj", "{7804480C-32B6-46E2-9C15-BE4C44EDE21E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}.Release|x64.Build.0 = Release|Any CPU
 		{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}.Release|x86.ActiveCfg = Release|Any CPU
 		{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}.Release|x86.Build.0 = Release|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Debug|x64.Build.0 = Debug|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Debug|x86.Build.0 = Debug|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x64.ActiveCfg = Release|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x64.Build.0 = Release|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x86.ActiveCfg = Release|Any CPU
+		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
