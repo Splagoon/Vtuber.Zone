@@ -436,16 +436,6 @@
             "languages": ["jp"]
         },
         {
-            "name": "Tsukishita Kaoru",
-            "channels": [{
-                "platform": "Youtube",
-                "id": "UCsehvfwaWF6nWuFnXI0AqZQ"
-            }],
-            "twitter_handle": "tsukishitakaoru",
-            "tags": ["Hololive", "Holostars", "Holostars 3rd Gen"],
-            "languages": ["jp"]
-        },
-        {
             "name": "Kageyama Shien",
             "channels": [{
                 "platform": "Youtube",
