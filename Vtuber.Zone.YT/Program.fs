@@ -30,16 +30,18 @@ let main _ =
     let videoToStream (video : Data.Video) =
         match video.Snippet.LiveBroadcastContent with
         | "live" ->
-            let vtubers = channelToVtuberMap.[video.Snippet.ChannelId]
-            (Some { Platform = Platform.Youtube
-                    VtuberIconUrl = video.Snippet.ChannelId |> getIcon
-                    VtuberName = vtubers |> combineNames
-                    Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
-                    ThumbnailUrl = video.Snippet.Thumbnails.Standard.Url
-                    Title = video.Snippet.Title
-                    Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
-                    StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
-                    Tags = vtubers |> combineTags }, None)
+            match channelToVtuberMap |> Map.tryFind video.Snippet.ChannelId with
+            | Some vtubers ->
+                (Some { Platform = Platform.Youtube
+                        VtuberIconUrl = video.Snippet.ChannelId |> getIcon
+                        VtuberName = vtubers |> combineNames
+                        Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
+                        ThumbnailUrl = video.Snippet.Thumbnails.Standard.Url
+                        Title = video.Snippet.Title
+                        Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
+                        StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
+                        Tags = vtubers |> combineTags }, None)
+            | None -> (None, Some video.Id)
         | "upcoming" -> (None, None) // TODO
         | _ -> (None, Some video.Id)
 
