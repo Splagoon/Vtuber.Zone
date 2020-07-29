@@ -10,9 +10,9 @@
     <Content Include="../secrets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Compile Include="Util.fs" />
     <Compile Include="Library.fs" />
     <Compile Include="Redis.fs" />
+    <Compile Include="Util.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FSharp.Data" Version="3.3.3" />

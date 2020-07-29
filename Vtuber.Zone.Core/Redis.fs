@@ -2,7 +2,6 @@ module Vtuber.Zone.Core.Redis
 
 open StackExchange.Redis
 open MBrace.FsPickler
-open Vtuber.Zone.Core.Util
 open Vtuber.Zone.Core
 
 let secrets = Secrets.Load().Redis
@@ -14,10 +13,11 @@ let pickler = FsPickler.CreateBinarySerializer()
 let Server = redis.GetEndPoints() |> Seq.exactlyOne |> redis.GetServer
 let DB = redis.GetDatabase()
 
-let AllStreamsByViewersKey: RedisKey = ~~ "vtuber.zone.all-streams.by-viewers"
+let AllStreamsByViewersKey = 
+    "vtuber.zone.all-streams.by-viewers" |> RedisKey
 
-let AllStreamsByStartTimeKey: RedisKey =
-    ~~ "vtuber.zone.all-streams.by-start-time"
+let AllStreamsByStartTimeKey =
+    "vtuber.zone.all-streams.by-start-time" |> RedisKey
 
 let invalidateStreamIndexes () =
     DB.KeyDelete
@@ -50,7 +50,8 @@ let putPlatformStreams platform (streams: Stream seq) =
     let streamsByViewers, streamsByStartTime =
         seq {
             for stream in streams ->
-                let value: RedisValue = stream |> pickler.Pickle |> (~~)
+                let value: RedisValue =
+                    stream |> pickler.Pickle |> RedisValue.op_Implicit
                 SortedSetEntry(value, stream |> getViewers),
                 SortedSetEntry(value, stream.StartTime.ToUnixTimeSeconds() |> float)
         }

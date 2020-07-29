@@ -18,22 +18,9 @@ let main _ =
                 ApplicationName = "vtubers-yt-connector"))
 
     let channelToVtuberMap =
-        seq { 
-            for vtuber in config.Vtubers do
-                for channel in vtuber.Channels do
-                    if channel.Platform = Platform.Youtube then
-                        yield channel.Id, vtuber
-        }
-        |> Seq.fold
-            (fun map (id, vtuber) ->
-                let vtubers =
-                    match map |> Map.tryFind id with
-                    | Some vtubers -> vtuber :: vtubers
-                    | None -> [vtuber]
-                map |> Map.add id vtubers)
-            Map.empty
+        config.Vtubers
+        |> getChannelToVtuberMap Platform.Youtube
 
-    let defaultIcon = "/image/default-icon.png"
     let mutable channelToIconMap = Map.empty
     let getIcon channelId =
         match channelToIconMap |> Map.tryFind channelId with
@@ -46,13 +33,13 @@ let main _ =
             let vtubers = channelToVtuberMap.[video.Snippet.ChannelId]
             (Some { Platform = Platform.Youtube
                     VtuberIconUrl = video.Snippet.ChannelId |> getIcon
-                    VtuberName = vtubers |> Combinators.combineNames
+                    VtuberName = vtubers |> combineNames
                     Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
                     ThumbnailUrl = video.Snippet.Thumbnails.Standard.Url
                     Title = video.Snippet.Title
                     Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
                     StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
-                    Tags = vtubers |> Combinators.combineTags }, None)
+                    Tags = vtubers |> combineTags }, None)
         | "upcoming" -> (None, None) // TODO
         | _ -> (None, Some video.Id)
 
@@ -128,11 +115,7 @@ let main _ =
             return! videoLoop ()
         }
 
-    let channelIds =
-        config.Vtubers
-        |> Seq.collect (fun v -> v.Channels)
-        |> Seq.filter (fun c -> c.Platform = Platform.Youtube)
-        |> Seq.map (fun c -> c.Id)
+    let channelIds = config.Vtubers |> getChannelIds Platform.Youtube
     let rec channelLoop () =
         async {
             do! Async.Sleep (TimeSpan.FromHours(12.).TotalMilliseconds |> int) 

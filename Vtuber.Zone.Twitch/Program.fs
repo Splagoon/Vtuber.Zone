@@ -1,6 +1,7 @@
 ﻿open System
 open Vtuber.Zone.Core
 open Vtuber.Zone.Core.Redis
+open Vtuber.Zone.Core.Util
 open TwitchLib.Api
 
 [<EntryPoint>]
@@ -25,17 +26,46 @@ let main _ =
                 c.Id)
         |> Collections.Generic.List
 
+    let channelToVtuberMap =
+        config.Vtubers
+        |> getChannelToVtuberMap Platform.Twitch
+
+    let mutable channelToIconMap = Map.empty
+    let getIcon channelId =
+        match channelToIconMap |> Map.tryFind channelId with
+        | Some icon -> icon
+        | None -> defaultIcon
+
+    let getChannelToIconMap (channelIds : string seq) =
+        async {
+            if Seq.isEmpty channelIds then
+                return Map.empty
+            else
+                let! res =
+                    twitch.Helix.Users.GetUsersAsync(
+                        logins = Collections.Generic.List(channelIds))
+                    |> Async.AwaitTask
+
+                return res.Users
+                |> Seq.map (fun u -> u.Login, u.ProfileImageUrl)
+                |> Map.ofSeq
+        }
+
     let getStream (stream : Helix.Models.Streams.Stream) =
-        { Channel = { Platform = Platform.Twitch 
-                      Id = stream.UserName }
+        let vtubers = channelToVtuberMap.[stream.UserName]
+        { Platform = Platform.Twitch
+          VtuberIconUrl = "" // TODO
+          VtuberName = vtubers |> combineNames
           Url = sprintf "https://www.twitch.tv/%s" stream.UserName
           ThumbnailUrl = stream.ThumbnailUrl
           Title = stream.Title
           Viewers = stream.ViewerCount |> uint64 |> Some
-          StartTime = stream.StartedAt |> DateTimeOffset }
+          StartTime = stream.StartedAt |> DateTimeOffset
+          Tags = vtubers |> combineTags }
 
-    let rec loop () =
+    let rec streamLoop () =
         async {
+            printfn "Grabbing streams"
             let! streams =
                 twitch.Helix.Streams.GetStreamsAsync(
                     first = 100,
@@ -46,7 +76,25 @@ let main _ =
             |> Seq.map getStream
             |> putPlatformStreams Platform.Twitch
             do! Async.Sleep <| 60 * 1000
-        } |> Async.RunSynchronously
-        loop()
-    loop()
+            return! streamLoop ()
+        }
+
+    let channelIds = config.Vtubers |> getChannelIds Platform.Twitch
+    let rec channelLoop () =
+        async {
+            do! Async.Sleep (TimeSpan.FromHours(12.).TotalMilliseconds |> int)
+            printfn "Grabbing channels"
+            let! iconMap = channelIds |> getChannelToIconMap
+            channelToIconMap <- iconMap
+            return! channelLoop ()
+        }
+    
+    // populate the icon map once before grabbing any streams
+    channelToIconMap <- channelIds
+                        |> getChannelToIconMap
+                        |> Async.RunSynchronously
+    [streamLoop (); channelLoop ()]
+    |> Async.Parallel
+    |> Async.RunSynchronously
+    |> ignore
     0 // return an integer exit code

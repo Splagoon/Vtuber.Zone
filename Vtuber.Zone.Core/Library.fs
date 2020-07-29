@@ -67,13 +67,3 @@ type Secrets =
                  ClientSecret: string |}
       Redis: {| Url: string |} }
     static member Load() = ConfigUtils.loadJson<Secrets> "secrets.json"
-
-module Combinators =  
-  let combineNames : Vtuber seq -> string =
-      Seq.map (fun v -> v.Name)
-      >> String.concat " & "
-
-  let combineTags : Vtuber seq -> string list =
-      Seq.collect (fun v -> v.Tags)
-      >> Set.ofSeq
-      >> Set.toList
