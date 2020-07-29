@@ -29,18 +29,16 @@ type Platform =
 
 type Channel = { Platform: Platform; Id: string }
 
-type ChannelInfo =
-    { Name: string
-      Url: string
-      IconUrl: string }
-
 type Stream =
-    { Channel: Channel
+    { Platform: Platform
+      VtuberIconUrl: string
+      VtuberName: string
       Url: string
       ThumbnailUrl: string
       Title: string
       Viewers: uint64 option
-      StartTime: DateTimeOffset }
+      StartTime: DateTimeOffset
+      Tags: string list }
 
 type Vtuber =
     { Name: string
@@ -69,3 +67,13 @@ type Secrets =
                  ClientSecret: string |}
       Redis: {| Url: string |} }
     static member Load() = ConfigUtils.loadJson<Secrets> "secrets.json"
+
+module Combinators =  
+  let combineNames : Vtuber seq -> string =
+      Seq.map (fun v -> v.Name)
+      >> String.concat " & "
+
+  let combineTags : Vtuber seq -> string list =
+      Seq.collect (fun v -> v.Tags)
+      >> Set.ofSeq
+      >> Set.toList
