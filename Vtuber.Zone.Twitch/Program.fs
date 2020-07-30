@@ -52,7 +52,7 @@ let main _ =
         }
 
     let getStream (stream : Helix.Models.Streams.Stream) =
-        let vtubers = channelToVtuberMap.[stream.UserName]
+        let vtubers = channelToVtuberMap.[stream.UserName.ToLower()]
         { Platform = Platform.Twitch
           VtuberIconUrl = "" // TODO
           VtuberName = vtubers |> combineNames
