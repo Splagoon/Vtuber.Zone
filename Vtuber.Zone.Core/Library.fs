@@ -1,4 +1,4 @@
-﻿namespace Vtuber.Zone.Core
+namespace Vtuber.Zone.Core
 
 open System
 open System.IO
@@ -50,6 +50,8 @@ type Vtuber =
 
 type Config =
     { Youtube: {| BatchSize: int |}
+      Twitch: {| ThumbnailSize: {| Width: int
+                                   Height: int |} |}
       Vtubers: Vtuber list }
     static member Load() =
         ConfigUtils.loadJson<Config> "settings.json"
