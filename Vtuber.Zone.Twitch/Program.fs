@@ -31,8 +31,8 @@ let main _ =
         |> getChannelToVtuberMap Platform.Twitch
 
     let mutable channelToIconMap = Map.empty
-    let getIcon channelId =
-        match channelToIconMap |> Map.tryFind channelId with
+    let getIcon (channelId : string) =
+        match channelToIconMap |> Map.tryFind (channelId.ToLower()) with
         | Some icon -> icon
         | None -> defaultIcon
 
@@ -47,17 +47,19 @@ let main _ =
                     |> Async.AwaitTask
 
                 return res.Users
-                |> Seq.map (fun u -> u.Login, u.ProfileImageUrl)
+                |> Seq.map (fun u -> u.Login.ToLower(), u.ProfileImageUrl)
                 |> Map.ofSeq
         }
 
     let getStream (stream : Helix.Models.Streams.Stream) =
         let vtubers = channelToVtuberMap.[stream.UserName.ToLower()]
         { Platform = Platform.Twitch
-          VtuberIconUrl = "" // TODO
+          VtuberIconUrl = stream.UserName |> getIcon
           VtuberName = vtubers |> combineNames
           Url = sprintf "https://www.twitch.tv/%s" stream.UserName
           ThumbnailUrl = stream.ThumbnailUrl
+            .Replace("{width}", config.Twitch.ThumbnailSize.Width |> string)
+            .Replace("{height}", config.Twitch.ThumbnailSize.Height |> string)
           Title = stream.Title
           Viewers = stream.ViewerCount |> uint64 |> Some
           StartTime = stream.StartedAt |> DateTimeOffset

@@ -2,6 +2,12 @@
     "youtube": {
         "batch_size": 50
     },
+    "twitch": {
+        "thumbnail_size": {
+            "width": 480,
+            "height": 270
+        }
+    },
     "vtubers": [
         {
             "name": "Kizuna AI",
