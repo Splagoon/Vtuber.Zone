@@ -468,7 +468,7 @@
                 "id": "UCD-miitqNY3nyukJ4Fnf4_A"
             }],
             "twitter_handle": "MitoTsukino",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -478,7 +478,7 @@
                 "id": "UCLO9QDxVL4bnvRRsz6K4bsQ"
             }],
             "twitter_handle": "Chihiro_yuki23",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -488,7 +488,7 @@
                 "id": "UCYKP16oMX9KKPbrNgo_Kgag"
             }],
             "twitter_handle": "Elu_World",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -498,7 +498,7 @@
                 "id": "UCsg-YqdqQ-KFF0LNk23BY4A"
             }],
             "twitter_handle": "HiguchiKaede",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -508,7 +508,7 @@
                 "id": "UC6oDys1BGgBsIC3WhG1BovQ"
             }],
             "twitter_handle": "ShizuRin23",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -518,7 +518,7 @@
                 "id": "UCeK9HFcRZoTrvqcUCtccMoQ"
             }],
             "twitter_handle": "sibuya_hajime",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -528,7 +528,7 @@
                 "id": "UCpnvhOIJ6BN-vPkYU9ls-Eg"
             }],
             "twitter_handle": "aki_suzuya",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
             "languages": ["ja"]
         },
         {
@@ -538,7 +538,107 @@
                 "id": "UCvmppcdYf4HOv-tFQhHHJMA"
             }],
             "twitter_handle": "Moiramoimoimoi",
-            "tags": ["Nijisanji", "Nijisanji First Wave"],
+            "tags": ["Nijisanji", "Nijisanji 1st Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Mononobe Alice",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCt0clH12Xk1-Ej5PXKGfdPA"
+            }],
+            "twitter_handle": "AliceMononobe",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Fushimi Gaku",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCXU7YYxy_iQd3ulXyO-zC2w"
+            }],
+            "twitter_handle": "gaku_fushimi",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ienaga Mugi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC_GCs6GARLxEHxy1w40d6VQ"
+            }],
+            "twitter_handle": "ienaga_mugi23",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Morinaka Kazaki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCtpB6Bvhs1Um93ziEDACQ8g"
+            }],
+            "twitter_handle": "KazakiMorinaka",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Suzuka Utako",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCwokZsOK_uEre70XayaFnzA"
+            }],
+            "twitter_handle": "suzukautako",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ushimi Ichigo",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCmUjjW5zF1MMOhYUwwwQv9Q"
+            }],
+            "twitter_handle": "ushimi_ichigo",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yuuhi Riri",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC48jH1ul-6HOrcSSfoR02fQ"
+            }],
+            "twitter_handle": "Yuuhi_Riri",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kenmochi Toya",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCv1fFr156jc65EMiLbaLImw"
+            }],
+            "twitter_handle": "rei_Toya_rei",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Gilzaren III",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCUzJ90o1EjqUbk2pBAy0_aw"
+            }],
+            "twitter_handle": "Gilzaren_III",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Fumino Tamaki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBiqkFJljoxAj10SoP2w2Cg"
+            }],
+            "twitter_handle": "nekokan_chu",
+            "tags": ["Nijisanji", "Nijisanji 2nd Wave"],
             "languages": ["ja"]
         },
         {

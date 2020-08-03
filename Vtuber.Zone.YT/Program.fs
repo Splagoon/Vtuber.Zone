@@ -117,7 +117,11 @@ let main _ =
             return! videoLoop ()
         }
 
-    let channelIds = config.Vtubers |> getChannelIds Platform.Youtube
+    let channelIds =
+        config.Vtubers
+        |> getChannelIds Platform.Youtube
+        |> Seq.distinct
+
     let rec channelLoop () =
         async {
             do! Async.Sleep (TimeSpan.FromHours(12.).TotalMilliseconds |> int) 
@@ -127,5 +131,12 @@ let main _ =
         }
 
     channelToIconMap <- channelIds |> getChannelToIconMap // populate the channel map once before grabbing videos
+    if Map.count channelToIconMap < Seq.length channelIds then
+        seq {
+            for id in channelIds do
+                if channelToIconMap |> Map.tryFind id |> Option.isNone then
+                    yield id
+        } |> printfn "Channel(s) not found: %A"
+
     [videoLoop (); channelLoop ()] |> Async.Parallel |> Async.RunSynchronously |> ignore
     0 // return an integer exit code
