@@ -642,6 +642,76 @@
             "languages": ["ja"]
         },
         {
+            "name": "Kanae",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCspv01oxUFf_MTSipURRhkA"
+            }],
+            "twitter_handle": "Kanae_2434",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Akabane Youko",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBi8YaVyZpiKWN3_Z0dCTfQ"
+            }],
+            "twitter_handle": "Youko_Akabane",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sasaki Saku",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCoztvTULBYd3WmStqYeoHcA"
+            }],
+            "twitter_handle": "saku_sasaki",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Honma Himawari",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC0g1AE0DOjBYnLhkgoRWN1w"
+            }],
+            "twitter_handle": "honmahimawari",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Makaino Ririmu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC9EjSJ8pvxtvPdxLOElv73w"
+            }],
+            "twitter_handle": "makaino_ririmu",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kuzuha",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCSFCh5NL4qXrAy9u-u2lX3g"
+            }],
+            "twitter_handle": "Vamp_Kuzu",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shiina Yuika",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC_4tXjqecqox5Uc05ncxpxg"
+            }],
+            "twitter_handle": "yuika_siina",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
