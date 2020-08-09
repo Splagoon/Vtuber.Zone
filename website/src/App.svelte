@@ -64,7 +64,7 @@
   setInterval(load, 60 * 1000);
 
   function tagId(tag: string): string {
-    return `tag-${tag.toLowerCase().replaceAll(" ", "-")}`;
+    return `tag-${tag.toLowerCase().replace(/\s/g, "-")}`;
   }
 </script>
 
