@@ -13,8 +13,8 @@ if redis.call("EXISTS", @key) == 0 then
     if #all_keys == 0 then
         return {}
     end
-    local args = {"ZUNIONSTORE", @key, #all_keys, unpack(all_keys)}
+    local args = {"SUNIONSTORE", @key, unpack(all_keys)}
     redis.call(unpack(args))
 end
 
-return redis.call("ZREVRANGE", @key, 0, -1)
+return redis.call("SMEMBERS", @key)

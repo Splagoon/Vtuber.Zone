@@ -1,4 +1,4 @@
-namespace Vtuber.Zone.Core
+﻿namespace Vtuber.Zone.Core
 
 open System
 open System.IO
@@ -38,7 +38,8 @@ type Stream =
       Title: string
       Viewers: uint64 option
       StartTime: DateTimeOffset
-      Tags: string list }
+      Tags: string list
+      Languages: string list }
 
 type Vtuber =
     { Name: string

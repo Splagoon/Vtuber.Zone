@@ -13,53 +13,30 @@ let pickler = FsPickler.CreateBinarySerializer()
 let Server = redis.GetEndPoints() |> Seq.exactlyOne |> redis.GetServer
 let DB = redis.GetDatabase()
 
-let AllStreamsByViewersKey = 
-    "vtuber.zone.all-streams.by-viewers" |> RedisKey
+let AllStreamsKey = 
+    "vtuber.zone.all-streams" |> RedisKey
 
-let AllStreamsByStartTimeKey =
-    "vtuber.zone.all-streams.by-start-time" |> RedisKey
-
-let invalidateStreamIndexes () =
-    DB.KeyDelete
-        ([| AllStreamsByViewersKey
-            AllStreamsByStartTimeKey |])
+let invalidateStreamIndex () =
+    DB.KeyDelete [| AllStreamsKey |]
     |> ignore
 
 let putPlatformStreams platform (streams: Stream seq) =
-    let viewersKey, startTimeKey =
+    let key =
         match platform with
         | Platform.Youtube -> "youtube"
         | Platform.Twitch -> "twitch"
         | _ -> failwithf "unknown stream provider %A" platform
-        |> fun p ->
-            p
-            |> sprintf "vtuber.zone.streams.%s.by-viewers"
-            |> RedisKey,
-            p
-            |> sprintf "vtuber.zone.streams.%s.by-start-time"
-            |> RedisKey
+        |> sprintf "vtuber.zone.streams.%s"
+        |> RedisKey
 
-    DB.KeyDelete([| viewersKey; startTimeKey |])
+    DB.KeyDelete[| key |]
     |> ignore
 
-    let getViewers stream =
-        match stream.Viewers with
-        | Some v -> float v
-        | None -> 0.
-
-    let streamsByViewers, streamsByStartTime =
-        seq {
-            for stream in streams ->
-                let value: RedisValue =
-                    stream |> pickler.Pickle |> RedisValue.op_Implicit
-                SortedSetEntry(value, stream |> getViewers),
-                SortedSetEntry(value, stream.StartTime.ToUnixTimeSeconds() |> float)
-        }
+    let redisValues =
+        streams
+        |> Seq.map (pickler.Pickle >> RedisValue.op_Implicit)
         |> Seq.toArray
-        |> Array.unzip
 
-    DB.SortedSetAdd(viewersKey, streamsByViewers)
+    DB.SetAdd(key, redisValues)
     |> ignore
-    DB.SortedSetAdd(startTimeKey, streamsByStartTime)
-    |> ignore
-    invalidateStreamIndexes ()
+    invalidateStreamIndex ()

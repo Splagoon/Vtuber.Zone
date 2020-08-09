@@ -15,6 +15,13 @@ let combineTags : Vtuber seq -> string list =
   >> Set.ofSeq
   >> Set.toList
 
+let combineLanguages : Vtuber seq -> string list =
+    // Unlike tags, which are a union, languages are an intersection
+    // (i.e. the vtubers will likely only speak in langauges they all know)
+    Seq.map (fun v -> v.Languages |> Set.ofSeq)
+    >> Set.intersectMany
+    >> Set.toList
+
 let getChannelIds platform =
     Seq.collect (fun v -> v.Channels)
     >> Seq.filter (fun c -> c.Platform = platform)

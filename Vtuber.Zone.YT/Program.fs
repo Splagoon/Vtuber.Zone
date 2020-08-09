@@ -40,7 +40,8 @@ let main _ =
                         Title = video.Snippet.Title
                         Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
                         StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
-                        Tags = vtubers |> combineTags }, None)
+                        Tags = vtubers |> combineTags
+                        Languages = vtubers |> combineLanguages }, None)
             | None -> (None, Some video.Id)
         | "upcoming" -> (None, None) // TODO
         | _ -> (None, Some video.Id)

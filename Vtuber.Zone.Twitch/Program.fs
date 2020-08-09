@@ -63,7 +63,8 @@ let main _ =
           Title = stream.Title
           Viewers = stream.ViewerCount |> uint64 |> Some
           StartTime = stream.StartedAt |> DateTimeOffset
-          Tags = vtubers |> combineTags }
+          Tags = vtubers |> combineTags
+          Languages = vtubers |> combineLanguages }
 
     let rec streamLoop () =
         async {

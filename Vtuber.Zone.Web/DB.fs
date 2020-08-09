@@ -10,17 +10,14 @@ let private getAllStreamsScript =
     |> LuaScript.Prepare
     |> fun s -> s.Load(Server)
 
-let private getAllStreams sortKey =
+let getAllStreams () =
     printfn "getting streams!"
-    let key = sprintf "vtuber.zone.all-streams.%s" sortKey
-    let keyPattern = sprintf "vtuber.zone.streams.*.%s" sortKey
+    let key = "vtuber.zone.all-streams" |> RedisKey
+    let keyPattern = "vtuber.zone.streams.*"
     let castToByteArrayArray : RedisResult -> byte array array = RedisResult.op_Explicit
     getAllStreamsScript.Evaluate
         (DB,
-         {| key = key |> RedisKey
+         {| key = key
             key_pattern = keyPattern |})
     |> castToByteArrayArray
     |> Seq.map pickler.UnPickle<Stream>
-
-let getAllStreamsByViewers () = getAllStreams "by-viewers"
-let getAllStreamsByStartTime () = getAllStreams "by-start-time"

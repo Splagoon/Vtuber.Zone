@@ -12,12 +12,11 @@ open Suave.RequestErrors
 open Vtuber.Zone.Core
 open Vtuber.Zone.Web.DB
 
-let getLiveStreams (req : HttpRequest) =
-  let serialize = Seq.toArray >> JsonUtils.serialize >> OK
-  match req.queryParam "by" with
-  | Choice1Of2 "viewers" -> getAllStreamsByViewers() |> serialize
-  | Choice1Of2 "start-time" -> getAllStreamsByStartTime() |> serialize
-  | _ -> BAD_REQUEST "missing or unsupported sort parameter"
+let getLiveStreams _ =
+  getAllStreams ()
+  |> Seq.toArray
+  |> JsonUtils.serialize
+  |> OK
 
 let routes =
   choose [
