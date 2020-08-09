@@ -5,12 +5,12 @@
   import { flip } from "svelte/animate";
 
   let loaded = false;
-  let allStreams = []
+  let allStreams = [];
   let activeStreams = [];
-  
+
   enum Sort {
     ByViewers,
-    ByStartTime
+    ByStartTime,
   }
   let activeSort: Sort = Sort.ByStartTime;
   let allLanguages = [];
@@ -26,14 +26,19 @@
 
   $: {
     activeStreams = allStreams
-      .filter(s => activeTags.length == 0 || activeTags.some(tag => s.tags.includes(tag)))
+      .filter(
+        (s) =>
+          activeTags.length == 0 ||
+          activeTags.some((tag) => s.tags.includes(tag))
+      )
       .sort((a, b) => {
         if (activeSort == Sort.ByViewers) {
-          
           return (b.viewers || 0) - (a.viewers || 0);
         }
         if (activeSort == Sort.ByStartTime) {
-          return (new Date(b.start_time).valueOf() - new Date(a.start_time).valueOf());
+          return (
+            new Date(b.start_time).valueOf() - new Date(a.start_time).valueOf()
+          );
         }
       });
   }
@@ -43,7 +48,7 @@
   // }
 
   $: {
-    allTags = [...new Set(allStreams.flatMap(s => s.tags))].sort();
+    allTags = [...new Set(allStreams.flatMap((s) => s.tags))].sort();
   }
 
   async function load() {
@@ -68,7 +73,7 @@
   @for $i from 1 through 8 {
     $container-width: $i * ($stream-box-width + 2rem);
     @media only screen and (orientation: landscape) and (min-width: ($container-width + $sidebar-width) / 1rem * $one-rem-in-px),
-           only screen and (orientation: portrait) and (min-width: $container-width / 1rem * $one-rem-in-px) {
+      only screen and (orientation: portrait) and (min-width: $container-width / 1rem * $one-rem-in-px) {
       .stream-container {
         width: $container-width;
       }
@@ -129,7 +134,7 @@
       background: $accent-color;
       color: white;
     }
-    
+
     input {
       display: none;
     }
@@ -179,30 +184,45 @@
 
 <main>
   <div class="sidebar">
-    <img src="/image/irasutoya/vtuber.png" alt="vtuber">
+    <img src="/image/irasutoya/vtuber.png" alt="vtuber" />
     <div class="inverted row title">
-      Vtuber<span class="dot">.</span>Zone
+      Vtuber
+      <span class="dot">.</span>
+      Zone
     </div>
     <div class="padded row">
       Sort by:
-      <input id="sort-by-start-time" type="radio" bind:group={activeSort} value={Sort.ByStartTime}/>
-      <label class="hoverable" for="sort-by-start-time">
-        Recently started
-      </label>
-      <input id="sort-by-viewers" type="radio" bind:group={activeSort} value={Sort.ByViewers}/>
-      <label class="hoverable" for="sort-by-viewers">
-        Current viewers
-      </label>
+      <input
+        id="sort-by-start-time"
+        type="radio"
+        bind:group={activeSort}
+        value={Sort.ByStartTime} />
+      <label class="hoverable" for="sort-by-start-time">Recently started</label>
+      <input
+        id="sort-by-viewers"
+        type="radio"
+        bind:group={activeSort}
+        value={Sort.ByViewers} />
+      <label class="hoverable" for="sort-by-viewers">Current viewers</label>
     </div>
     <div class="languages padded row">
       Language:
-      <input id="lang-all" type="radio" bind:group={activeLanguage} value="all"/>
+      <input
+        id="lang-all"
+        type="radio"
+        bind:group={activeLanguage}
+        value="all" />
       <label class="hoverable" for="lang-all">All</label>
     </div>
     <div class="tags padded row">
       Filters:
       {#each allTags as tag (tag)}
-        <input id={tagId(tag)} type="checkbox" bind:group={activeTags} value={tag} disabled={animations > 0}/>
+        <input
+          id={tagId(tag)}
+          type="checkbox"
+          bind:group={activeTags}
+          value={tag}
+          disabled={animations > 0} />
         <label class="hoverable" for={tagId(tag)}>{tag}</label>
       {/each}
     </div>
@@ -214,19 +234,21 @@
           <div
             in:scale={{ duration: animationTime }}
             out:scale={{ duration: animationTime }}
-            on:introstart={() => animations += 1}
-            on:introend={() => animations -= 1}
-            on:outrostart={() => animations += 1}
-            on:outroend={() => animations -= 1}
+            on:introstart={() => (animations += 1)}
+            on:introend={() => (animations -= 1)}
+            on:outrostart={() => (animations += 1)}
+            on:outroend={() => (animations -= 1)}
             animate:flip={{ duration: animationTime }}>
             <Stream {stream} />
           </div>
         {/each}
       {:else if loaded}
-          <div class="no-streams">
-            <img src="/image/irasutoya/hamster-sleeping.png" alt="hamster sleeping">
-            <span>Nobody's streaming right now...</span>
-          </div>
+        <div class="no-streams">
+          <img
+            src="/image/irasutoya/hamster-sleeping.png"
+            alt="hamster sleeping" />
+          <span>Nobody's streaming right now...</span>
+        </div>
       {/if}
     </div>
   </div>

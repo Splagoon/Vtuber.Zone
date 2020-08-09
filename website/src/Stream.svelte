@@ -101,12 +101,14 @@
       <img
         class="channel-icon icon"
         src={stream.vtuber_icon_url}
-        alt={stream.vtuber_name} />{stream.vtuber_name}
+        alt={stream.vtuber_name} />
+      {stream.vtuber_name}
     </div>
   </div>
   <div class="padded row">
     <div class="title">
-      <div class="platform {stream.platform.toLowerCase()} icon" /><span>{stream.title}</span>
+      <div class="platform {stream.platform.toLowerCase()} icon" />
+      <span>{stream.title}</span>
     </div>
   </div>
   <div class="padded info row">
