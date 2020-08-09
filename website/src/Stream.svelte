@@ -17,7 +17,10 @@
   @import "./style/vars.scss";
 
   .stream {
-    background-color: $panel-color;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0.5rem 0.5rem 1rem change-color($foreground-color, $alpha: 0.5);
+    background-color: white;
     width: $stream-box-width;
     height: $stream-box-height;
     margin: 1rem;
@@ -29,14 +32,13 @@
     object-fit: cover;
     border-radius: 50%;
     background-color: white;
-    margin: 0 0.5rem;
   }
 
   .stream .vtuber-name {
     font-size: $stream-vtuber-name-height;
-    line-height: $stream-vtuber-name-height;
     text-transform: uppercase;
     font-weight: 200;
+    line-height: 0.74rem;
   }
 
   .stream .tags-container {
@@ -81,31 +83,36 @@
 
   .stream .viewers,
   .stream .uptime {
-    flex-grow: 1;
+    font-size: 0.8rem;
+  }
+
+  .info.row {
+    padding-top: 0;
+    justify-content: space-around;
   }
 </style>
 
-<a class="stream" href={stream.url}>
+<a class="stream hoverable" href={stream.url}>
   <div class="row">
     <img class="thumbnail" src={stream.thumbnail_url} alt="thumbnail" />
   </div>
-  <div class="row">
+  <div class="inverted padded row">
     <div class="vtuber-name">
       <img
         class="channel-icon icon"
         src={stream.vtuber_icon_url}
-        alt={stream.vtuber_name} />
-      {stream.vtuber_name}
+        alt={stream.vtuber_name} />{stream.vtuber_name}
     </div>
   </div>
   <div class="padded row">
     <div class="title">
-      <div class="platform {stream.platform.toLowerCase()}" />
-      <span>{stream.title}</span>
+      <div class="platform {stream.platform.toLowerCase()} icon" /><span>{stream.title}</span>
     </div>
   </div>
-  <div class="padded row">
-    <div class="viewers">{stream.viewers.toLocaleString()} watching</div>
+  <div class="padded info row">
     <div class="uptime">Live for {timeSince(stream.start_time)}</div>
+    {#if stream.viewers != null}
+      <div class="viewers">{stream.viewers.toLocaleString()} watching</div>
+    {/if}
   </div>
 </a>

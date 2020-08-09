@@ -1,10 +1,17 @@
 $one-rem-in-px: 16px;
 $stream-box-width: 20rem;
-$stream-box-height: 20rem;
+$stream-box-height: 19.5rem;
 $stream-vtuber-name-height: 2rem;
 $stream-title-font-size: 1rem;
 $stream-title-lines: 3;
+$sidebar-width: 20rem;
+$sidebar-height: 15rem;
 
 $thumbnail-height: (9 / 16) * $stream-box-width;
 
-$panel-color: #2c3e50;
+$panel-color: white;
+
+$foreground-color: #4d4d4c;
+$background-color-1: #efefef;
+$background-color-2: #d6d6d6;
+$accent-color: #4271ae;
