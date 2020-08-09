@@ -77,18 +77,20 @@
   .stream .title {
     font-size: $stream-title-font-size;
     line-height: $stream-title-font-size;
-    height: $stream-title-font-size * $stream-title-lines + 0.15rem; // a lil extra for descenders (j, q, g, _, etc.)
+    height: $stream-title-font-size * $stream-title-lines + 0.05rem; // a lil extra for descenders (j, q, g, _, etc.)
     overflow: hidden;
   }
 
-  .stream .viewers,
-  .stream .uptime {
-    font-size: 0.8rem;
-  }
-
   .info.row {
+    font-size: 0.8rem;
     padding-top: 0;
     justify-content: space-around;
+    align-items: start;
+
+    img {
+      display: inline-block;
+      height: 1.1875rem;
+    }
   }
 </style>
 
@@ -116,5 +118,10 @@
     {#if stream.viewers != null}
       <div class="viewers">{stream.viewers.toLocaleString()} watching</div>
     {/if}
+    <div class="languages">
+      {#each stream.languages as language}
+        <img src="/image/language/{language}.png" alt={language}/>
+      {/each}
+    </div>
   </div>
 </a>

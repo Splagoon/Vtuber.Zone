@@ -14,7 +14,7 @@
   }
   let activeSort: Sort = Sort.ByStartTime;
   let allLanguages = [];
-  let activeLanguage = "all";
+  let activeLanguage = "any";
   let allTags = [];
   let activeTags = [];
   const animationTime = 200;
@@ -28,8 +28,9 @@
     activeStreams = allStreams
       .filter(
         (s) =>
-          activeTags.length == 0 ||
-          activeTags.some((tag) => s.tags.includes(tag))
+          (activeTags.length == 0 ||
+            activeTags.some((tag) => s.tags.includes(tag))) &&
+          (activeLanguage == "any" || s.languages.includes(activeLanguage))
       )
       .sort((a, b) => {
         if (activeSort == Sort.ByViewers) {
@@ -43,9 +44,9 @@
       });
   }
 
-  // $: {
-  //   languages = new Set(streams.flatMap(s => s.languages))
-  // }
+  $: {
+    allLanguages = [...new Set(allStreams.flatMap((s) => s.languages))].sort();
+  }
 
   $: {
     allTags = [...new Set(allStreams.flatMap((s) => s.tags))].sort();
@@ -98,6 +99,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -129,6 +131,11 @@
       padding: 0 0.25rem;
       border-radius: 0.25rem;
       user-select: none;
+
+      img {
+        height: 1rem;
+        display: inline-block;
+      }
     }
 
     input:checked + label {
@@ -229,11 +236,21 @@
     <div class="languages padded row">
       Language:
       <input
-        id="lang-all"
+        id="lang-any"
         type="radio"
         bind:group={activeLanguage}
-        value="all" />
-      <label class="hoverable" for="lang-all">All</label>
+        value="any" />
+      <label class="hoverable" for="lang-any">Any</label>
+      {#each allLanguages as language}
+        <input
+          id="lang-{language}"
+          type="radio"
+          bind:group={activeLanguage}
+          value={language} />
+        <label class="hoverable" for="lang-{language}">
+          <img src="/image/language/{language}.png" alt={language} />
+        </label>
+      {/each}
     </div>
     <div class="tags padded row">
       Filters:

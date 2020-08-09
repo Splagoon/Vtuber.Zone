@@ -3,88 +3,94 @@
 @import './vars.scss';
 
 html {
-    margin: 0;
-    padding: 0;
-    font-size: $one-rem-in-px;
-    font-family: 'Oswald', sans-serif;
-    color: #4d4d4c;
-    width: 100%;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: $one-rem-in-px;
+  font-family: 'Oswald', sans-serif;
+  color: #4d4d4c;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: repeating-linear-gradient(
-        -45deg,
-        $background-color-1,
-        $background-color-1 0.5rem,
-        $background-color-2 0.5rem,
-        $background-color-2 1rem
-    );
-    background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  
+  background: repeating-linear-gradient(
+  -45deg,
+  $background-color-1,
+  $background-color-1 0.5rem,
+  $background-color-2 0.5rem,
+  $background-color-2 1rem
+  );
+  background-attachment: fixed;
 }
 
-@media only screen and (max-width: (($stream-box-width + 2rem) / 1rem) * $one-rem-in-px) {
-    html {
-        font-size: 4.5vw;
-    }
+@media only screen and (orientation: landscape) and (max-width: (($sidebar-width + $stream-box-width + 2rem) / 1rem) * $one-rem-in-px) {
+  html {
+    font-size: 2.38vw;
+  }
+}
+
+@media only screen and (orientation: portrait) and (max-width: (($stream-box-width + 2rem) / 1rem) * $one-rem-in-px) {
+  html {
+    font-size: 4.5vw;
+  }
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .icon {
-    height: 0.825em;
-    width: 0.825em;
-    background-size: 0.825em;
-    vertical-align: baseline;
+  height: 0.825em;
+  width: 0.825em;
+  background-size: 0.825em;
+  vertical-align: baseline;
 }
 
 .row {
-    display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
 }
 
 .padded.row {
-    padding: 0.5rem;
-    // padding-bottom: 0;
+  padding: 0.5rem;
 }
 
 .inverted {
-    color: white;
-    background-color: $foreground-color;
+  color: white;
+  background-color: $foreground-color;
 }
 
 .thumbnail-container {
-    position: relative;
+  position: relative;
 }
 
 .hoverable {
-    scale: 1;
-    transition: scale 0.2s;
-    cursor: pointer;
+  scale: 1;
+  transition: scale 0.2s;
+  cursor: pointer;
 }
 
 .hoverable:hover {
-    scale: 1.05;
+  scale: 1.05;
 }
 
 button {
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
 }
