@@ -83,6 +83,7 @@
   .content {
     margin-left: $sidebar-width;
     flex-grow: 1;
+    height: 100%;
   }
 
   .sidebar {
@@ -150,10 +151,17 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+
+    &.empty {
+      justify-content: center;
+      align-content: middle;
+      height: 100%;
+    }
   }
 
   main {
     display: flex;
+    height: 100%;
   }
 
   @media only screen and (orientation: portrait) {
@@ -178,6 +186,19 @@
   @media only screen and (orientation: landscape) and (min-height: ($sidebar-height + 25rem) / 1rem * $one-rem-in-px) {
     .sidebar img {
       display: block;
+    }
+  }
+
+  .no-streams {
+    width: 20rem;
+    text-align: center;
+    background-color: $background-color-2;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    align-self: center;
+
+    img {
+      width: 100%;
     }
   }
 </style>
@@ -228,7 +249,7 @@
     </div>
   </div>
   <div class="content">
-    <div class="stream-container">
+    <div class="stream-container {activeStreams.length == 0 ? 'empty' : ''}">
       {#if activeStreams.length > 0}
         {#each activeStreams as stream (stream.url)}
           <div
@@ -247,7 +268,7 @@
           <img
             src="/image/irasutoya/hamster-sleeping.png"
             alt="hamster sleeping" />
-          <span>Nobody's streaming right now...</span>
+          <div>Nobody's streaming right now...</div>
         </div>
       {/if}
     </div>
