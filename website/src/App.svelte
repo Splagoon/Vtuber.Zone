@@ -133,6 +133,7 @@
       user-select: none;
 
       img {
+        width: 1rem;
         height: 1rem;
         display: inline-block;
       }
