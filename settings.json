@@ -712,6 +712,266 @@
             "languages": ["ja"]
         },
         {
+            "name": "Dola",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC53UDnhAAYwvNO7j_2Ju1cQ"
+            }],
+            "twitter_handle": "___Dola",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hanabatake Chaika",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCsFn_ueskBkMCEyzCEqAOvg"
+            }],
+            "twitter_handle": "ZulmIhP1nlMOT5y",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Izumo Kasumi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCLpYMk5h1bq8_GAFVBgXhPQ"
+            }],
+            "twitter_handle": "ikasumi_zzz",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Azuchi Momo",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC6TfqY40Xt1Y0J-N18c85qQ"
+            }],
+            "twitter_handle": "momo_azuchi_",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ryushen",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCt5-0i4AVHXaWJrL8Wql3mw"
+            }],
+            "twitter_handle": "midori_2434",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sister Cleaire",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1zFJrfEKvCixhsjNSb1toQ"
+            }],
+            "twitter_handle": "SisterCleaire",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Suzuki Masaru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCryOPk2GZ1meIDt53tL30Tw"
+            }],
+            "twitter_handle": "darkness_eater",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Todoroki Kyoko",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCRV9d6YCYIMUszK-83TwxVA"
+            }],
+            "twitter_handle": "KT_seeds",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Uzuki Kou",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC3lNFeJiTq6L3UWoz4g1e-A"
+            }],
+            "twitter_handle": "udukikohh",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yashiro Kizuku",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCKMYISTJAQ8xTplUPHiABlA"
+            }],
+            "twitter_handle": "846kizuQ",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kanda Shoichi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCWz0CSYCxf4MhRKPDm220AQ"
+            }],
+            "twitter_handle": "Kanda_Shoichi",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Amemori Sayo",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCRWOdwLRsenx2jLaiCAIU4A"
+            }],
+            "twitter_handle": "Sayo_Amemori",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Takamiya Rion",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCV5ZZlLjk5MKGg3L0n0vbzw"
+            }],
+            "twitter_handle": "TakamiyaRion",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Asuka Hina",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCiSRx1a2k-0tOg-fs6gAolQ"
+            }],
+            "twitter_handle": "hina__asuka",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Maimoto Keisuke",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCJubINhCcFXlsBwnHp0wl_g"
+            }],
+            "twitter_handle": "maimoto_k",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Debidebi Debiru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCjlmCrq4TP1I4xguOtJ-31w"
+            }],
+            "twitter_handle": "debidebiru_sama",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Rindou Mikoto",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCPvGypSgfDkVe7JG2KygK7A"
+            }],
+            "twitter_handle": "RindouMikoto",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Joe Rikiichi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UChUJbHiTVeGrSkTdBzVfNCQ"
+            }],
+            "twitter_handle": "JoeRikiichi",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Machita Chima",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCo7TRj3cS-f_1D9ZDmuTsjw"
+            }],
+            "twitter_handle": "chima_machita23",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sakura Ritsuki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCfQVs_KuXeNAlGa3fb8rlnQ"
+            }],
+            "twitter_handle": "SAKURA_RITSUKI",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Belmond Banderas",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCbc8fwhdUNlqi-J99ISYu4A"
+            }],
+            "twitter_handle": "belmond_b_2434",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yaguruma Rine",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCvzVB-EYuHFXHZrObB8a_Og"
+            }],
+            "twitter_handle": "Rine_Yaguruma",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yumeoi Kakeru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCTIE7LM5X15NVugV7Krp9Hw"
+            }],
+            "twitter_handle": "kakeru_yumeoi",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kuroi Shiba",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCmeyo5pRj_6PXG-CsGUuWWg"
+            }],
+            "twitter_handle": "BlackShiba_chan",
+            "tags": ["Nijisanji"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Harusaki Air",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCtAvQ5U0aXyKwm2i4GqFgJg"
+            }],
+            "twitter_handle": "harusakiair2434",
+            "tags": ["Nijisanji", "VOIZ"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Naruse Naru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCoM_XmK45j504hfUWvN06Qg"
+            }],
+            "twitter_handle": "narusenaru_2434",
+            "tags": ["Nijisanji", "VOIZ"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
