@@ -1318,6 +1318,99 @@
             "twitter_handle": "comfyrana",
             "tags": ["Indie"],
             "languages": ["en"]
+        },
+        {
+            "name": "Aisha",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCqhhWjpw23dWhJ5rRwCCrMA"
+            }],
+            "twitter_handle": "Aisha_Channel",
+            "tags": [],
+            "languages": ["th", "en"]
+        },
+        {
+            "name": "Savi",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "savisavichan"
+            }],
+            "twitter_handle": "savisavichan",
+            "tags": ["Indie"],
+            "languages": ["en", "ru", "ja"]
+        },
+        {
+            "name": "Harin",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "harinchip"
+            }],
+            "twitter_handle": "harinchip",
+            "tags": ["Indie"],
+            "languages": ["en", "ko"]
+        },
+        {
+            "name": "Hanayome Kamakiri",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "hanayomekamakiri"
+            }],
+            "twitter_handle": "HanayomeK",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Snuffy",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "snuffyowo"
+            }],
+            "twitter_handle": "snuffyowo",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Taiga",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "bungotaiga"
+            }],
+            "twitter_handle": "bungotaiga",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Yuni Luna",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "yuniluna"
+            }, {
+                "platform": "Youtube",
+                "id": "UC3J61HoOFR4bUsvBa9EKtbQ"
+            }],
+            "twitter_handle": "YuniLunaTV",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Catfeine",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "catfeiine"
+            }],
+            "twitter_handle": "Catfeine_",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Sumii",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "suulore"
+            }],
+            "twitter_handle": "_lorenyan",
+            "tags": ["Indie"],
+            "languages": ["en"]
         }
     ]
 }
