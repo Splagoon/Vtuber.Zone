@@ -6,7 +6,10 @@ open FSharp.Json
 
 module JsonUtils =
     let jsonConfig =
-        JsonConfig.create (jsonFieldNaming = Json.snakeCase, enumValue = EnumMode.Name)
+        JsonConfig.create
+          (jsonFieldNaming = Json.snakeCase,
+           enumValue = EnumMode.Name,
+           unformatted = true)
 
     let deserialize<'a> = Json.deserializeEx<'a> jsonConfig
     let serialize<'a> (obj : 'a) = obj |> Json.serializeEx jsonConfig

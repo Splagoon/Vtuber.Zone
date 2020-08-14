@@ -1,16 +1,12 @@
 ﻿open Suave
-open Suave.Sockets.Control
-open Suave.Logging
 open Suave.Operators
-open Suave.EventSource
 open Suave.Filters
 open Suave.Writers
-open Suave.Files
 open Suave.Successful
-open Suave.State.CookieStateStore
-open Suave.RequestErrors
 open Vtuber.Zone.Core
 open Vtuber.Zone.Web.DB
+
+let config = Config.Load()
 
 let getLiveStreams _ =
   getAllStreams ()
@@ -18,10 +14,37 @@ let getLiveStreams _ =
   |> JsonUtils.serialize
   |> OK
 
+let formatChannel (channel : Channel) =
+  channel.Platform,
+  match channel.Platform with
+  | Platform.Youtube -> Some <| sprintf "https://www.youtube.com/channel/%s" channel.Id
+  | Platform.Twitch -> Some <| sprintf "https://www.twitch.tv/%s" channel.Id
+  | _ -> None
+
+let vtubersPayload =
+  config.Vtubers
+  |> List.map
+    (fun vtuber ->
+      {| name = vtuber.Name
+         channels = vtuber.Channels
+                    |> List.map formatChannel
+                    |> List.choose
+                      (fun (platform, url) ->
+                        match url with
+                        | Some url -> Some {| platform = platform
+                                              url = url |}
+                        | None -> None)
+         twitter = sprintf "https://twitter.com/%s" vtuber.TwitterHandle |})
+  |> JsonUtils.serialize
+
+let getVtubers _ =
+  OK vtubersPayload
+
 let routes =
   choose [
     GET >=> choose
-      [ path "/streams/live" >=> request getLiveStreams ]
+      [ path "/streams/live" >=> request getLiveStreams
+        path "/vtubers" >=> request getVtubers ]
   ] >=> setMimeType "application/json; charset=utf-8"
     >=> setHeader  "Access-Control-Allow-Origin" "*"
 

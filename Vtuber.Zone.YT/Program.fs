@@ -137,7 +137,7 @@ let main _ =
             for id in channelIds do
                 if channelToIconMap |> Map.tryFind id |> Option.isNone then
                     yield id
-        } |> Log.info "Channel(s) not found: %A"
+        } |> Log.warn "Channel(s) not found: %A"
 
     [videoLoop (); channelLoop ()] |> Async.Parallel |> Async.RunSynchronously |> ignore
     0 // return an integer exit code
