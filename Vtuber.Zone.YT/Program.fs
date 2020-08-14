@@ -53,7 +53,7 @@ let main _ =
                 badIdsKey,
                 videoIds |> Seq.map RedisValue |> Seq.toArray)
         if setSize > 1000L then
-            printfn "Bad ID set grew to %d elements, popping" setSize
+            Log.info "Bad ID set grew to %d elements, popping" setSize
             DB.SetPop(badIdsKey, 200L) |> ignore
 
     let getStreams (videoIds : string seq) =
@@ -67,7 +67,7 @@ let main _ =
                     printf "Searching for %d videoId(s)..." batch.Length
                     req.Id <- batch |> Repeatable
                     let results = req.Execute().Items
-                    printfn "got %d result(s)" results.Count
+                    Log.info "got %d result(s)" results.Count
                     yield! results
                     |> Seq.map videoToStream
             } |> Seq.toList)
@@ -84,7 +84,7 @@ let main _ =
                 printf "Searching for %d channelId(s)..." batch.Length
                 req.Id <- batch |> Repeatable
                 let results = req.Execute().Items
-                printfn "got %d result(s)" results.Count
+                Log.info "got %d result(s)" results.Count
                 yield! results
                 |> Seq.map (fun c -> c.Id, c.Snippet.Thumbnails.Medium.Url)
             } |> Map.ofSeq
@@ -105,7 +105,7 @@ let main _ =
 
     let rec videoLoop () = 
         async {
-            printfn "Grabbing videos"
+            Log.info "Grabbing videos"
             let streams, badIds =
                 config.Vtubers
                 |> Seq.collect getFoundVideos
@@ -126,7 +126,7 @@ let main _ =
     let rec channelLoop () =
         async {
             do! Async.Sleep (TimeSpan.FromHours(12.).TotalMilliseconds |> int) 
-            printfn "Grabbing channels"
+            Log.info "Grabbing channels"
             channelToIconMap <- channelIds |> getChannelToIconMap
             return! channelLoop ()
         }
@@ -137,7 +137,7 @@ let main _ =
             for id in channelIds do
                 if channelToIconMap |> Map.tryFind id |> Option.isNone then
                     yield id
-        } |> printfn "Channel(s) not found: %A"
+        } |> Log.info "Channel(s) not found: %A"
 
     [videoLoop (); channelLoop ()] |> Async.Parallel |> Async.RunSynchronously |> ignore
     0 // return an integer exit code

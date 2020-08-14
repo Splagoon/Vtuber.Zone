@@ -26,7 +26,7 @@ let main _ =
                 |> Seq.filter (fun m -> m.Success && m.Groups.[1].Success)
                 |> Seq.map (fun m -> m.Groups.[1].Value)
             if not << Seq.isEmpty <| videoIds then
-                printfn "Found YouTube video(s) for %s: %A" vtuber.Name videoIds
+                Log.info "Found YouTube video(s) for %s: %A" vtuber.Name videoIds
                 let key = sprintf "vtuber.zone.twitter-yt-links.%s" vtuber.Id |> RedisKey
                 let timestamp = tweet.CreatedAt |> DateTimeOffset |> fun x -> x.ToUnixTimeSeconds() |> float
                 let values : SortedSetEntry array =
@@ -50,8 +50,8 @@ let main _ =
     for user in User.GetUsersFromScreenNames(twitterHandles) do
         let vtuber = handleLookup.[user.ScreenName.ToLower()]
         stream.AddFollow(Nullable user.Id, readTweet vtuber)
-        printfn "Following %s (@%s): %d" vtuber.Name user.ScreenName user.Id
+        Log.info "Following %s (@%s): %d" vtuber.Name user.ScreenName user.Id
 
-    printfn "Now listening for tweets..."
+    Log.info "Now listening for tweets..."
     stream.StartStreamMatchingAnyCondition() // does not return
     0 // return an integer exit code

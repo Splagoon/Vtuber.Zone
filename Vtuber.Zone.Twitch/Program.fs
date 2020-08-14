@@ -22,7 +22,7 @@ let main _ =
         |> Seq.collect getTwitchChannels
         |> Seq.map
             (fun (v, c) ->
-                printfn "Following %s (%s)" v.Name c.Id
+                Log.info "Following %s (%s)" v.Name c.Id
                 c.Id)
         |> Collections.Generic.List
 
@@ -68,7 +68,7 @@ let main _ =
 
     let rec streamLoop () =
         async {
-            printfn "Grabbing streams"
+            Log.info "Grabbing streams"
             let! streams =
                 twitch.Helix.Streams.GetStreamsAsync(
                     first = 100,
@@ -86,7 +86,7 @@ let main _ =
     let rec channelLoop () =
         async {
             do! Async.Sleep (TimeSpan.FromHours(12.).TotalMilliseconds |> int)
-            printfn "Grabbing channels"
+            Log.info "Grabbing channels"
             let! iconMap = channelIds |> getChannelToIconMap
             channelToIconMap <- iconMap
             return! channelLoop ()

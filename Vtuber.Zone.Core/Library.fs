@@ -57,7 +57,7 @@ type Config =
     static member Load() =
         ConfigUtils.loadJson<Config> "settings.json"
         |> fun c ->
-            printfn "Loaded %d vtubers" c.Vtubers.Length
+            Log.info "Loaded %d vtubers" c.Vtubers.Length
             c
 
 type Secrets =
