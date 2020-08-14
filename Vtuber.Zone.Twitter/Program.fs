@@ -53,5 +53,12 @@ let main _ =
         Log.info "Following %s (@%s): %d" vtuber.Name user.ScreenName user.Id
 
     Log.info "Now listening for tweets..."
-    stream.StartStreamMatchingAnyCondition() // does not return
+    let rec loop () =
+        async {
+            do! stream.StartStreamMatchingAnyConditionAsync()
+                |> Async.AwaitTask
+            Log.warn "Tweet stream stopped, restarting..."
+            return! loop ()
+        }
+    loop () |> Async.RunSynchronously // does not return
     0 // return an integer exit code
