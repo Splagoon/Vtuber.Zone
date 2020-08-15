@@ -1411,6 +1411,168 @@
             "twitter_handle": "_lorenyan",
             "tags": ["Indie"],
             "languages": ["en"]
+        },
+        {
+            "name": "Itolife",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCj_KuUzpOXAliYEesJwdrbw"
+            }],
+            "twitter_handle": "itolife",
+            "tags": ["Indie"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "mic_chq",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "mic_chq"
+            }, {
+                "platform": "Youtube",
+                "id": "UC9VIjIQPY7E-jjkx_dRByXg"
+            }],
+            "twitter_handle": "mic_chq",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Anon Shito",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCUKngXhjnKJ6KCyuC7ejI_w"
+            }],
+            "twitter_handle": "Shito_ANON",
+            "tags": ["Indie"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Smolt",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "smolthie"
+            }],
+            "twitter_handle": "Smolt_E",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Kazami Kuku",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCXp7sNC0F_qkjickvlYkg-Q"
+            }],
+            "twitter_handle": "Kuku_Kazami",
+            "tags": ["Indie"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yunohara Izumi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCW8WKciBixmaqaGqrlTITRQ"
+            }],
+            "twitter_handle": "Izumi_Yunohara",
+            "tags": ["Indie"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hanami Arisa",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "hanami_arisa"
+            }, {
+                "platform": "Youtube",
+                "id": "UCkfMEY3DliTU6h3sUNENnDw"
+            }],
+            "twitter_handle": "hanami_arisa",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Nullary",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "nullarys"
+            }],
+            "twitter_handle": "nullarys",
+            "tags": ["Prism Pro"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Snowy",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "46snowy"
+            }],
+            "twitter_handle": "46snowy",
+            "tags": ["Prism Pro"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Fabucastle",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "fabucastle"
+            }],
+            "twitter_handle": "fabucastle",
+            "tags": ["Prism Pro"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Himeko Sae",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "himekosae"
+            }],
+            "twitter_handle": "himekosae",
+            "tags": ["Indie"],
+            "languages": ["en", "tl"]
+        },
+        {
+            "name": "Nini Yuuna",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "ninipan"
+            }, {
+                "platform": "Youtube",
+                "id": "UC8CKGSvp9bRfmtWyfV5L9Jw"
+            }],
+            "twitter_handle": "niniyuuna",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Cranky",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "crankyvt"
+            }],
+            "twitter_handle": "CrankyVT",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Ayane Ninomae",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCk03zgqNZwy_CT-jDPS9vgw"
+            }],
+            "twitter_handle": "ninomaeayane",
+            "tags": ["Indie"],
+            "languages": ["ja", "en"]
+        },
+        {
+            "name": "Lyrica",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCc5H1WmEARIj2R16mvut0ZA"
+            }, {
+                "platform": "Twitch",
+                "id": "lyrica_ch"
+            }],
+            "twitter_handle": "Lyrica_ch",
+            "tags": ["Indie"],
+            "languages": ["en", "tl", "ja"]
         }
     ]
 }
