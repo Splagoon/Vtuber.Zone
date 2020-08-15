@@ -332,6 +332,56 @@
             "languages": ["ja"]
         },
         {
+            "name": "Yukihana Lamy",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCFKOVgVbGmX65RxO3EtH3iw"
+            }],
+            "twitter_handle": "yukihanalamy",
+            "tags": ["Hololive", "Hololive 5th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Momosuzu Nene",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCAWSyEs_Io8MtpY3m-zqILA"
+            }],
+            "twitter_handle": "momosuzunene",
+            "tags": ["Hololive", "Hololive 5th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shishiro Botan",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCUKD-uaobj9jiqB-VXt71mA"
+            }],
+            "twitter_handle": "shishirobotan",
+            "tags": ["Hololive", "Hololive 5th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Mano Aloe",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCgZuwn-O7Szh9cAgHqJ6vjw"
+            }],
+            "twitter_handle": "manoaloe",
+            "tags": ["Hololive", "Hololive 5th Gen"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Omaru Polka",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCK9V2B22uJYu3N7eR_BT9QA"
+            }],
+            "twitter_handle": "omarupolka",
+            "tags": ["Hololive", "Hololive 5th Gen"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Artia",
             "channels": [{
                 "platform": "Twitch",
@@ -1162,6 +1212,236 @@
             "languages": ["ja"]
         },
         {
+            "name": "Kagami Hayato",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCmovZ2th3Sqpd00F5RdeigQ"
+            }],
+            "twitter_handle": "H_KAGAMI2434",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yorumi Rena",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCL34fAoFim9oHLbVzMKFavQ"
+            }],
+            "twitter_handle": "rena_yorumi",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Mayuzumi Kai",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCb5JxV6vKlYVknoJB8TnyYg"
+            }],
+            "twitter_handle": "mayuzumi_X",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ars Almal",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCdpUojq0KWZCN9bxXnZwz5w"
+            }],
+            "twitter_handle": "ars_almal",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Aiba Uiha",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCnRQYHTnRLSF0cLJwMnedCg"
+            }],
+            "twitter_handle": "AibaUiha",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Amamiya Kokoro",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCkIimWZ9gBJRamKF0rmPU8w"
+            }],
+            "twitter_handle": "amamiya_kokoro",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Eli Conifer",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCpNH2Zk2gw3JBjWAKSyZcQQ"
+            }],
+            "twitter_handle": "Eli_Conifer",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ratna Petit",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCIG9rDtgR45VCZmYnd-4DUw"
+            }],
+            "twitter_handle": "ratna_petit",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hayase Sou",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC2OacIzd2UxGHRGhdHl1Rhw"
+            }],
+            "twitter_handle": "SouHayase",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sukoya Kana",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC8C1LLhBhf_E2IBPLSDJXlQ"
+            }],
+            "twitter_handle": "sukosuko_sukoya",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shellin Burgundy",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCHBhnG2G-qN0JrrWmMO2FTA"
+            }],
+            "twitter_handle": "ShellinBurgundy",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Fumi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCwrjITPwG4q71HzihV2C7Nw"
+            }],
+            "twitter_handle": "FumiVirtual",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hoshikawa Sara",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC9V3Y3_uzU5e-usObb6IE1w"
+            }],
+            "twitter_handle": "Sara_Hoshikawa",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yamagami Karuta",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCllKI7VjyANuS1RXatizfLQ"
+            }],
+            "twitter_handle": "Karuta_Yamagami",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Matsukai Mao",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCerkculBD7YLc_vOGrF7tKg"
+            }],
+            "twitter_handle": "matsukai_mao",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Emma★August",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCl1oLKcAq93p-pwKfDGhiYQ"
+            }],
+            "twitter_handle": "emma_august_",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Luis Cammy",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCb6ObE-XGCctO3WrjRZC-cw"
+            }],
+            "twitter_handle": "Luis_Cammy",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Fuwa Minato",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC6wvdADTJ88OfIbJYIpAaDA"
+            }],
+            "twitter_handle": "Fuwa_Minato",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shirayuki Tomoe",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCuvk5PilcvDECU7dDZhQiEw"
+            }],
+            "twitter_handle": "Tomoe_Shirayuki",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Gwelu Os Gar",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1QgXt46-GEvtNjEC1paHnw"
+            }],
+            "twitter_handle": "Gwelu_os_gar",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Mashiro",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCfki3lMEF6SGBFiFfo9kvUA"
+            }],
+            "twitter_handle": "mashiro2434",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Naraka",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC-o-E6I3IC2q8sAoAuM6Umg"
+            }],
+            "twitter_handle": "Naraka_2434",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kurusu Natsume",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCRcLAVTbmx2-iNcXSsupdNA"
+            }],
+            "twitter_handle": "kurusu72me",
+            "tags": ["Nijisanji", "Nijisanji 2019 Wave"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
@@ -1495,7 +1775,7 @@
                 "id": "nullarys"
             }],
             "twitter_handle": "nullarys",
-            "tags": ["Prism Pro"],
+            "tags": ["Prism Pro", "Indie"],
             "languages": ["en"]
         },
         {
@@ -1505,7 +1785,7 @@
                 "id": "46snowy"
             }],
             "twitter_handle": "46snowy",
-            "tags": ["Prism Pro"],
+            "tags": ["Prism Pro", "Indie"],
             "languages": ["en"]
         },
         {
@@ -1515,7 +1795,7 @@
                 "id": "fabucastle"
             }],
             "twitter_handle": "fabucastle",
-            "tags": ["Prism Pro"],
+            "tags": ["Prism Pro", "Indie"],
             "languages": ["en"]
         },
         {
