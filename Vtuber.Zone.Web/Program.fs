@@ -35,6 +35,7 @@ let vtubersPayload =
                                               url = url |}
                         | None -> None)
          twitter = sprintf "https://twitter.com/%s" vtuber.TwitterHandle |})
+  |> List.sortBy (fun vtuber -> vtuber.name |> String.toLowerInvariant)
   |> JsonUtils.serialize
 
 let getVtubers _ =

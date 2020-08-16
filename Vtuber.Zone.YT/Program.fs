@@ -113,7 +113,7 @@ let main _ =
                 |> getStreams
             
             putBadVideoIds badIds
-            putPlatformStreams Platform.Youtube streams
+            do! putPlatformStreams Platform.Youtube streams
             do! Async.Sleep (TimeSpan.FromMinutes(1.).TotalMilliseconds |> int)
             return! videoLoop ()
         }
@@ -132,12 +132,9 @@ let main _ =
         }
 
     channelToIconMap <- channelIds |> getChannelToIconMap // populate the channel map once before grabbing videos
-    if Map.count channelToIconMap < Seq.length channelIds then
-        seq {
-            for id in channelIds do
-                if channelToIconMap |> Map.tryFind id |> Option.isNone then
-                    yield id
-        } |> Log.warn "Channel(s) not found: %A"
+    let missingIds = getMissingKeys channelIds channelToIconMap
+    if not <| Seq.isEmpty missingIds then
+        Log.warn "Channel(s) not found: %s" (missingIds |> String.concat ", ")
 
     [videoLoop (); channelLoop ()] |> Async.Parallel |> Async.RunSynchronously |> ignore
     0 // return an integer exit code

@@ -25,3 +25,6 @@ let trace<'a> (fmt : StringFormat<'a, unit>) =
 
 let warn<'a> (fmt : StringFormat<'a, unit>) =
     ksprintf (fun str -> logger.Warn(str)) fmt
+
+let exn<'a> (exn : exn) (fmt : StringFormat<'a, unit>) =
+    ksprintf (fun str -> logger.Error(exn, str)) fmt

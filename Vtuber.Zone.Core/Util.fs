@@ -43,4 +43,14 @@ let getChannelToVtuberMap platform vtubers =
             map |> Map.add id vtubers)
         Map.empty
 
+let getMissingKeys expectedKeys map =
+    if Map.count map < Seq.length expectedKeys then
+        seq {
+            for key in expectedKeys do
+                if map |> Map.tryFind key |> Option.isNone then
+                    yield key
+        }
+    else
+        Seq.empty
+
 let defaultIcon = "/image/default-icon.png"

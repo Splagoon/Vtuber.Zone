@@ -17,26 +17,34 @@ let AllStreamsKey =
     "vtuber.zone.all-streams" |> RedisKey
 
 let invalidateStreamIndex () =
-    DB.KeyDelete [| AllStreamsKey |]
-    |> ignore
+    async {
+        do! DB.KeyDeleteAsync [| AllStreamsKey |]
+            |> Async.AwaitTask
+            |> Async.Ignore
+    }
 
 let putPlatformStreams platform (streams: Stream seq) =
-    let key =
-        match platform with
-        | Platform.Youtube -> "youtube"
-        | Platform.Twitch -> "twitch"
-        | _ -> failwithf "unknown stream provider %A" platform
-        |> sprintf "vtuber.zone.streams.%s"
-        |> RedisKey
+    async {
+        let key =
+            match platform with
+            | Platform.Youtube -> "youtube"
+            | Platform.Twitch -> "twitch"
+            | _ -> failwithf "unknown stream provider %A" platform
+            |> sprintf "vtuber.zone.streams.%s"
+            |> RedisKey
 
-    DB.KeyDelete[| key |]
-    |> ignore
+        do! DB.KeyDeleteAsync [| key |]
+            |> Async.AwaitTask
+            |> Async.Ignore
 
-    let redisValues =
-        streams
-        |> Seq.map (pickler.Pickle >> RedisValue.op_Implicit)
-        |> Seq.toArray
+        let redisValues =
+            streams
+            |> Seq.map (pickler.Pickle >> RedisValue.op_Implicit)
+            |> Seq.toArray
 
-    DB.SetAdd(key, redisValues)
-    |> ignore
-    invalidateStreamIndex ()
+        do! DB.SetAddAsync(key, redisValues)
+            |> Async.AwaitTask
+            |> Async.Ignore
+
+        do! invalidateStreamIndex ()
+    }
