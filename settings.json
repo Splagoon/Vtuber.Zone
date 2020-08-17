@@ -1442,6 +1442,136 @@
             "languages": ["ja"]
         },
         {
+            "name": "Furen E Lustario",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCuep1JCrMvSxOGgGhBfJuYw"
+            }],
+            "twitter_handle": "furen_2434",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Melissa Kinrenka",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCwcyyxn6h9ex4sMXGtpQE_g"
+            }],
+            "twitter_handle": "melissa_2434",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ibrahim",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCmZ1Rbthn-6Jm_qOGjYsh5A"
+            }],
+            "twitter_handle": "honmono_ibrahim",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nagao Kei",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCXW4MqCQn-jCaxlX-nn-BYg"
+            }],
+            "twitter_handle": "kei_nagao2434",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Genzuki Tojiro",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCGw7lrT-rVZCWHfdG9Frcgg"
+            }],
+            "twitter_handle": "1O46V",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kaida Haru",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCo2N7C-Z91waaR6lF3LL_jw"
+            }],
+            "twitter_handle": "Kaida_Haru",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kingyozaka Meiro",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC69URn8iP4u8D_zUp-IJ1sg"
+            }],
+            "twitter_handle": "meiro_oO",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sorahoshi Kirame",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC_82HBGtvwN1hcGeOGHzUBQ"
+            }],
+            "twitter_handle": "kirame_2434",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Asahina Akane",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCe_p3YEuYJb8Np0Ip9dk-FQ"
+            }],
+            "twitter_handle": "Akane_Asahina__",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Suo Sango",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCL_O_HXgLJx3Auteer0n0pA"
+            }],
+            "twitter_handle": "Suo_Sango",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Todo Kohaku",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCebT4Aq-3XWb5je1S1FvR_A"
+            }],
+            "twitter_handle": "kohaku_todo",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kitakoji Hisui",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCRqBKoKuX30ruKAq05pCeRQ"
+            }],
+            "twitter_handle": "Hisui_Kitakoji",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nishizono Chigusa",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCkngxfPbmGyGl_RIq4FA3MQ"
+            }],
+            "twitter_handle": "Chigusa_24zono",
+            "tags": ["Nijisanji", "Nijisanji 2020 Wave"],
+            "languages": ["ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
