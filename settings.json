@@ -1572,6 +1572,136 @@
             "languages": ["ja"]
         },
         {
+            "name": "Hana Macchia",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCpJtk0myFr5WnyfsmnInP-w"
+            }],
+            "twitter_handle": "Hana_Macchia",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 1st Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "ZEA Cornelia",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCA3WE2WRSpoIvtnoVGq4VAw"
+            }],
+            "twitter_handle": "ZEA_Cornelia",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 1st Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Taka Radjiman",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCZ5dNZsqBjBzbBl0l_IdmXg"
+            }],
+            "twitter_handle": "Taka_Radjiman",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 1st Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Rai Galilei",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC8Snw5i4eOJXEQqURAK17hQ"
+            }],
+            "twitter_handle": "Rai_Galilei",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 2nd Wave"],
+            "languages": ["id", "en"]
+        },
+        {
+            "name": "Riksa Dhirendra",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCkL9OLKjIQbKk2CztbpOCFg"
+            }],
+            "twitter_handle": "RiksaDhirendra",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 2nd Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Amicia Michella",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCrR7JxkbeLY82e8gsj_I0pQ"
+            }],
+            "twitter_handle": "AmiciaMichella",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 2nd Wave"],
+            "languages": ["id", "en"]
+        },
+        {
+            "name": "Miyu Ottavia",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCOmjciHZ8Au3iKMElKXCF_g"
+            }],
+            "twitter_handle": "MiyuOttavia",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 2nd Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Azura Cecillia",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCk5r533QVMgJUdWwqegH2TA"
+            }],
+            "twitter_handle": "Azura_Cecillia",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 3rd Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Layla Alstroemeria",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCyRkQSuhJILuGOuXk10voPg"
+            }],
+            "twitter_handle": "LaylaAlstro2434",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 3rd Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Nara Haramaung",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCoWH3sDpeXG1aXmOxveX4KA"
+            }],
+            "twitter_handle": "Nara_Haramaung",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 3rd Wave"],
+            "languages": ["id", "en"]
+        },
+        {
+            "name": "Etna Crimson",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCjFu-9GHnabzSFRAYm1B9Dw"
+            }],
+            "twitter_handle": "Etna_Crimson",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 4th Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Bonnivier Pranaja",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCHjeZylSgXDSnor8wUnwU_g"
+            }],
+            "twitter_handle": "bobon_pranaja",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 4th Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
+            "name": "Siska Leontyne",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC5qSx7KzdRwbsO1QmJc4d-w"
+            }],
+            "twitter_handle": "SiskaLeontyne",
+            "tags": ["Nijisanji", "Nijisanji ID", "Nijisanji ID 4th Wave"],
+            "languages": ["id", "en", "ja"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
