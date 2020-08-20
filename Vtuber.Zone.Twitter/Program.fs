@@ -6,6 +6,9 @@ open Vtuber.Zone.Core
 open Vtuber.Zone.Core.Redis
 open StackExchange.Redis
 
+let lowercase (str: string) =
+    str.ToLowerInvariant()
+
 [<EntryPoint>]
 let main _ =
     let config = Config.Load()
@@ -47,10 +50,19 @@ let main _ =
         |> Seq.map (fun v -> v.TwitterHandle.ToLower(), v)
         |> Map.ofSeq
 
-    for user in User.GetUsersFromScreenNames(twitterHandles) do
+    let users = User.GetUsersFromScreenNames(twitterHandles) |> List.ofSeq
+    Log.info "Found %d handles" users.Length
+    for user in users do
         let vtuber = handleLookup.[user.ScreenName.ToLower()]
         stream.AddFollow(Nullable user.Id, readTweet vtuber)
-        Log.info "Following %s (@%s): %d" vtuber.Name user.ScreenName user.Id
+
+    let foundHandles = users |> Seq.map (fun u -> u.ScreenName.ToLower())
+    let missingHandles =
+        Set.difference
+            (twitterHandles |> Seq.map lowercase |> Set.ofSeq)
+            (foundHandles |> Seq.map lowercase |> Set.ofSeq)
+    if missingHandles |> Set.isEmpty |> not then
+        Log.warn "Handle(s) not found: %s" (missingHandles |> String.concat ", ")
 
     Log.info "Now listening for tweets..."
     let rec loop () =
