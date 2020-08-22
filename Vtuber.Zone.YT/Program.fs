@@ -7,6 +7,11 @@ open Vtuber.Zone.Core.Util
 open Vtuber.Zone.Core.Redis
 open StackExchange.Redis
 
+type VideoResult =
+    | GotStream of Stream
+    | NotStream of string
+    | AskAgainLater
+
 [<EntryPoint>]
 let main _ =
     let config = Config.Load()
@@ -32,19 +37,19 @@ let main _ =
         | "live" ->
             match channelToVtuberMap |> Map.tryFind video.Snippet.ChannelId with
             | Some vtubers ->
-                (Some { Platform = Platform.Youtube
-                        VtuberIconUrl = video.Snippet.ChannelId |> getIcon
-                        VtuberName = vtubers |> combineNames
-                        Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
-                        ThumbnailUrl = video.Snippet.Thumbnails.Standard.Url
-                        Title = video.Snippet.Title
-                        Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
-                        StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
-                        Tags = vtubers |> combineTags
-                        Languages = vtubers |> combineLanguages }, None)
-            | None -> (None, Some video.Id)
-        | "upcoming" -> (None, None) // TODO
-        | _ -> (None, Some video.Id)
+                GotStream { Platform = Platform.Youtube
+                            VtuberIconUrl = video.Snippet.ChannelId |> getIcon
+                            VtuberName = vtubers |> combineNames
+                            Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
+                            ThumbnailUrl = video.Snippet.Thumbnails.Standard.Url
+                            Title = video.Snippet.Title
+                            Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
+                            StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
+                            Tags = vtubers |> combineTags
+                            Languages = vtubers |> combineLanguages }
+            | None -> NotStream video.Id
+        | "upcoming" -> AskAgainLater // TODO
+        | _ -> NotStream video.Id
 
     let badIdsKey = "vtuber.zone.youtube-bad-ids" |> RedisKey
     let putBadVideoIds videoIds =
@@ -56,38 +61,50 @@ let main _ =
             Log.info "Bad ID set grew to %d elements, popping" setSize
             DB.SetPop(badIdsKey, 200L) |> ignore
 
-    let getStreams (videoIds : string seq) =
-        if Seq.isEmpty videoIds
-        then
-            Seq.empty, Seq.empty
-        else
-            let unified = (seq {
-                for batch in videoIds |> Seq.chunkBySize config.Youtube.BatchSize do
-                    let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
-                    printf "Searching for %d videoId(s)..." batch.Length
-                    req.Id <- batch |> Repeatable
-                    let results = req.Execute().Items
-                    Log.info "got %d result(s)" results.Count
-                    yield! results
+    let getStreams =
+        Seq.chunkBySize config.Youtube.BatchSize
+        >> Seq.mapi (fun batch ids -> async {
+            let req = yt.Videos.List(["snippet"; "liveStreamingDetails"] |> Repeatable)
+            Log.info "Video batch %d: searching for %d video(s)" (batch+1) ids.Length
+            req.Id <- ids |> Repeatable
+            match!
+                req.ExecuteAsync()
+                |> Async.AwaitTask
+                |> Async.Catch
+                with
+            | Choice1Of2 res ->
+                    Log.info "Video batch %d: got %d result(s)" (batch+1) res.Items.Count
+                    return res.Items
                     |> Seq.map videoToStream
-            } |> Seq.toList)
-            unified |> Seq.map fst |> Seq.choose id, unified |> Seq.map snd |> Seq.choose id
+            | Choice2Of2 err ->
+                    Log.exn err "Video batch %d: got error" (batch+1)
+                    return Seq.empty })
+        >> Async.Parallel
+        >> Async.RunSynchronously
+        >> Seq.concat
 
-    let getChannelToIconMap (channelIds : string seq) =
-        if Seq.isEmpty channelIds
-        then
-            Map.empty
-        else
-            seq {
-                for batch in channelIds |> Seq.chunkBySize config.Youtube.BatchSize do
-                let req = yt.Channels.List(["snippet"] |> Repeatable)
-                printf "Searching for %d channelId(s)..." batch.Length
-                req.Id <- batch |> Repeatable
-                let results = req.Execute().Items
-                Log.info "got %d result(s)" results.Count
-                yield! results
+    let getChannelToIconMap =
+        Seq.chunkBySize config.Youtube.BatchSize
+        >> Seq.mapi (fun batch ids -> async {
+            let req = yt.Channels.List(["snippet"] |> Repeatable)
+            Log.info "Channel batch %d: searching for %d channel(s)..." (batch+1) ids.Length
+            req.Id <- ids |> Repeatable
+            match!
+                req.ExecuteAsync()
+                |> Async.AwaitTask
+                |> Async.Catch
+                with
+            | Choice1Of2 res ->
+                Log.info "Channel batch %d: got %d result(s)" (batch+1) res.Items.Count
+                return res.Items
                 |> Seq.map (fun c -> c.Id, c.Snippet.Thumbnails.Medium.Url)
-            } |> Map.ofSeq
+            | Choice2Of2 err ->
+                Log.exn err "Channel batch %d: got error" (batch+1)
+                return Seq.empty })
+        >> Async.Parallel
+        >> Async.RunSynchronously
+        >> Seq.concat
+        >> Map.ofSeq
 
     let getFoundVideos (vtuber : Vtuber) =
         let redisKey = sprintf "vtuber.zone.twitter-yt-links.%s" vtuber.Id |> RedisKey
@@ -106,11 +123,23 @@ let main _ =
     let rec videoLoop () = 
         async {
             Log.info "Grabbing videos"
-            let streams, badIds =
+            let results =
                 config.Vtubers
                 |> Seq.collect getFoundVideos
                 |> filterBadIds
                 |> getStreams
+            let badIds =
+                results
+                |> Seq.choose
+                    (function
+                     | NotStream id -> Some id
+                     | _ -> None)
+            let streams =
+                results
+                |> Seq.choose
+                    (function
+                     | GotStream stream -> Some stream
+                     | _ -> None)
             
             putBadVideoIds badIds
             do! putPlatformStreams Platform.Youtube streams
