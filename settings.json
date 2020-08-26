@@ -1702,6 +1702,161 @@
             "languages": ["id", "en", "ja"]
         },
         {
+            "name": "Aadya",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC_aB_-PHLFHiP61djM0oOiQ"
+            }],
+            "twitter_handle": "Aadya_VTuber",
+            "tags": ["Nijisanji", "Nijisanji EN"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Noor",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC6oW4FXETgEGOFTxWmI2h5Q"
+            }],
+            "twitter_handle": "Noor_VTuber",
+            "tags": ["Nijisanji", "Nijisanji EN"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Vihaan",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC0lik9pHju6ONgkBh7N5wHw"
+            }],
+            "twitter_handle": "Vihaan_VTuber",
+            "tags": ["Nijisanji", "Nijisanji EN"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Wiffy",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCzMAP-oh5-pC8j6RlCPf26w"
+            }, {
+                "platform": "Twitch",
+                "id": "wiffy2434"
+            }],
+            "twitter_handle": "Wiffy2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 1st Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Yuya Shin",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCjGE11ZnF0JSR8egVAwh-3A"
+            }, {
+                "platform": "Twitch",
+                "id": "yuyashin2434"
+            }],
+            "twitter_handle": "YuyaShin2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 1st Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Suha Min",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCUtKkGKef8BYMs3h-3zQm9A"
+            }],
+            "twitter_handle": "SuhaMin2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 1st Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Gaon",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCpRXCTyNNa-MnjhK6gisnRw"
+            }, {
+                "platform": "Twitch",
+                "id": "gaon_2434"
+            }],
+            "twitter_handle": "Gaon2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 1.5 Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Chiho Han",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCJ6LH4jMNy0JN9RSThz1mMQ"
+            }, {
+                "platform": "Twitch",
+                "id": "chihorahao"
+            }],
+            "twitter_handle": "ChihoHan2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 1.5 Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Siu Lee",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCSlv7Z-4q7_7NRkzJB10A5Q"
+            }, {
+                "platform": "Twitch",
+                "id": "siulee2434"
+            }],
+            "twitter_handle": "SiuLee2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 2nd Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Nagi So",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC5ek2GWKvUKFgnKSHuuCFrw"
+            }],
+            "twitter_handle": "NagiSo2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 2nd Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Ara Chae",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCmWqYB6y8gSfPONWGspuOWQ"
+            }],
+            "twitter_handle": "AraChae2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 2nd Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Ray Akira",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC7hffDQLKIEG-_zoAQkMIvg"
+            }],
+            "twitter_handle": "RayAkira2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 3rd Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Roha Lee",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCClwIqTUn5LDpFucHyaAhHg"
+            }],
+            "twitter_handle": "rohalee2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 3rd Wave"],
+            "languages": ["ko"]
+        },
+        {
+            "name": "Bora Nun",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC1ZV7KBscK0EMoJKFu1DnDg"
+            }],
+            "twitter_handle": "BoraNun2434",
+            "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 3rd Wave"],
+            "languages": ["ko"]
+        },
+        {
             "name": "Amano Pikamee",
             "channels": [{
                 "platform": "Youtube",
