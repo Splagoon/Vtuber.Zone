@@ -2620,6 +2620,88 @@
             "twitter_handle": "Lyrica_ch",
             "tags": ["Indie"],
             "languages": ["en", "tl", "ja"]
+        },
+        {
+            "name": "Kohno Omi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCY4lJ-JAlYV_jyum49GZTSw"
+            }, {
+                "platform": "Twitch",
+                "id": "kohnoomi"
+            }],
+            "twitter_handle": "KohnoOmi",
+            "tags": ["Indie"],
+            "languages": ["en", "ja"]
+        },
+        {
+            "name": "Memo",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCPVObsoMAQ16g3FOqnwv54g"
+            }],
+            "twitter_handle": "meoelli",
+            "tags": ["Indie"],
+            "languages": ["en", "ja"]
+        },
+        {
+            "name": "Usami",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC835Gt23Gc-1uosxkXyx1Ug"
+            }, {
+                "platform": "Twitch",
+                "id": "usami_vt"
+            }],
+            "twitter_handle": "usami_vt",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Ichimaru Hanayo",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "ichimaruhayano"
+            }, {
+                "platform": "Youtube",
+                "id": "UC9ikL27dBlHIRxiiS6iNdqA"
+            }],
+            "twitter_handle": "HanayoIchimaru",
+            "tags": ["Indie"],
+            "languages": ["en"]
+        },
+        {
+            "name": "Rin Oninosuzu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCV5wmu2YD64XF1Y3DDuD-Rw"
+            }],
+            "twitter_handle": "rinoninosuzu",
+            "tags": ["Indie"],
+            "languages": ["ja", "en"]
+        },
+        {
+            "name": "Rumskii",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "rumskii_ch"
+            }, {
+                "platform": "Youtube",
+                "id": "UChIsLLz4UvdJVT0yBku1qOw"
+            }],
+            "twitter_handle": "Rumskiich",
+            "tags": ["Indie"],
+            "languages": ["id", "en"]
+        },
+        {
+            "name": "Hoshino Spica",
+            "channels": [{
+                "platform": "Twitch",
+                "id": "hoshinospica"
+            }],
+            "twitter_handle": "hoshinospica",
+            "tags": ["Indie"],
+            "languages": ["en", "ja", "tl"]
         }
     ]
 }
