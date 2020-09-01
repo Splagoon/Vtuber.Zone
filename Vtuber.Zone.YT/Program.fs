@@ -22,9 +22,9 @@ let main _ =
                 ApiKey = secrets.ApiKey,
                 ApplicationName = "vtubers-yt-connector"))
 
-    let channelToVtuberMap =
+    let channelMap =
         config.Vtubers
-        |> getChannelToVtuberMap Platform.Youtube
+        |> getFullChannelMap Platform.Youtube
 
     let mutable channelToIconMap = Map.empty
     let getIcon channelId =
@@ -35,18 +35,18 @@ let main _ =
     let videoToStream (video : Data.Video) =
         match video.Snippet.LiveBroadcastContent with
         | "live" ->
-            match channelToVtuberMap |> Map.tryFind video.Snippet.ChannelId with
-            | Some vtubers ->
+            match channelMap |> Map.tryFind video.Snippet.ChannelId with
+            | Some channel ->
                 GotStream { Platform = Platform.Youtube
                             VtuberIconUrl = video.Snippet.ChannelId |> getIcon
-                            VtuberName = vtubers |> combineNames
+                            VtuberName = channel.Name
                             Url = sprintf "https://www.youtube.com/watch?v=%s" video.Id
                             ThumbnailUrl = video.Snippet.Thumbnails.Standard.Url
                             Title = video.Snippet.Title
                             Viewers = video.LiveStreamingDetails.ConcurrentViewers |> toOption
                             StartTime = video.LiveStreamingDetails.ActualStartTime |> DateTimeOffset.Parse
-                            Tags = vtubers |> combineTags
-                            Languages = vtubers |> combineLanguages }
+                            Tags = channel.Tags
+                            Languages = channel.Languages }
             | None -> NotStream video.Id
         | "upcoming" -> AskAgainLater // TODO
         | _ -> NotStream video.Id

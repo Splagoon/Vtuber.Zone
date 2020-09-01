@@ -30,7 +30,17 @@ type Platform =
     | Youtube = 1
     | Twitch = 2
 
-type Channel = { Platform: Platform; Id: string }
+type PartialChannel =
+    { Platform: Platform
+      Id: string
+      Name: string option }
+
+type FullChannel =
+    { Platform : Platform
+      Id : string
+      Name : string
+      Tags : string list
+      Languages : string list }
 
 type Stream =
     { Platform: Platform
@@ -46,7 +56,7 @@ type Stream =
 
 type Vtuber =
     { Name: string
-      Channels: Channel list
+      Channels: PartialChannel list
       TwitterHandle: string
       Tags: string list
       Languages: string list }

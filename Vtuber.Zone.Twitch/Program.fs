@@ -26,9 +26,12 @@ let main _ =
                 c.Id)
         |> Collections.Generic.List
 
-    let channelToVtuberMap =
+    let channelMap =
         config.Vtubers
-        |> getChannelToVtuberMap Platform.Twitch
+        |> getFullChannelMap Platform.Twitch
+        |> Map.toSeq
+        |> Seq.map (fun (k, v) -> k.ToLower(), v)
+        |> Map.ofSeq
 
     let mutable channelToIconMap = Map.empty
     let getIcon (channelId : string) =
@@ -66,19 +69,21 @@ let main _ =
         }
 
     let getStream (stream : Helix.Models.Streams.Stream) =
-        let vtubers = channelToVtuberMap.[stream.UserName.ToLower()]
-        { Platform = Platform.Twitch
-          VtuberIconUrl = stream.UserName |> getIcon
-          VtuberName = vtubers |> combineNames
-          Url = sprintf "https://www.twitch.tv/%s" stream.UserName
-          ThumbnailUrl = stream.ThumbnailUrl
-            .Replace("{width}", config.Twitch.ThumbnailSize.Width |> string)
-            .Replace("{height}", config.Twitch.ThumbnailSize.Height |> string)
-          Title = stream.Title
-          Viewers = stream.ViewerCount |> uint64 |> Some
-          StartTime = stream.StartedAt |> DateTimeOffset
-          Tags = vtubers |> combineTags
-          Languages = vtubers |> combineLanguages }
+        match channelMap |> Map.tryFind (stream.UserName.ToLower()) with
+        | Some channel ->
+            Some { Platform = Platform.Twitch
+                   VtuberIconUrl = stream.UserName |> getIcon
+                   VtuberName = channel.Name
+                   Url = sprintf "https://www.twitch.tv/%s" stream.UserName
+                   ThumbnailUrl = stream.ThumbnailUrl
+                     .Replace("{width}", config.Twitch.ThumbnailSize.Width |> string)
+                     .Replace("{height}", config.Twitch.ThumbnailSize.Height |> string)
+                   Title = stream.Title
+                   Viewers = stream.ViewerCount |> uint64 |> Some
+                   StartTime = stream.StartedAt |> DateTimeOffset
+                   Tags = channel.Tags
+                   Languages = channel.Languages }
+        | None -> None
 
     let rec streamLoop () =
         async {
@@ -95,7 +100,7 @@ let main _ =
                 Log.info "Got %d streams" data.Streams.Length
                 try
                     do! data.Streams
-                        |> Seq.map getStream
+                        |> Seq.choose getStream
                         |> putPlatformStreams Platform.Twitch
                 with
                     err -> Log.exn err "Error storing streams"

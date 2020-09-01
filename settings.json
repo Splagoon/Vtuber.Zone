@@ -26,20 +26,22 @@
             "name": "Love-chan",
             "channels": [{
                 "platform": "Youtube",
-                "id": "UCYm8zALd2uHqyy6C1tb4_zA"
+                "id": "UCYm8zALd2uHqyy6C1tb4_zA",
+                "name": "love-pii"
             }],
             "twitter_handle": "lovechan_lp",
-            "tags": ["love-pii"],
+            "tags": [],
             "languages": ["ja"]
         },
         {
             "name": "Aipii",
             "channels": [{
                 "platform": "Youtube",
-                "id": "UCYm8zALd2uHqyy6C1tb4_zA"
+                "id": "UCYm8zALd2uHqyy6C1tb4_zA",
+                "name": "love-pii"
             }],
             "twitter_handle": "aipii_lp",
-            "tags": ["love-pii"],
+            "tags": [],
             "languages": ["ja"]
         },
         {
@@ -228,7 +230,7 @@
                 "id": "UC0TXe_LYZ4scaW2XMyi5_kw"
             }],
             "twitter_handle": "AZKi_VDiVA",
-            "tags": ["Hololive", "upd8", "INoNaKa MUSIC"],
+            "tags": ["Hololive", "Upd8", "INoNaKa MUSIC"],
             "languages": ["ja"]
         },
         {
@@ -1855,6 +1857,356 @@
             "twitter_handle": "BoraNun2434",
             "tags": ["Nijisanji", "Nijisanji KR", "Nijisanji KR 3rd Wave"],
             "languages": ["ko"]
+        },
+        {
+            "name": "Osanai Mei",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCZx7wgGNs2UFyRRtLoNur9Q",
+                "name": "Osanai Mei & Ichika"
+            }],
+            "twitter_handle": "osanai_mei",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Osanai Ichika",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCZx7wgGNs2UFyRRtLoNur9Q",
+                "name": "Osanai Mei & Ichika"
+            }],
+            "twitter_handle": "osanai_ichika",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Rio",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCNjTjd2-PMC8Oo_-dCEss7A",
+                "name": "Omega Sisters"
+            }],
+            "twitter_handle": "omesis_rio",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Ray",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCNjTjd2-PMC8Oo_-dCEss7A",
+                "name": "Omega Sisters"
+            }],
+            "twitter_handle": "omesis_ray",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Tsunohane Akagi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC7IyAJq03ohb0TpGqsFfPng"
+            }],
+            "twitter_handle": "hiramecurry",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Moscow Mule",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCX7WYPXASkYUm2GyomLllIg"
+            }],
+            "twitter_handle": "moscow_ojisan",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nora Cat",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC3iwL9Yz8LcKkJsnLPevOTQ"
+            }],
+            "twitter_handle": "VR_Girl_NoraCat",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Mituki Neu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCLXxry0HqEz_mzHSsXwrhYg"
+            }],
+            "twitter_handle": "mitukineu",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kashiko Mari",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCfiK42sBHraMBK6eNWtsy7A"
+            }],
+            "twitter_handle": "kashikomari_ch",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nijikawa Laki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCp77Qho-YHhnklRr-DkjiOw"
+            }],
+            "twitter_handle": "nijikawa_laki",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hibiki Ao",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCNwo7eikmX5HPs7NedWVBgw"
+            }],
+            "twitter_handle": "hibiki_ao",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Fukuya Master",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCXzcu59Cbu-hkpNNXnNiKDg"
+            }],
+            "twitter_handle": "lesupo_ru321id",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yamikumo Kerin",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCeAfiVvEuyICYJW-f3GnQjQ"
+            }],
+            "twitter_handle": "Kerin_Vtuber",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Icotsu",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCGFD_8TRHhlpjfqGhLUSk4g"
+            }],
+            "twitter_handle": "vtuber_icotsu",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kasukabe Tsukushi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCHccxX2p_9DB_HPnXSb2omw"
+            }],
+            "twitter_handle": "kasukaBe_nyoki",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Dela & Hadou",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC0QzO6nK1cEDZvJSt2769Zw"
+            }],
+            "twitter_handle": "harddeluxe",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Utai Meika",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC7-N7MvN5muVIHqyQx9LFbA"
+            }],
+            "twitter_handle": "makeagames2018",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Yoruno Neon",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCLQIMDHNE0ZGAiHIdMbq7dw"
+            }],
+            "twitter_handle": "NeonNight_exe",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Eve",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UChGY3OpdU6wzFzygJ_Rjvlw"
+            }],
+            "twitter_handle": "Eve_scp",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "MonsterZ MATE",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCDG8K9g6qo8gX4jCjsqUVzA"
+            }],
+            "twitter_handle": "monsterzmate",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kimino Miya",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCg8TPE5nLLOqlNnBivmQwww"
+            }],
+            "twitter_handle": "MIYA_KIMINO",
+            "tags": ["Upd8"],
+            "languages": ["ja", "en"]
+        },
+        {
+            "name": "Otowa Lara",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC84RYorF7UcJzt_iAYXBisA",
+                "name": "Utagoe Broadcasting"
+            }],
+            "twitter_handle": "lara_songs",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sanhaku Yukko",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC84RYorF7UcJzt_iAYXBisA",
+                "name": "Utagoe Broadcasting"
+            }],
+            "twitter_handle": "yukko_songs",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Haruka Mikoto",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC84RYorF7UcJzt_iAYXBisA",
+                "name": "Utagoe Broadcasting"
+            }],
+            "twitter_handle": "mikoto_songs",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "YuNi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCHTnX0CSX_KObo5I9WuZ64g"
+            }],
+            "twitter_handle": "_YuNiofficial_",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Suzuyo Cocone",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCH1B9AR8sfWJVf9zcu9rbGg",
+                "name": "CocoTsuki"
+            }],
+            "twitter_handle": "CT_Cocone",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Suzuyo Tsukine",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCH1B9AR8sfWJVf9zcu9rbGg",
+                "name": "CocoTsuki"
+            }],
+            "twitter_handle": "CT_Tsukine",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hibiki Kasane",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCH1B9AR8sfWJVf9zcu9rbGg",
+                "name": "CocoTsuki"
+            }],
+            "twitter_handle": "Kasane_CT",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Virtual Neko",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCKDHdDpoE9lurDuyAGAuNnw"
+            }],
+            "twitter_handle": "neko_vtuber",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Choueki Tarou",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC0e6zo8oX6ISSBjPaSZsjeA"
+            }],
+            "twitter_handle": "choueki_tarou",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Oiran Yugiri",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCMxKcUjeTEcgHmC9Zzn3R4w"
+            }],
+            "twitter_handle": "oiran_yugiri",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Tomari Mari",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCkPIfBOLoO0hVPG-tI2YeGg"
+            }],
+            "twitter_handle": "tomari_mari",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Maou Magrona",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCPf-EnX70UM7jqjKwhDmS8g"
+            }],
+            "twitter_handle": "ukyo_rst",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sakurazuki Kanon",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC3-jXrZXv-PQshpaTQpicPQ"
+            }],
+            "twitter_handle": "SakurazukiKanon",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
         },
         {
             "name": "Amano Pikamee",

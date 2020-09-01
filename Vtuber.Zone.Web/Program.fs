@@ -14,7 +14,7 @@ let getLiveStreams _ =
   |> JsonUtils.serialize
   |> OK
 
-let formatChannel (channel : Channel) =
+let formatChannel (channel : PartialChannel) =
   channel.Platform,
   match channel.Platform with
   | Platform.Youtube -> Some <| sprintf "https://www.youtube.com/channel/%s" channel.Id
