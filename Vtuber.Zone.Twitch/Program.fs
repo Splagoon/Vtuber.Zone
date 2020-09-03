@@ -50,13 +50,12 @@ let main _ =
             if Seq.isEmpty channelIds then
                 return Some Map.empty
             else
-                let! res =
-                    twitch.Helix.Users.GetUsersAsync(
-                        logins = Collections.Generic.List(channelIds))
+                match!
+                    twitch.Helix.Users.GetUsersAsync 
+                        (logins = Collections.Generic.List(channelIds))
                     |> Async.AwaitTask
                     |> Async.Catch
-                
-                match res with
+                    with
                 | Choice1Of2 data ->
                     return data.Users
                     |> Seq.map (fun u -> u.Login.ToLower(), u.ProfileImageUrl)
@@ -88,14 +87,13 @@ let main _ =
     let rec streamLoop () =
         async {
             Log.info "Grabbing streams..."
-            let! res =
-                twitch.Helix.Streams.GetStreamsAsync(
-                    first = 100,
-                    userLogins = twitchChannels)
+            match!
+                twitch.Helix.Streams.GetStreamsAsync
+                    (first = 100,
+                     userLogins = twitchChannels)
                 |> Async.AwaitTask
                 |> Async.Catch
-
-            match res with
+                with
             | Choice1Of2 data ->
                 Log.info "Got %d streams" data.Streams.Length
                 try

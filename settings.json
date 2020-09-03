@@ -2213,6 +2213,9 @@
             "channels": [{
                 "platform": "Youtube",
                 "id": "UCajhBT4nMrg3DLS-bLL2RCg"
+            }, {
+                "platform": "Twitch",
+                "id": "pikameeamano"
             }],
             "twitter_handle": "amanopikamee",
             "tags": ["VOMS Project"],
