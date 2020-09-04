@@ -1,122 +1,131 @@
-﻿open System
+﻿module Vtuber.Zone.Twitch.Main
+
+open System
 open Vtuber.Zone.Core
 open Vtuber.Zone.Core.Redis
 open Vtuber.Zone.Core.Util
 open Vtuber.Zone.Twitch.Client
 
-[<EntryPoint>]
-let main _ =
-    let config = Config.Load()
-    let secrets = Secrets.Load().Twitch
-    let twitchClient = getTwitchClient secrets
+type TwitchChannel =
+    { Channel: FullChannel
+      IconUrl: string }
 
-    let getTwitchChannels vtuber =
-        vtuber.Channels
-        |> Seq.filter (fun c -> c.Platform = Platform.Twitch)
-        |> Seq.map (fun channel -> vtuber, channel)
+let getStream (channelMap: Map<string, TwitchChannel>) (thumbnailWidth: int, thumbnailHeight: int) (stream: StreamInfo) =
+    channelMap
+    |> Map.tryFind (stream.UserName.ToLower())
+    |> Option.map (fun channel ->
+        { Platform = Platform.Twitch
+          VtuberIconUrl = channel.IconUrl
+          VtuberName = channel.Channel.Name
+          Url = sprintf "https://www.twitch.tv/%s" stream.UserName
+          ThumbnailUrl =
+              stream.ThumbnailUrl.Replace("{width}", thumbnailWidth |> string)
+                    .Replace("{height}", thumbnailHeight |> string)
+          Title = stream.Title
+          Viewers = stream.Viewers |> Some
+          StartTime = stream.StartTime
+          Tags = channel.Channel.Tags
+          Languages = channel.Channel.Languages })
 
-    let twitchChannels =
-        config.Vtubers
-        |> Seq.collect getTwitchChannels
-        |> Seq.map
-            (fun (v, c) ->
-                Log.info "Following %s (%s)" v.Name c.Id
-                c.Id)
-        |> Collections.Generic.List
+let getStreams (channelMap: Map<string, TwitchChannel>) thumbnailSize (twitchClient: ITwitchClient) =
+    let twitchUserNames = channelMap |> Map.toSeq |> Seq.map fst
+    async {
+        let! res = twitchClient.GetStreams(twitchUserNames)
 
-    let channelMap =
-        config.Vtubers
+        return res
+               |> Result.map (Seq.choose (getStream channelMap thumbnailSize))
+    }
+
+let getChannelMap (twitchClient: ITwitchClient) (vtubers: Vtuber seq) =
+    let fullChannelMap =
+        vtubers
         |> getFullChannelMap Platform.Twitch
         |> Map.toSeq
         |> Seq.map (fun (k, v) -> k.ToLower(), v)
         |> Map.ofSeq
 
-    let mutable channelToIconMap = Map.empty
-    let getIcon (channelId : string) =
-        match channelToIconMap |> Map.tryFind (channelId.ToLower()) with
-        | Some icon -> icon
-        | None -> defaultIcon
+    let userNames =
+        fullChannelMap |> Map.toSeq |> Seq.map fst
 
-    let logMissingChannels channelIds channelMap =
-        let missingIds = getMissingKeys channelIds channelMap
-        if not <| Seq.isEmpty missingIds then
-            Log.warn "Channel(s) not found: %s" (missingIds |> String.concat ", ")
-        channelMap
+    async {
+        let! res = twitchClient.GetUsers(userNames)
 
-    let getChannelToIconMap (channelIds : string seq) =
-        async {
-            if Seq.isEmpty channelIds then
-                return Ok Map.empty
-            else
-                let! res = twitchClient.GetUsers(channelIds)
-                
-                return res
-                |> Result.map (
-                    Seq.map (fun u -> u.UserName.ToLower(), u.ProfileImageUrl)
-                    >> Map.ofSeq
-                    >> logMissingChannels channelIds)
-        }
+        return res
+               |> Result.map
+                   (Seq.map (fun user ->
+                       let userName = user.UserName.ToLower()
+                       userName,
+                       { Channel = fullChannelMap.[userName]
+                         IconUrl = user.ProfileImageUrl })
+                    >> Map.ofSeq)
+    }
 
-    let getStream (stream : StreamInfo) =
-        match channelMap |> Map.tryFind (stream.UserName.ToLower()) with
-        | Some channel ->
-            Some { Platform = Platform.Twitch
-                   VtuberIconUrl = stream.UserName |> getIcon
-                   VtuberName = channel.Name
-                   Url = sprintf "https://www.twitch.tv/%s" stream.UserName
-                   ThumbnailUrl = stream.ThumbnailUrl
-                     .Replace("{width}", config.Twitch.ThumbnailSize.Width |> string)
-                     .Replace("{height}", config.Twitch.ThumbnailSize.Height |> string)
-                   Title = stream.Title
-                   Viewers = stream.Viewers |> Some
-                   StartTime = stream.StartTime
-                   Tags = channel.Tags
-                   Languages = channel.Languages }
-        | None -> None
+[<EntryPoint>]
+let main _ =
+    let config = Config.Load()
+    let secrets = Secrets.Load().Twitch
+
+    let twitchClient = getTwitchClient secrets
+
+    let thumbnailSize =
+        config.Twitch.ThumbnailSize.Width, config.Twitch.ThumbnailSize.Height
+
+    let mutable channelMap = Map.empty
+
+    let twitchUserNames =
+        config.Vtubers
+        |> Seq.collect (fun v -> v.Channels)
+        |> Seq.choose (fun c -> if c.Platform = Platform.Twitch then Some <| c.Id.ToLower() else None)
+
+    let logMissingChannels () =
+        let missingIds =
+            getMissingKeys twitchUserNames channelMap
+
+        if not <| Seq.isEmpty missingIds
+        then Log.warn "Channel(s) not found: %s" (missingIds |> String.concat ", ")
 
     let rec streamLoop () =
         async {
             Log.info "Grabbing streams..."
-            match!
-                twitchClient.GetStreams(twitchChannels)
-                with
+            match! twitchClient
+                   |> getStreams channelMap thumbnailSize with
             | Ok streams ->
                 Log.info "Got %d streams" (streams |> Seq.length)
                 try
-                    do! streams
-                        |> Seq.choose getStream
-                        |> putPlatformStreams Platform.Twitch
-                with
-                    err -> Log.exn err "Error storing streams"
+                    do! streams |> putPlatformStreams Platform.Twitch
+                with err -> Log.exn err "Error storing streams"
             | Error _ -> ()
 
             do! Async.Sleep <| 60 * 1000
             return! streamLoop ()
         }
 
-    let channelIds = config.Vtubers |> getChannelIds Platform.Twitch
     let rec channelLoop () =
         async {
-            do! Async.Sleep (TimeSpan.FromHours(12.).TotalMilliseconds |> int)
+            do! Async.Sleep(TimeSpan.FromHours(12.).TotalMilliseconds |> int)
             Log.info "Grabbing channels"
 
-            match! channelIds |> getChannelToIconMap with
-            | Ok iconMap -> channelToIconMap <- iconMap
-            | Error _ -> Log.warn "Skipping channel icon update"
+            match! config.Vtubers |> getChannelMap twitchClient with
+            | Ok map ->
+                channelMap <- map
+                logMissingChannels ()
+            | Error _ -> Log.warn "Skipping channel update"
             return! channelLoop ()
         }
-    
-    // populate the icon map once before grabbing any streams
-    while channelToIconMap = Map.empty do
-        match channelIds
-              |> getChannelToIconMap
+
+    // populate the channel map once before grabbing any streams
+    while channelMap = Map.empty do
+        match config.Vtubers
+              |> getChannelMap twitchClient
               |> Async.RunSynchronously with
-        | Ok map -> channelToIconMap <- map
+        | Ok map ->
+            channelMap <- map
+            logMissingChannels ()
         | Error _ ->
-            Log.warn "Error populating channel icons, retrying in 1s..."
+            Log.warn "Error populating channel map, retrying in 1s..."
             Async.Sleep 1000 |> Async.RunSynchronously
 
-    [streamLoop (); channelLoop ()]
+    [ streamLoop (); channelLoop () ]
     |> Async.Parallel
     |> Async.RunSynchronously
     |> ignore

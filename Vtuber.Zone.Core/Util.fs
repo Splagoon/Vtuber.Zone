@@ -28,8 +28,7 @@ let channelName (channel: PartialChannel) vtubers =
 
 let getChannelIds platform =
     Seq.collect (fun v -> v.Channels)
-    >> Seq.filter (fun c -> c.Platform = platform)
-    >> Seq.map (fun c -> c.Id)
+    >> Seq.choose (fun c -> if c.Platform = platform then Some c.Id else None)
 
 let getFullChannelMap platform vtubers =
     seq {
