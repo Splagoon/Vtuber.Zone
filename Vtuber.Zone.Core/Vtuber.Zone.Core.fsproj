@@ -3,11 +3,13 @@
     <RootNamespace>Vtuber.Zone</RootNamespace>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Include="../settings.json">
+  <ItemGroup Condition="Exists('../secrets.json')">
+    <Content Include="../secrets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="../secrets.json">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="../settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="./NLog.config">
