@@ -11,7 +11,11 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Vtub
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Web", "Vtuber.Zone.Web\Vtuber.Zone.Web.fsproj", "{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitch", "Vtuber.Zone.Twitch\Vtuber.Zone.Twitch.fsproj", "{7804480C-32B6-46E2-9C15-BE4C44EDE21E}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitch", "Twitch\Vtuber.Zone.Twitch\Vtuber.Zone.Twitch.fsproj", "{7804480C-32B6-46E2-9C15-BE4C44EDE21E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Twitch", "Twitch", "{D3602B52-E3FE-4228-AB92-26A10B00FE3F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitch.Test", "Twitch\Vtuber.Zone.Twitch.Test\Vtuber.Zone.Twitch.Test.fsproj", "{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,5 +90,20 @@ Global
 		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x64.Build.0 = Release|Any CPU
 		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x86.ActiveCfg = Release|Any CPU
 		{7804480C-32B6-46E2-9C15-BE4C44EDE21E}.Release|x86.Build.0 = Release|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Debug|x64.Build.0 = Debug|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Debug|x86.Build.0 = Debug|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x64.ActiveCfg = Release|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x64.Build.0 = Release|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x86.ActiveCfg = Release|Any CPU
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2} = {D3602B52-E3FE-4228-AB92-26A10B00FE3F}
 	EndGlobalSection
 EndGlobal

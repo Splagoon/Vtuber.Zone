@@ -2,15 +2,13 @@
 open Vtuber.Zone.Core
 open Vtuber.Zone.Core.Redis
 open Vtuber.Zone.Core.Util
-open TwitchLib.Api
+open Vtuber.Zone.Twitch.Client
 
 [<EntryPoint>]
 let main _ =
     let config = Config.Load()
     let secrets = Secrets.Load().Twitch
-    let twitch = TwitchAPI()
-    twitch.Settings.ClientId <- secrets.ClientId
-    twitch.Settings.Secret <- secrets.ClientSecret
+    let twitchClient = getTwitchClient secrets
 
     let getTwitchChannels vtuber =
         vtuber.Channels
@@ -48,26 +46,18 @@ let main _ =
     let getChannelToIconMap (channelIds : string seq) =
         async {
             if Seq.isEmpty channelIds then
-                return Some Map.empty
+                return Ok Map.empty
             else
-                match!
-                    twitch.Helix.Users.GetUsersAsync 
-                        (logins = Collections.Generic.List(channelIds))
-                    |> Async.AwaitTask
-                    |> Async.Catch
-                    with
-                | Choice1Of2 data ->
-                    return data.Users
-                    |> Seq.map (fun u -> u.Login.ToLower(), u.ProfileImageUrl)
-                    |> Map.ofSeq
-                    |> logMissingChannels channelIds
-                    |> Some
-                | Choice2Of2 err ->
-                    Log.exn err "Error fetching channels"
-                    return None
+                let! res = twitchClient.GetUsers(channelIds)
+                
+                return res
+                |> Result.map (
+                    Seq.map (fun u -> u.UserName.ToLower(), u.ProfileImageUrl)
+                    >> Map.ofSeq
+                    >> logMissingChannels channelIds)
         }
 
-    let getStream (stream : Helix.Models.Streams.Stream) =
+    let getStream (stream : StreamInfo) =
         match channelMap |> Map.tryFind (stream.UserName.ToLower()) with
         | Some channel ->
             Some { Platform = Platform.Twitch
@@ -78,8 +68,8 @@ let main _ =
                      .Replace("{width}", config.Twitch.ThumbnailSize.Width |> string)
                      .Replace("{height}", config.Twitch.ThumbnailSize.Height |> string)
                    Title = stream.Title
-                   Viewers = stream.ViewerCount |> uint64 |> Some
-                   StartTime = stream.StartedAt |> DateTimeOffset
+                   Viewers = stream.Viewers |> Some
+                   StartTime = stream.StartTime
                    Tags = channel.Tags
                    Languages = channel.Languages }
         | None -> None
@@ -88,22 +78,17 @@ let main _ =
         async {
             Log.info "Grabbing streams..."
             match!
-                twitch.Helix.Streams.GetStreamsAsync
-                    (first = 100,
-                     userLogins = twitchChannels)
-                |> Async.AwaitTask
-                |> Async.Catch
+                twitchClient.GetStreams(twitchChannels)
                 with
-            | Choice1Of2 data ->
-                Log.info "Got %d streams" data.Streams.Length
+            | Ok streams ->
+                Log.info "Got %d streams" (streams |> Seq.length)
                 try
-                    do! data.Streams
+                    do! streams
                         |> Seq.choose getStream
                         |> putPlatformStreams Platform.Twitch
                 with
                     err -> Log.exn err "Error storing streams"
-            | Choice2Of2 err ->
-                Log.exn err "Error fetching streams"
+            | Error _ -> ()
 
             do! Async.Sleep <| 60 * 1000
             return! streamLoop ()
@@ -116,8 +101,8 @@ let main _ =
             Log.info "Grabbing channels"
 
             match! channelIds |> getChannelToIconMap with
-            | Some iconMap -> channelToIconMap <- iconMap
-            | None -> Log.warn "Skipping channel icon update"
+            | Ok iconMap -> channelToIconMap <- iconMap
+            | Error _ -> Log.warn "Skipping channel icon update"
             return! channelLoop ()
         }
     
@@ -126,8 +111,8 @@ let main _ =
         match channelIds
               |> getChannelToIconMap
               |> Async.RunSynchronously with
-        | Some map -> channelToIconMap <- map
-        | None ->
+        | Ok map -> channelToIconMap <- map
+        | Error _ ->
             Log.warn "Error populating channel icons, retrying in 1s..."
             Async.Sleep 1000 |> Async.RunSynchronously
 
