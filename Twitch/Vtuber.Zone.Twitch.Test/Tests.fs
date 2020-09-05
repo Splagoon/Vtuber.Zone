@@ -34,6 +34,11 @@ let emptyVtuber =
       Tags = List.empty
       Languages = List.empty }
 
+let twitchChannel userName =
+    { Platform = Platform.Twitch
+      Id = userName
+      Name = None }
+
 [<Fact>]
 let ``Stream should use Vtuber's channel icon`` () =
     let twitchClient =
@@ -46,10 +51,7 @@ let ``Stream should use Vtuber's channel icon`` () =
 
     let vtubers =
         [ { emptyVtuber with
-                Channels =
-                    [ { Platform = Platform.Twitch
-                        Id = "coolstreamer"
-                        Name = None } ] } ]
+                Channels = [ twitchChannel "coolstreamer" ] } ]
 
     async {
         match! vtubers |> getChannelMap twitchClient with
@@ -62,3 +64,87 @@ let ``Stream should use Vtuber's channel icon`` () =
         | Error err -> raise err
     }
     |> Async.RunSynchronously
+
+[<Fact>]
+let ``getChannelMap should ignore missing channels`` () =
+    let twitchClient =
+        { Users =
+              [ { UserName = "streamer2"
+                  ProfileImageUrl = "image2" } ]
+          Streams = Seq.empty }
+
+    let vtubers =
+        [ { emptyVtuber with
+                Channels = [ twitchChannel "streamer1" ] }
+          { emptyVtuber with
+                Channels = [ twitchChannel "streamer2" ] } ]
+
+    async {
+        match! vtubers |> getChannelMap twitchClient with
+        | Ok channelMap ->
+            channelMap
+            |> Map.tryFind "streamer1"
+            |> Option.isNone
+            |> should be True
+            channelMap
+            |> Map.tryFind "streamer2"
+            |> Option.isSome
+            |> should be True
+        | Error err -> raise err
+    }
+    |> Async.RunSynchronously
+
+[<Fact>]
+let ``getStream should ignore missing channels`` () =
+    let twitchClient =
+        { Users =
+            [ { UserName = "userB"
+                ProfileImageUrl = "imageB" } ]
+          Streams =
+            [ { emptyStream with UserName = "userA" }
+              { emptyStream with UserName = "userB" } ] }
+
+    let vtubers =
+        [ { emptyVtuber with
+                Name = "Vtuber A"
+                Channels = [ twitchChannel "userA" ] }
+          { emptyVtuber with
+                Name = "Vtuber B"
+                Channels = [ twitchChannel "userB" ] } ]
+
+    async {
+        match! vtubers |> getChannelMap twitchClient with
+        | Ok channelMap ->
+            match! twitchClient |> getStreams channelMap (0, 0) with
+            | Ok streams ->
+                let stream = streams |> Seq.exactlyOne
+                stream.VtuberName |> should equal "Vtuber B"
+            | Error err -> raise err
+        | Error err -> raise err
+    } |> Async.RunSynchronously
+
+[<Fact>]
+let ``Usernames should be case insensitive`` () =
+    let twitchClient =
+        { Users =
+            [ { UserName = "vTuber"
+                ProfileImageUrl = "image" } ]
+          Streams =
+            [ { emptyStream with UserName = "Vtuber" } ] }
+
+    let vtubers =
+        [ { emptyVtuber with
+                Name = "The Vtuber"
+                Channels = [ twitchChannel "vtuber" ] } ]
+
+    async {
+        match! vtubers |> getChannelMap twitchClient with
+        | Ok channelMap ->
+            match! twitchClient |> getStreams channelMap (0, 0) with
+            | Ok streams ->
+                let stream = streams |> Seq.exactlyOne
+                stream.VtuberName |> should equal "The Vtuber"
+                stream.VtuberIconUrl |> should equal "image"
+            | Error err -> raise err
+        | Error err -> raise err
+    } |> Async.RunSynchronously
