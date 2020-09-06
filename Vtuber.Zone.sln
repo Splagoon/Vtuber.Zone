@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core", "Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj", "{3E346967-6BEA-485C-9FA9-DB76E73ADADC}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core", "Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj", "{3E346967-6BEA-485C-9FA9-DB76E73ADADC}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YT", "Vtuber.Zone.YT\Vtuber.Zone.YT.fsproj", "{B92DA02F-E4EC-41F8-982C-E8CB0111985E}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Twitch", "Twitch", "{D3602B52-E3FE-4228-AB92-26A10B00FE3F}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitch.Test", "Twitch\Vtuber.Zone.Twitch.Test\Vtuber.Zone.Twitch.Test.fsproj", "{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{09BBF121-C3D7-4EE8-9C0E-EC65E1AB70CD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core.Test", "Core\Vtuber.Zone.Core.Test\Vtuber.Zone.Core.Test.fsproj", "{607984A7-4AF9-4225-815D-C70713181E8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,8 +106,21 @@ Global
 		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x64.Build.0 = Release|Any CPU
 		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x86.ActiveCfg = Release|Any CPU
 		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2}.Release|x86.Build.0 = Release|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Debug|x64.Build.0 = Debug|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Debug|x86.Build.0 = Debug|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Release|x64.ActiveCfg = Release|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Release|x64.Build.0 = Release|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Release|x86.ActiveCfg = Release|Any CPU
+		{607984A7-4AF9-4225-815D-C70713181E8C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2} = {D3602B52-E3FE-4228-AB92-26A10B00FE3F}
+		{607984A7-4AF9-4225-815D-C70713181E8C} = {09BBF121-C3D7-4EE8-9C0E-EC65E1AB70CD}
 	EndGlobalSection
 EndGlobal

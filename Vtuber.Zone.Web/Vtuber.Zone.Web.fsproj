@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
+    <ProjectReference Include="..\Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Script/GetAllStreams.lua">
