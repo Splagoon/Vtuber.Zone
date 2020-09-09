@@ -1,7 +1,8 @@
-﻿namespace Vtuber.Zone.Core
+namespace Vtuber.Zone.Core
 
 open System
 open System.IO
+open System.Text.RegularExpressions
 open FSharp.Json
 
 module JsonUtils =
@@ -55,7 +56,7 @@ type Vtuber =
       TwitterHandle: string
       Tags: string list
       Languages: string list }
-    member this.Id = this.Name.ToLower().Replace(" ", "-")
+    member this.Id = Regex("\W").Replace(this.Name.ToLower(), "_")
 
 type Config =
     { Youtube: {| BatchSize: int |}
