@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Vtuber.Zone.YT</RootNamespace>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Script/GetFoundVideoIds.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="YouTubeClient.fs" />
+    <Compile Include="RedisClient.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.47.0.2008" />
+    <PackageReference Include="Google.Protobuf" Version="3.12.3" />
+  </ItemGroup>
+</Project>

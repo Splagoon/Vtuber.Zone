@@ -1,4 +1,4 @@
-namespace Vtuber.Zone.Core
+﻿namespace Vtuber.Zone.Core
 
 open System
 open System.IO
@@ -72,13 +72,19 @@ type TwitchSecrets =
     { ClientId: string
       ClientSecret: string }
 
+type YouTubeSecrets =
+    { ApiKey: string }
+
+type RedisSecrets =
+    { Url: string }
+
 type Secrets =
     { Twitter: {| ConsumerKey: string
                   ConsumerSecret: string
                   UserAccessToken: string
                   UserAccessSecret: string |}
-      Youtube: {| ApiKey: string |}
+      Youtube: YouTubeSecrets
       Twitch: TwitchSecrets
-      Redis: {| Url: string |} }
+      Redis: RedisSecrets }
     static member Load() =
         ConfigUtils.loadJson<Secrets> "secrets.json"

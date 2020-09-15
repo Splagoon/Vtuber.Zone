@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core", "Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj", "{3E346967-6BEA-485C-9FA9-DB76E73ADADC}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YT", "Vtuber.Zone.YT\Vtuber.Zone.YT.fsproj", "{B92DA02F-E4EC-41F8-982C-E8CB0111985E}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YouTube", "YouTube\Vtuber.Zone.YouTube\Vtuber.Zone.YouTube.fsproj", "{B92DA02F-E4EC-41F8-982C-E8CB0111985E}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Vtuber.Zone.Twitter\Vtuber.Zone.Twitter.fsproj", "{945FA695-BC17-42B5-AF44-25C75A26B74E}"
 EndProject
