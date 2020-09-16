@@ -28,7 +28,9 @@ let private getFoundVideoIds (db: IDatabaseAsync) (script: LoadedLuaScript) =
                 |> Async.AwaitTask
 
             return res |> castToStringArray |> Ok
-        with err -> return Error err
+        with err ->
+            Log.exn err "Error fetching found video IDs"
+            return Error err
     }
 
 let private putBadIds (db: IDatabaseAsync) (videoIds: string seq) =

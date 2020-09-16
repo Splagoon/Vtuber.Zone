@@ -105,7 +105,7 @@ let private getStreams (youtubeService: YouTubeService) (batchSize: int) (stream
                                    | _ -> NotStream stream.Id)
                                |> Ok
                     with err ->
-                        Log.exn err "Channel batch %d: got error" (batchIdx + 1)
+                        Log.exn err "Video batch %d: got error" (batchIdx + 1)
                         return Error err
                 })
             |> Async.Parallel

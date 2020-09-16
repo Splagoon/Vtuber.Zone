@@ -1,6 +1,6 @@
 redis.replicate_commands()
 
-redis.call("DELETE", @tmp_key)
+redis.call("DEL", @tmp_key)
 
 local cursor = "0"
 repeat
