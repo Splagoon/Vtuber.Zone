@@ -15,6 +15,15 @@ type MockYouTubeClient =
         member this.GetChannels _ = async { return Ok this.Channels }
         member this.GetStreams _ = async { return Ok this.Streams }
 
+type MockRedisClient =
+    { FoundVideoIds: string array
+      mutable BadIds: string seq }
+    interface IRedisClient with
+        member this.GetFoundVideoIds () = async { return Ok this.FoundVideoIds }
+        member this.PutBadIds ids =
+            this.BadIds <- ids
+            async { return Ok () }
+
 let emptyStream =
     { Id = ""
       ChannelId = ""
@@ -45,6 +54,10 @@ let ``Stream should use Vtuber's channel icon`` () =
             [ LiveStream { emptyStream with
                             ChannelId = "abc123" } ] }
 
+    let redisClient =
+        { FoundVideoIds = Array.empty
+          BadIds = Seq.empty }
+
     let vtubers =
         [ { emptyVtuber with
                 Channels = [ youtubeChannel "abc123" ] } ]
@@ -52,11 +65,40 @@ let ``Stream should use Vtuber's channel icon`` () =
     async {
         match! vtubers |> getChannelMap youtubeClient with
         | Ok channelMap ->
-            match! youtubeClient |> getStreams channelMap with
+            match! getStreams channelMap youtubeClient redisClient with
             | Ok (streams, _) ->
                 let stream = streams |> Seq.exactlyOne
                 stream.VtuberIconUrl |> should equal "coolimage"
             | Error err -> raise err
+        | Error err -> raise err
+    }
+    |> Async.RunSynchronously
+
+[<Fact>]
+let ``getChannelMap should ignore missing channels`` () =
+    let youtubeClient =
+        { Channels =
+            [ { Id = "streamer2"
+                ProfileImageUrl = "image2" } ]
+          Streams = Seq.empty }
+
+    let vtubers =
+        [ { emptyVtuber with
+                Channels = [ youtubeChannel "streamer1" ] }
+          { emptyVtuber with
+                Channels = [ youtubeChannel "streamer2" ] } ]
+
+    async {
+        match! vtubers |> getChannelMap youtubeClient with
+        | Ok channelMap ->
+            channelMap
+            |> Map.tryFind "streamer1"
+            |> Option.isNone
+            |> should be True
+            channelMap
+            |> Map.tryFind "streamer2"
+            |> Option.isSome
+            |> should be True
         | Error err -> raise err
     }
     |> Async.RunSynchronously
