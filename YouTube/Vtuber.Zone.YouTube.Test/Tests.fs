@@ -168,3 +168,30 @@ let ``Non-live streams should be added to bad ID set`` () =
         | Error err -> raise err
     }
     |> Async.RunSynchronously
+
+[<Fact>]
+let ``Upcoming streams should be ignored`` () =
+    let youtubeClient =
+        { Channels =
+            [ { Id = "streamer"
+                ProfileImageUrl = "image" } ]
+          Streams = [ UpcomingStream ] }
+
+    let redisClient =
+        { FoundVideoIds = [| "upcoming" |] }
+
+    let vtubers =
+        [ { emptyVtuber with
+                Channels = [ youtubeChannel "streamer" ] } ]
+
+    async {
+        match! vtubers |> getChannelMap youtubeClient with
+        | Ok channelMap ->
+            match! getStreams channelMap youtubeClient redisClient with
+            | Ok (streams, badIds) ->
+                streams |> should be Empty
+                badIds |> should be Empty
+            | Error err -> raise err
+        | Error err -> raise err
+    }
+    |> Async.RunSynchronously
