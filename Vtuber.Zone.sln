@@ -9,7 +9,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YouTube", "YouT
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Vtuber.Zone.Twitter\Vtuber.Zone.Twitter.fsproj", "{945FA695-BC17-42B5-AF44-25C75A26B74E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Web", "Vtuber.Zone.Web\Vtuber.Zone.Web.fsproj", "{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.WebAPI", "WebAPI\Vtuber.Zone.WebAPI\Vtuber.Zone.WebAPI.fsproj", "{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitch", "Twitch\Vtuber.Zone.Twitch\Vtuber.Zone.Twitch.fsproj", "{7804480C-32B6-46E2-9C15-BE4C44EDE21E}"
 EndProject

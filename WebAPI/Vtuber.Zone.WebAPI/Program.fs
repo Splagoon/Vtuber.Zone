@@ -4,7 +4,7 @@ open Suave.Filters
 open Suave.Writers
 open Suave.Successful
 open Vtuber.Zone.Core
-open Vtuber.Zone.Web.DB
+open Vtuber.Zone.WebAPI.DB
 
 let config = Config.Load()
 

@@ -1,4 +1,4 @@
-module Vtuber.Zone.Web.DB
+module Vtuber.Zone.WebAPI.DB
 
 open Vtuber.Zone.Core
 open Vtuber.Zone.Core.Redis
