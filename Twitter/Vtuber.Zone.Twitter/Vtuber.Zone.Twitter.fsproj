@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
+    <ProjectReference Include="..\..\Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
   </ItemGroup>
 
 </Project>

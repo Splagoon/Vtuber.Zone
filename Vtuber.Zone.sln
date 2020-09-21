@@ -7,7 +7,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core", "Core\Vt
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YouTube", "YouTube\Vtuber.Zone.YouTube\Vtuber.Zone.YouTube.fsproj", "{B92DA02F-E4EC-41F8-982C-E8CB0111985E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Vtuber.Zone.Twitter\Vtuber.Zone.Twitter.fsproj", "{945FA695-BC17-42B5-AF44-25C75A26B74E}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter", "Twitter\Vtuber.Zone.Twitter\Vtuber.Zone.Twitter.fsproj", "{945FA695-BC17-42B5-AF44-25C75A26B74E}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.WebAPI", "WebAPI\Vtuber.Zone.WebAPI\Vtuber.Zone.WebAPI.fsproj", "{1D2B8B3F-0EA7-45EF-8B4F-A607EAD888EA}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YouTube", "YouTube", "{C5973890-5A3A-4BA2-954D-230CFDDF2EE0}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YouTube.Test", "YouTube\Vtuber.Zone.YouTube.Test\Vtuber.Zone.YouTube.Test.fsproj", "{4C7004D7-3E47-416F-AF5A-D843BD52E824}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Twitter", "Twitter", "{A2290E97-0CB3-4218-8333-7897D329FB6E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Twitter.Test", "Twitter\Vtuber.Zone.Twitter.Test\Vtuber.Zone.Twitter.Test.fsproj", "{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -134,10 +138,23 @@ Global
 		{4C7004D7-3E47-416F-AF5A-D843BD52E824}.Release|x64.Build.0 = Release|Any CPU
 		{4C7004D7-3E47-416F-AF5A-D843BD52E824}.Release|x86.ActiveCfg = Release|Any CPU
 		{4C7004D7-3E47-416F-AF5A-D843BD52E824}.Release|x86.Build.0 = Release|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Debug|x64.Build.0 = Debug|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Debug|x86.Build.0 = Debug|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Release|x64.ActiveCfg = Release|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Release|x64.Build.0 = Release|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Release|x86.ActiveCfg = Release|Any CPU
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{10BA43C9-C28D-4820-B3FA-CA41BF2A1DE2} = {D3602B52-E3FE-4228-AB92-26A10B00FE3F}
 		{607984A7-4AF9-4225-815D-C70713181E8C} = {09BBF121-C3D7-4EE8-9C0E-EC65E1AB70CD}
 		{4C7004D7-3E47-416F-AF5A-D843BD52E824} = {C5973890-5A3A-4BA2-954D-230CFDDF2EE0}
+		{205E5E3C-6A1E-4150-99CE-F836F5C49EBF} = {A2290E97-0CB3-4218-8333-7897D329FB6E}
 	EndGlobalSection
 EndGlobal
