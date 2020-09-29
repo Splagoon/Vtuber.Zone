@@ -2,11 +2,9 @@
 
 open System
 open System.Text.RegularExpressions
-open Tweetinvi
-open Tweetinvi.Models
 open Vtuber.Zone.Core
-open Vtuber.Zone.Core.Redis
-open StackExchange.Redis
+open Vtuber.Zone.Twitter.Client
+open Vtuber.Zone.Twitter.Redis
 
 let lowercase (str: string) = str.ToLowerInvariant()
 
@@ -25,62 +23,60 @@ let parseYouTubeUrl =
 [<EntryPoint>]
 let main _ =
     let config = Config.Load()
-    let secrets = Secrets.Load().Twitter
-    Auth.SetUserCredentials
-        (secrets.ConsumerKey, secrets.ConsumerSecret, secrets.UserAccessToken, secrets.UserAccessSecret)
-    |> ignore
+    let secrets = Secrets.Load()
 
-    let readTweet vtuber (tweet: ITweet) =
-        if not tweet.IsRetweet then
-            let videoIds =
-                tweet.Urls
-                |> Seq.map (fun u -> u.ExpandedURL)
-                |> Seq.choose parseYouTubeUrl
+    let twitterClient =
+        getTwitterClient secrets.Twitter config.Twitter.BatchSize
 
-            if not << Seq.isEmpty <| videoIds then
-                Log.info "Found YouTube video(s) for %s: %A" vtuber.Name videoIds
-
-                let key =
-                    sprintf "vtuber.zone.twitter-yt-links.%s" vtuber.Id
-                    |> RedisKey
-
-                let timestamp =
-                    tweet.CreatedAt
-                    |> DateTimeOffset
-                    |> fun x -> x.ToUnixTimeSeconds() |> float
-
-                let values: SortedSetEntry array =
-                    videoIds
-                    |> Seq.map (fun id -> SortedSetEntry(id |> RedisValue, timestamp))
-                    |> Seq.toArray
-
-                DB.SortedSetAdd(key, values) |> ignore
-                // Only keep 5 most recently observed videos
-                DB.SortedSetRemoveRangeByRank(key, 0L, -6L)
-                |> ignore
-
-    let stream = Stream.CreateFilteredStream()
-
-    let twitterHandles =
-        config.Vtubers
-        |> Seq.map (fun v -> v.TwitterHandle)
+    let redisClient =
+        getRedisClient secrets.Redis
+        |> Async.RunSynchronously
+        |> function
+        | Ok client -> client
+        | Error err ->
+            Log.exn err "Error instantiating Redis client"
+            exit 1
 
     let handleLookup =
         config.Vtubers
         |> Seq.map (fun v -> v.TwitterHandle.ToLower(), v)
         |> Map.ofSeq
 
-    let users =
-        User.GetUsersFromScreenNames(twitterHandles)
-        |> List.ofSeq
+    let readTweet (tweet: TweetInfo) =
+        match handleLookup
+              |> Map.tryFind (tweet.AuthorHandle.ToLower()) with
+        | Some vtuber ->
+            let videoIds = tweet.Urls |> Seq.choose parseYouTubeUrl
 
-    Log.info "Found %d handles" users.Length
-    for user in users do
-        let vtuber = handleLookup.[user.ScreenName.ToLower()]
-        stream.AddFollow(Nullable user.Id, readTweet vtuber)
+            if not << Seq.isEmpty <| videoIds then
+                Log.info "Found YouTube video(s) for %s: %A" vtuber.Name videoIds
+
+                let res =
+                    redisClient.PutFoundVideoIds vtuber videoIds tweet.Timestamp
+                    |> Async.RunSynchronously
+
+                match res with
+                | Error err -> Log.exn err "Error storing found video IDs to Redis"
+                | _ -> ()
+        | _ -> Log.warn "Got Tweet from unknown account: %s" tweet.AuthorHandle
+
+    let twitterHandles =
+        config.Vtubers
+        |> Seq.map (fun v -> v.TwitterHandle)
+
+    let users =
+        twitterClient.GetUsers twitterHandles
+        |> Async.RunSynchronously
+        |> function
+        | Ok users -> List.ofSeq users
+        | Error err ->
+            Log.exn err "Error fetching user IDs"
+            exit 2
+
+    let userIds = users |> Seq.map (fun u -> u.Id)
 
     let foundHandles =
-        users |> Seq.map (fun u -> u.ScreenName.ToLower())
+        users |> Seq.map (fun u -> u.Handle.ToLower())
 
     let missingHandles =
         Set.difference
@@ -93,12 +89,12 @@ let main _ =
     Log.info "Now listening for tweets..."
 
     let rec loop () =
-        async {
-            do! stream.StartStreamMatchingAnyConditionAsync()
-                |> Async.AwaitTask
+        try
+            for tweet in twitterClient.GetTweets userIds do
+                readTweet tweet
             Log.warn "Tweet stream stopped, restarting..."
-            return! loop ()
-        }
+        with err -> Log.exn err "Got error reading Tweet stream, continuing..."
+        loop ()
 
     loop () |> Async.RunSynchronously // does not return
     0 // return an integer exit code

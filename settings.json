@@ -8,6 +8,9 @@
             "height": 270
         }
     },
+    "twitter": {
+        "batch_size": 100
+    },
     "vtubers": [
         {
             "name": "Kizuna AI",
@@ -4074,7 +4077,7 @@
                     "id": "harinaria"
                 }
             ],
-            "twitter_handle": "harinchip",
+            "twitter_handle": "harinaria",
             "tags": [
                 "Indie"
             ],

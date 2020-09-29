@@ -61,6 +61,7 @@ type Vtuber =
 type Config =
     { Youtube: {| BatchSize: int |}
       Twitch: {| ThumbnailSize: {| Width: int; Height: int |} |}
+      Twitter: {| BatchSize: int |}
       Vtubers: Vtuber list }
     static member Load() =
         ConfigUtils.loadJson<Config> "settings.json"
@@ -75,14 +76,17 @@ type TwitchSecrets =
 type YouTubeSecrets =
     { ApiKey: string }
 
+type TwitterSecrets =
+    { ConsumerKey: string
+      ConsumerSecret: string
+      UserAccessToken: string
+      UserAccessSecret: string }
+
 type RedisSecrets =
     { Url: string }
 
 type Secrets =
-    { Twitter: {| ConsumerKey: string
-                  ConsumerSecret: string
-                  UserAccessToken: string
-                  UserAccessSecret: string |}
+    { Twitter: TwitterSecrets
       Youtube: YouTubeSecrets
       Twitch: TwitchSecrets
       Redis: RedisSecrets }
