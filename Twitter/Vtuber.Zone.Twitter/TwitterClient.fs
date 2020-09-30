@@ -49,7 +49,7 @@ let private getUsers (tokens: Tokens) (batchSize: int) (handles: string seq) =
                         Log.exn err "User batch %d: got error" (batchIdx + 1)
                         return Result.Error err
                 })
-            |> Async.Parallel
+            |> Async.Sequential // CoreTweet cannot handle parallel requests
 
         return batchedRes |> mergeBatchedResults
     }
@@ -57,8 +57,11 @@ let private getUsers (tokens: Tokens) (batchSize: int) (handles: string seq) =
 let private getTweets (tokens: Tokens) userIds =
     tokens.Streaming.Filter(follow = userIds)
     |> Seq.choose (fun msg ->
-        match box msg.Type with
-        | :? StatusMessage as statusMsg when isNull statusMsg.Status.RetweetedStatus ->
+        match msg with
+        | :? StatusMessage as statusMsg when
+                isNull statusMsg.Status.RetweetedStatus
+                && not statusMsg.Status.InReplyToStatusId.HasValue
+                && not statusMsg.Status.InReplyToUserId.HasValue ->
             Some
                 { AuthorHandle = statusMsg.Status.User.ScreenName
                   Urls =
