@@ -11,6 +11,12 @@
   })();
 </script>
 
+<style lang="scss">
+  div {
+    margin-top: 1rem;
+  }
+</style>
+
 <Sidebar page="vtubers">
   <h2 class="row">
     {#await loadVtubers}
@@ -23,6 +29,11 @@
     Know of a Vtuber not on this list?
     <a href="https://github.com/Splagoon/Vtuber.Zone/issues/new">Open an issue on Github</a>
     or reach out to me on <a href="https://twitter.com/Splagoon">Twitter</a>.
+  </div>
+  <div>
+    I'm slowly working through the fantastic
+    <a href="https://docs.google.com/spreadsheets/d/1Zsc_Ray2d5b7rtgbGcznlHiM4KFDDD9VJZofX_WQBio/edit?usp=sharing">VLIST</a>,
+    which has 888+ English vtubers, but it's going to take me a while to add them all. It's a big list!
   </div>
 </Sidebar>
 <MainContainer>

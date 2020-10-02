@@ -49,10 +49,14 @@
 
   $: {
     allLanguages = [...new Set(allStreams.flatMap((s) => s.languages))].sort();
+    if (!allLanguages.includes(activeLanguage)) {
+      activeLanguage = "any";
+    }
   }
 
   $: {
     allTags = [...new Set(allStreams.flatMap((s) => s.tags))].sort();
+    activeTags = activeTags.filter((tag) => allTags.includes(tag))
   }
 
   async function load() {
