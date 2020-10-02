@@ -35,26 +35,10 @@
             "channels": [
                 {
                     "platform": "Youtube",
-                    "id": "UCYm8zALd2uHqyy6C1tb4_zA",
-                    "name": "love-pii"
+                    "id": "UCYm8zALd2uHqyy6C1tb4_zA"
                 }
             ],
             "twitter_handle": "lovechan_lp",
-            "tags": [],
-            "languages": [
-                "ja"
-            ]
-        },
-        {
-            "name": "Aipii",
-            "channels": [
-                {
-                    "platform": "Youtube",
-                    "id": "UCYm8zALd2uHqyy6C1tb4_zA",
-                    "name": "love-pii"
-                }
-            ],
-            "twitter_handle": "aipii_lp",
             "tags": [],
             "languages": [
                 "ja"
@@ -134,8 +118,7 @@
             ],
             "twitter_handle": "yozoramel",
             "tags": [
-                "Hololive",
-                "Hololive 1st Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -155,8 +138,7 @@
             ],
             "twitter_handle": "akirosenthal",
             "tags": [
-                "Hololive",
-                "Hololive 1st Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -172,8 +154,7 @@
             ],
             "twitter_handle": "natsuiromatsuri",
             "tags": [
-                "Hololive",
-                "Hololive 1st Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -189,9 +170,7 @@
             ],
             "twitter_handle": "shirakamifubuki",
             "tags": [
-                "Hololive",
-                "Hololive 1st Gen",
-                "Hololive Gamers"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -211,8 +190,7 @@
             ],
             "twitter_handle": "akaihaato",
             "tags": [
-                "Hololive",
-                "Hololive 1st Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja",
@@ -233,8 +211,7 @@
             ],
             "twitter_handle": "yuzukichococh",
             "tags": [
-                "Hololive",
-                "Hololive 2nd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -250,8 +227,7 @@
             ],
             "twitter_handle": "oozorasubaru",
             "tags": [
-                "Hololive",
-                "Hololive 2nd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -267,8 +243,7 @@
             ],
             "twitter_handle": "minatoaqua",
             "tags": [
-                "Hololive",
-                "Hololive 2nd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -284,8 +259,7 @@
             ],
             "twitter_handle": "murasakishionch",
             "tags": [
-                "Hololive",
-                "Hololive 2nd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -301,8 +275,7 @@
             ],
             "twitter_handle": "nakiriayame",
             "tags": [
-                "Hololive",
-                "Hololive 2nd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -318,8 +291,7 @@
             ],
             "twitter_handle": "ookamimio",
             "tags": [
-                "Hololive",
-                "Hololive Gamers"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -335,8 +307,7 @@
             ],
             "twitter_handle": "nekomataokayu",
             "tags": [
-                "Hololive",
-                "Hololive Gamers"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -352,8 +323,7 @@
             ],
             "twitter_handle": "inugamikorone",
             "tags": [
-                "Hololive",
-                "Hololive Gamers"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -370,8 +340,7 @@
             "twitter_handle": "AZKi_VDiVA",
             "tags": [
                 "Hololive",
-                "Upd8",
-                "INoNaKa MUSIC"
+                "Upd8"
             ],
             "languages": [
                 "ja"
@@ -387,8 +356,7 @@
             ],
             "twitter_handle": "usadapekora",
             "tags": [
-                "Hololive",
-                "Hololive 3rd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -404,8 +372,7 @@
             ],
             "twitter_handle": "uruharushia",
             "tags": [
-                "Hololive",
-                "Hololive 3rd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -421,8 +388,7 @@
             ],
             "twitter_handle": "shiranuiflare",
             "tags": [
-                "Hololive",
-                "Hololive 3rd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -438,8 +404,7 @@
             ],
             "twitter_handle": "shiroganenoel",
             "tags": [
-                "Hololive",
-                "Hololive 3rd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -455,8 +420,7 @@
             ],
             "twitter_handle": "houshoumarine",
             "tags": [
-                "Hololive",
-                "Hololive 3rd Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -472,8 +436,7 @@
             ],
             "twitter_handle": "tsunomakiwatame",
             "tags": [
-                "Hololive",
-                "Hololive 4th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -489,8 +452,7 @@
             ],
             "twitter_handle": "tokoyamitowa",
             "tags": [
-                "Hololive",
-                "Hololive 4th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -506,8 +468,7 @@
             ],
             "twitter_handle": "kiryucoco",
             "tags": [
-                "Hololive",
-                "Hololive 4th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -523,8 +484,7 @@
             ],
             "twitter_handle": "amanekanatach",
             "tags": [
-                "Hololive",
-                "Hololive 4th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -540,8 +500,7 @@
             ],
             "twitter_handle": "himemoriluna",
             "tags": [
-                "Hololive",
-                "Hololive 4th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -557,8 +516,7 @@
             ],
             "twitter_handle": "yukihanalamy",
             "tags": [
-                "Hololive",
-                "Hololive 5th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -574,8 +532,7 @@
             ],
             "twitter_handle": "momosuzunene",
             "tags": [
-                "Hololive",
-                "Hololive 5th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -591,25 +548,7 @@
             ],
             "twitter_handle": "shishirobotan",
             "tags": [
-                "Hololive",
-                "Hololive 5th Gen"
-            ],
-            "languages": [
-                "ja"
-            ]
-        },
-        {
-            "name": "Mano Aloe",
-            "channels": [
-                {
-                    "platform": "Youtube",
-                    "id": "UCgZuwn-O7Szh9cAgHqJ6vjw"
-                }
-            ],
-            "twitter_handle": "manoaloe",
-            "tags": [
-                "Hololive",
-                "Hololive 5th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -625,8 +564,7 @@
             ],
             "twitter_handle": "omarupolka",
             "tags": [
-                "Hololive",
-                "Hololive 5th Gen"
+                "Hololive"
             ],
             "languages": [
                 "ja"
@@ -643,8 +581,7 @@
             "twitter_handle": "Artia_Hololive",
             "tags": [
                 "Hololive",
-                "Hololive China",
-                "Hololive China 2nd Gen"
+                "Hololive CN"
             ],
             "languages": [
                 "zh",
@@ -662,8 +599,7 @@
             "twitter_handle": "airaniiofifteen",
             "tags": [
                 "Hololive",
-                "Hololive Indonesia",
-                "Hololive Indonesia 1st Gen"
+                "Hololive ID"
             ],
             "languages": [
                 "id",
@@ -682,8 +618,7 @@
             "twitter_handle": "moonahoshinova",
             "tags": [
                 "Hololive",
-                "Hololive Indonesia",
-                "Hololive Indonesia 1st Gen"
+                "Hololive ID"
             ],
             "languages": [
                 "id",
@@ -702,8 +637,7 @@
             "twitter_handle": "ayunda_risu",
             "tags": [
                 "Hololive",
-                "Hololive Indonesia",
-                "Hololive Indonesia 1st Gen"
+                "Hololive ID"
             ],
             "languages": [
                 "id",
@@ -722,8 +656,7 @@
             "twitter_handle": "miyabihanasaki",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 1st Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -740,8 +673,7 @@
             "twitter_handle": "kanadeizuru",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 1st Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -758,8 +690,7 @@
             "twitter_handle": "arurandeisu",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 1st Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -776,8 +707,7 @@
             "twitter_handle": "rikkaroid",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 1st Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -794,8 +724,7 @@
             "twitter_handle": "astelleda",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 2nd Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -812,8 +741,7 @@
             "twitter_handle": "kishidotemma",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 2nd Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -830,8 +758,7 @@
             "twitter_handle": "yukokuroberu",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 2nd Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -848,8 +775,7 @@
             "twitter_handle": "kageyamashien",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 3rd Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -866,8 +792,7 @@
             "twitter_handle": "aragamioga",
             "tags": [
                 "Hololive",
-                "Holostars",
-                "Holostars 3rd Gen"
+                "Holostars"
             ],
             "languages": [
                 "ja"
@@ -875,53 +800,91 @@
         },
         {
             "name": "Gawr Gura",
-            "channels": [{
-                "platform": "Youtube",
-                "id": "UCoSrY_IQQVpmIRZ9Xf-y93g"
-            }],
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UCoSrY_IQQVpmIRZ9Xf-y93g"
+                }
+            ],
             "twitter_handle": "gawrgura",
-            "tags": ["Hololive", "Hololive EN"],
-            "languages": ["en"]
+            "tags": [
+                "Hololive",
+                "Hololive EN"
+            ],
+            "languages": [
+                "en"
+            ]
         },
         {
             "name": "Watson Amelia",
-            "channels": [{
-                "platform": "Youtube",
-                "id": "UCyl1z3jo3XHR1riLFKG5UAg"
-            }],
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UCyl1z3jo3XHR1riLFKG5UAg"
+                }
+            ],
             "twitter_handle": "watsonameliaEN",
-            "tags": ["Hololive", "Hololive EN"],
-            "languages": ["en"]
+            "tags": [
+                "Hololive",
+                "Hololive EN"
+            ],
+            "languages": [
+                "en"
+            ]
         },
         {
             "name": "Ninomae Ina'nis",
-            "channels": [{
-                "platform": "Youtube",
-                "id": "UCMwGHR0BTZuLsmjY_NT5Pwg"
-            }],
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UCMwGHR0BTZuLsmjY_NT5Pwg"
+                }
+            ],
             "twitter_handle": "ninomaeinanis",
-            "tags": ["Hololive", "Hololive EN"],
-            "languages": ["en", "ja"]
+            "tags": [
+                "Hololive",
+                "Hololive EN"
+            ],
+            "languages": [
+                "en",
+                "ja"
+            ]
         },
         {
             "name": "Takanashi Kiara",
-            "channels": [{
-                "platform": "Youtube",
-                "id": "UCHsx4Hqa-1ORjQTh9TYDhww"
-            }],
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UCHsx4Hqa-1ORjQTh9TYDhww"
+                }
+            ],
             "twitter_handle": "takanashikiara",
-            "tags": ["Hololive", "Hololive EN"],
-            "languages": ["en", "ja"]
+            "tags": [
+                "Hololive",
+                "Hololive EN"
+            ],
+            "languages": [
+                "en",
+                "ja"
+            ]
         },
         {
             "name": "Mori Calliope",
-            "channels": [{
-                "platform": "Youtube",
-                "id": "UCL_qhgtOy0dy1Agp8vkySQg"
-            }],
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UCL_qhgtOy0dy1Agp8vkySQg"
+                }
+            ],
             "twitter_handle": "moricalliope",
-            "tags": ["Hololive", "Hololive EN"],
-            "languages": ["en", "ja"]
+            "tags": [
+                "Hololive",
+                "Hololive EN"
+            ],
+            "languages": [
+                "en",
+                "ja"
+            ]
         },
         {
             "name": "Tsukino Mito",
@@ -933,8 +896,7 @@
             ],
             "twitter_handle": "MitoTsukino",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -950,8 +912,7 @@
             ],
             "twitter_handle": "Chihiro_yuki23",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -967,8 +928,7 @@
             ],
             "twitter_handle": "Elu_World",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -984,8 +944,7 @@
             ],
             "twitter_handle": "HiguchiKaede",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1001,8 +960,7 @@
             ],
             "twitter_handle": "ShizuRin23",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1018,8 +976,7 @@
             ],
             "twitter_handle": "sibuya_hajime",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1035,8 +992,7 @@
             ],
             "twitter_handle": "aki_suzuya",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1052,8 +1008,7 @@
             ],
             "twitter_handle": "Moiramoimoimoi",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 1st Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1069,8 +1024,7 @@
             ],
             "twitter_handle": "AliceMononobe",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1086,8 +1040,7 @@
             ],
             "twitter_handle": "gaku_fushimi",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1103,8 +1056,7 @@
             ],
             "twitter_handle": "ienaga_mugi23",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1120,8 +1072,7 @@
             ],
             "twitter_handle": "KazakiMorinaka",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1137,8 +1088,7 @@
             ],
             "twitter_handle": "suzukautako",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1154,8 +1104,7 @@
             ],
             "twitter_handle": "ushimi_ichigo",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1171,8 +1120,7 @@
             ],
             "twitter_handle": "Yuuhi_Riri",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1188,8 +1136,7 @@
             ],
             "twitter_handle": "rei_Toya_rei",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1205,8 +1152,7 @@
             ],
             "twitter_handle": "Gilzaren_III",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1222,8 +1168,7 @@
             ],
             "twitter_handle": "nekokan_chu",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2nd Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1769,8 +1714,7 @@
             ],
             "twitter_handle": "warabeda_meiji",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1786,8 +1730,7 @@
             ],
             "twitter_handle": "g9v9g_mirei",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1803,8 +1746,7 @@
             ],
             "twitter_handle": "yuzuki_roa",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1820,8 +1762,7 @@
             ],
             "twitter_handle": "onomachi_haruka",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1837,8 +1778,7 @@
             ],
             "twitter_handle": "KataribeTsumugu",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1854,8 +1794,7 @@
             ],
             "twitter_handle": "seto_miyako",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1871,8 +1810,7 @@
             ],
             "twitter_handle": "OtogibaraEra",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1888,8 +1826,7 @@
             ],
             "twitter_handle": "inui_toko",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1905,8 +1842,7 @@
             ],
             "twitter_handle": "ange_katrina_",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1922,8 +1858,7 @@
             ],
             "twitter_handle": "Lize_Helesta",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1939,8 +1874,7 @@
             ],
             "twitter_handle": "333akina",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1956,8 +1890,7 @@
             ],
             "twitter_handle": "manami_aizono",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1973,8 +1906,7 @@
             ],
             "twitter_handle": "lulu_suzuhara",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -1990,8 +1922,7 @@
             ],
             "twitter_handle": "MahiroYukishiro",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2007,8 +1938,7 @@
             ],
             "twitter_handle": "ex_albio",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2024,8 +1954,7 @@
             ],
             "twitter_handle": "Levi_E_2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2041,8 +1970,7 @@
             ],
             "twitter_handle": "Hayama_Marin",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2058,8 +1986,7 @@
             ],
             "twitter_handle": "Nui_Sociere",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2075,8 +2002,7 @@
             ],
             "twitter_handle": "Hakase_Fuyuki",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2092,8 +2018,7 @@
             ],
             "twitter_handle": "H_KAGAMI2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2109,8 +2034,7 @@
             ],
             "twitter_handle": "rena_yorumi",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2126,8 +2050,7 @@
             ],
             "twitter_handle": "mayuzumi_X",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2143,8 +2066,7 @@
             ],
             "twitter_handle": "ars_almal",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2160,8 +2082,7 @@
             ],
             "twitter_handle": "AibaUiha",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2177,8 +2098,7 @@
             ],
             "twitter_handle": "amamiya_kokoro",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2194,8 +2114,7 @@
             ],
             "twitter_handle": "Eli_Conifer",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2211,8 +2130,7 @@
             ],
             "twitter_handle": "ratna_petit",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2228,8 +2146,7 @@
             ],
             "twitter_handle": "SouHayase",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2245,8 +2162,7 @@
             ],
             "twitter_handle": "sukosuko_sukoya",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2262,8 +2178,7 @@
             ],
             "twitter_handle": "ShellinBurgundy",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2279,8 +2194,7 @@
             ],
             "twitter_handle": "FumiVirtual",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2296,8 +2210,7 @@
             ],
             "twitter_handle": "Sara_Hoshikawa",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2313,8 +2226,7 @@
             ],
             "twitter_handle": "Karuta_Yamagami",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2330,8 +2242,7 @@
             ],
             "twitter_handle": "matsukai_mao",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2347,8 +2258,7 @@
             ],
             "twitter_handle": "emma_august_",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2364,8 +2274,7 @@
             ],
             "twitter_handle": "Luis_Cammy",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2381,8 +2290,7 @@
             ],
             "twitter_handle": "Fuwa_Minato",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2398,8 +2306,7 @@
             ],
             "twitter_handle": "Tomoe_Shirayuki",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2415,8 +2322,7 @@
             ],
             "twitter_handle": "Gwelu_os_gar",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2432,8 +2338,7 @@
             ],
             "twitter_handle": "mashiro2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2449,8 +2354,7 @@
             ],
             "twitter_handle": "Naraka_2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2466,8 +2370,7 @@
             ],
             "twitter_handle": "kurusu72me",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2019 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2483,8 +2386,7 @@
             ],
             "twitter_handle": "furen_2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2500,8 +2402,7 @@
             ],
             "twitter_handle": "melissa_2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2517,8 +2418,7 @@
             ],
             "twitter_handle": "honmono_ibrahim",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2534,8 +2434,7 @@
             ],
             "twitter_handle": "kei_nagao2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2551,8 +2450,7 @@
             ],
             "twitter_handle": "1O46V",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2568,8 +2466,7 @@
             ],
             "twitter_handle": "Kaida_Haru",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2585,8 +2482,7 @@
             ],
             "twitter_handle": "meiro_oO",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2602,8 +2498,7 @@
             ],
             "twitter_handle": "kirame_2434",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2619,8 +2514,7 @@
             ],
             "twitter_handle": "Akane_Asahina__",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2636,8 +2530,7 @@
             ],
             "twitter_handle": "Suo_Sango",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2653,8 +2546,7 @@
             ],
             "twitter_handle": "kohaku_todo",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2670,8 +2562,7 @@
             ],
             "twitter_handle": "Hisui_Kitakoji",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2687,8 +2578,7 @@
             ],
             "twitter_handle": "Chigusa_24zono",
             "tags": [
-                "Nijisanji",
-                "Nijisanji 2020 Wave"
+                "Nijisanji"
             ],
             "languages": [
                 "ja"
@@ -2705,8 +2595,7 @@
             "twitter_handle": "Hana_Macchia",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 1st Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2725,8 +2614,7 @@
             "twitter_handle": "ZEA_Cornelia",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 1st Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2745,8 +2633,7 @@
             "twitter_handle": "Taka_Radjiman",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 1st Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2765,8 +2652,7 @@
             "twitter_handle": "Rai_Galilei",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 2nd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2784,8 +2670,7 @@
             "twitter_handle": "RiksaDhirendra",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 2nd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2804,8 +2689,7 @@
             "twitter_handle": "AmiciaMichella",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 2nd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2823,8 +2707,7 @@
             "twitter_handle": "MiyuOttavia",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 2nd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2843,8 +2726,7 @@
             "twitter_handle": "Azura_Cecillia",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 3rd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2863,8 +2745,7 @@
             "twitter_handle": "LaylaAlstro2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 3rd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2883,8 +2764,7 @@
             "twitter_handle": "Nara_Haramaung",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 3rd Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2902,8 +2782,7 @@
             "twitter_handle": "Etna_Crimson",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 4th Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2922,8 +2801,7 @@
             "twitter_handle": "bobon_pranaja",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 4th Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -2942,8 +2820,7 @@
             "twitter_handle": "SiskaLeontyne",
             "tags": [
                 "Nijisanji",
-                "Nijisanji ID",
-                "Nijisanji ID 4th Wave"
+                "Nijisanji ID"
             ],
             "languages": [
                 "id",
@@ -3017,8 +2894,7 @@
             "twitter_handle": "Wiffy2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 1st Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3039,8 +2915,7 @@
             "twitter_handle": "YuyaShin2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 1st Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3057,8 +2932,7 @@
             "twitter_handle": "SuhaMin2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 1st Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3079,8 +2953,7 @@
             "twitter_handle": "Gaon2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 1.5 Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3101,8 +2974,7 @@
             "twitter_handle": "ChihoHan2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 1.5 Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3123,8 +2995,7 @@
             "twitter_handle": "SiuLee2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 2nd Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3141,8 +3012,7 @@
             "twitter_handle": "NagiSo2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 2nd Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3159,8 +3029,7 @@
             "twitter_handle": "AraChae2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 2nd Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3177,8 +3046,7 @@
             "twitter_handle": "RayAkira2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 3rd Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3195,8 +3063,7 @@
             "twitter_handle": "rohalee2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 3rd Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
@@ -3213,8 +3080,7 @@
             "twitter_handle": "BoraNun2434",
             "tags": [
                 "Nijisanji",
-                "Nijisanji KR",
-                "Nijisanji KR 3rd Wave"
+                "Nijisanji KR"
             ],
             "languages": [
                 "ko"
