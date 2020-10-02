@@ -14,18 +14,12 @@
 </script>
 
 <style lang="scss">
-  @import "./style/vars.scss";
+  @import "../style/vars.scss";
 
   .stream {
-    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0.5rem 0.5rem 1rem change-color($foreground-color, $alpha: 0.5);
-    background-color: white;
     width: $stream-box-width;
     height: $stream-box-height;
-    margin: 1rem;
-
-    display: block;
   }
 
   .stream .channel-icon {
@@ -65,15 +59,6 @@
     display: inline-block;
   }
 
-  // https://www.iconfinder.com/abhishekpipalva
-  .platform.youtube {
-    background-image: url("/image/platform-youtube.png");
-  }
-
-  .platform.twitch {
-    background-image: url("/image/platform-twitch.png");
-  }
-
   .stream .title {
     font-size: $stream-title-font-size;
     line-height: $stream-title-font-size;
@@ -94,7 +79,7 @@
   }
 </style>
 
-<a class="stream hoverable" href={stream.url}>
+<a class="stream hoverable floating-box" href={stream.url}>
   <div class="row">
     <img class="thumbnail" src={stream.thumbnail_url} alt="thumbnail" />
   </div>
