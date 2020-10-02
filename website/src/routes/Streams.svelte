@@ -31,15 +31,15 @@
     activeStreams = allStreams
       .filter(
         (s) =>
-          (activeTags.length == 0 ||
+          (activeTags.length === 0 ||
             activeTags.some((tag) => s.tags.includes(tag))) &&
-          (activeLanguage == "any" || s.languages.includes(activeLanguage))
+          (activeLanguage === "any" || s.languages.includes(activeLanguage))
       )
       .sort((a, b) => {
-        if (activeSort == Sort.ByViewers) {
+        if (activeSort === Sort.ByViewers) {
           return (b.viewers || 0) - (a.viewers || 0);
         }
-        if (activeSort == Sort.ByStartTime) {
+        if (activeSort === Sort.ByStartTime) {
           return (
             new Date(b.start_time).valueOf() - new Date(a.start_time).valueOf()
           );
@@ -89,7 +89,8 @@
     width: 20rem;
     text-align: center;
     background-color: $background-color-2;
-    padding-bottom: 1rem;
+    padding: 1rem;
+    margin: auto;
     border-radius: 1rem;
     align-self: center;
 
@@ -167,7 +168,12 @@
       <img
         src="/image/irasutoya/hamster-sleeping.jpg"
         alt="hamster sleeping" />
-      <div>Nobody's streaming right now...</div>
+      {#if allStreams.length === 0}
+        <div>Nobody's streaming right now...</div>
+      {:else}
+        <div>All streams are filtered out...</div>
+        <div>Try changing your selected filters.</div>
+      {/if}
     </div>
   {/if}
 </MainContainer>
