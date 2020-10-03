@@ -11,7 +11,6 @@ let private getAllStreamsScript =
     |> fun s -> s.Load(Server)
 
 let getAllStreams () =
-    Log.info "getting streams!"
     let key = "vtuber.zone.all-streams" |> RedisKey
     let keyPattern = "vtuber.zone.streams.*"
     let castToByteArrayArray : RedisResult -> byte array array = RedisResult.op_Explicit
