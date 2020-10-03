@@ -3159,7 +3159,8 @@
             "channels": [
                 {
                     "platform": "Youtube",
-                    "id": "UC7IyAJq03ohb0TpGqsFfPng"
+                    "id": "UC7IyAJq03ohb0TpGqsFfPng",
+                    "name": "Tenmoku Doushin"
                 }
             ],
             "twitter_handle": "hiramecurry",
@@ -3169,6 +3170,45 @@
             "languages": [
                 "ja"
             ]
+        },
+        {
+            "name": "Toritoi",
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UC7IyAJq03ohb0TpGqsFfPng",
+                    "name": "Tenmoku Doushin"
+                }
+            ],
+            "twitter_handle": "tmds_toritoi",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hanamure Chinaki",
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UC7IyAJq03ohb0TpGqsFfPng",
+                    "name": "Tenmoku Doushin"
+                }
+            ],
+            "twitter_handle": "tmds_chinaki",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Sorae",
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UC7IyAJq03ohb0TpGqsFfPng",
+                    "name": "Tenmoku Doushin"
+                }
+            ],
+            "twitter_handle": "tmds_sorae",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
         },
         {
             "name": "Moscow Mule",
@@ -3640,6 +3680,136 @@
             "languages": [
                 "ja"
             ]
+        },
+        {
+            "name": "Nanyo Yuki",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBnJcqkJofBN26VELPXSB5A",
+                "name": "Cheri High"
+            }],
+            "twitter_handle": "yuki_cheriko",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Hanagasa Ilya",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBnJcqkJofBN26VELPXSB5A",
+                "name": "Cheri High"
+            }],
+            "twitter_handle": "ilya_cheriko",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Mogami Ren",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBnJcqkJofBN26VELPXSB5A",
+                "name": "Cheri High"
+            }],
+            "twitter_handle": "ren_cheriko",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Takasago Ryokuya",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBnJcqkJofBN26VELPXSB5A",
+                "name": "Cheri High"
+            }],
+            "twitter_handle": "ryokuya_cheriko",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Nishikiyama Mutaka",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCBnJcqkJofBN26VELPXSB5A",
+                "name": "Cheri High"
+            }],
+            "twitter_handle": "mutaka_cheriko",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Shibuya HAL",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UChLfthKoUV502J7gU9STArg"
+            }],
+            "twitter_handle": "ShibuyaHAL",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Utai Meika",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UC7-N7MvN5muVIHqyQx9LFbA"
+            }],
+            "twitter_handle": "makeagames2018",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Arcana",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCmGxj8pXAF4J8tVYiveAnpQ"
+            }, {
+                "platform": "Twitch",
+                "id": "arcana_channel"
+            }],
+            "twitter_handle": "ArcanaChannel",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Kasukabe Tsukushi",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCHccxX2p_9DB_HPnXSb2omw"
+            }],
+            "twitter_handle": "kasukaBe_nyoki",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Engine Kazumi",
+            "channels": [
+                {
+                    "platform": "Youtube",
+                    "id": "UCZk6mxfTpjuuxgqxuFBJO_g"
+                }
+            ],
+            "twitter_handle": "Engine_Kazumi",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "Noraneko P",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCSyB7n4vUn-_Ah3KEuka2hw"
+            }],
+            "twitter_handle": "VR_Produce_Nora",
+            "tags": ["Upd8"],
+            "languages": ["ja"]
+        },
+        {
+            "name": "KITSUNEKON",
+            "channels": [{
+                "platform": "Youtube",
+                "id": "UCyZZMKRn-mUEkPzaqa9b6bg"
+            }],
+            "twitter_handle": "kwa_kon",
+            "tags": ["Upd8"],
+            "languages": ["ja", "zh"]
         },
         {
             "name": "Amano Pikamee",
@@ -4247,7 +4417,7 @@
             "channels": [
                 {
                     "platform": "Twitch",
-                    "id": "ninipan"
+                    "id": "niniyuuna"
                 },
                 {
                     "platform": "Youtube",
