@@ -88,7 +88,7 @@
       <img
         class="channel-icon icon"
         src={stream.vtuber_icon_url}
-        alt={stream.vtuber_name} />
+        alt="" />
       {stream.vtuber_name}
     </div>
   </div>
