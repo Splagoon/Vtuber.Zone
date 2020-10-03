@@ -11,7 +11,7 @@
 
   @for $i from 2 through 8 {
     $container-width: $i * $full-box-width;
-    @media only screen and (orientation: landscape) and (min-width: ($container-width + $sidebar-width) / 1rem * $one-rem-in-px),
+    @media only screen and (orientation: landscape) and (min-width: ($container-width + $sidebar-width + 2rem) / 1rem * $one-rem-in-px),
       only screen and (orientation: portrait) and (min-width: $container-width / 1rem * $one-rem-in-px) {
       div {
         width: $container-width;
