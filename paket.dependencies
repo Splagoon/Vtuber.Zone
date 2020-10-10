@@ -1,0 +1,21 @@
+source https://api.nuget.org/v3/index.json
+
+storage: none
+framework: netcoreapp3.1, netstandard2.0, netstandard2.1
+nuget CoreTweet 1.0.0.483
+nuget coverlet.collector 1.2.0
+nuget FSharp.Core
+nuget FSharp.Data 3.3.3
+nuget FSharp.Json 0.4.0
+nuget FsPickler 5.3.2
+nuget FsUnit.xUnit 4.0.1
+nuget Google.Apis.YouTube.v3 1.47.0.2008
+nuget Google.Protobuf 3.12.3
+nuget Microsoft.NET.Test.Sdk 16.5.0
+nuget NLog 4.7.2
+nuget StackExchange.Redis 2.1.58
+nuget Suave 2.5.6
+nuget TweetinviAPI 4.0.3
+nuget TwitchLib.Api 3.1.3
+nuget xunit 2.4.1
+nuget xunit.runner.visualstudio 2.4.0

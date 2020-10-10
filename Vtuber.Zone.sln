@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{CD2023D5-0FF3-49D5-B698-D9EAD5DB18FE}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.Core", "Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj", "{3E346967-6BEA-485C-9FA9-DB76E73ADADC}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vtuber.Zone.YouTube", "YouTube\Vtuber.Zone.YouTube\Vtuber.Zone.YouTube.fsproj", "{B92DA02F-E4EC-41F8-982C-E8CB0111985E}"

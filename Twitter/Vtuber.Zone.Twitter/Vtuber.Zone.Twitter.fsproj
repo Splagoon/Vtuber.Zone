@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -11,8 +12,5 @@
     <Compile Include="RedisClient.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CoreTweet" Version="1.0.0.483" />
-    <PackageReference Include="TweetinviAPI" Version="4.0.3" />
-  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

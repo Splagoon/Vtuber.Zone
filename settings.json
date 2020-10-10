@@ -5377,6 +5377,46 @@
         "en",
         "ja"
       ]
+    },
+    {
+      "name": "Kaga Oren",
+      "channels": [{
+        "platform": "Youtube",
+        "id": "UCmEehAwjzjAk1cwPP9DOaHw"
+      }],
+      "twitter_handle": "kaga_oren",
+      "tags": ["Indie"],
+      "languages": ["ja", "en"]
+    },
+    {
+      "name": "Midorima Caroline",
+      "channels": [{
+        "platform": "Youtube",
+        "id": "UC_BJOJtwijKGpyARVPUVw4w"
+      }],
+      "twitter_handle": "midorimacarol",
+      "tags": ["Indie"],
+      "languages": ["ja"]
+    },
+    {
+      "name": "Plin-sama",
+      "channels": [{
+        "platform": "Youtube",
+        "id": "UCs6Od4ZOxmJBRL3MDT_KucA"
+      }],
+      "twitter_handle": "PLIN_sama",
+      "tags": ["Indie"],
+      "languages": ["ja"]
+    },
+    {
+      "name": "Syuwa Mineral",
+      "channels": [{
+        "platform": "Youtube",
+        "id": ""
+      }],
+      "twitter_handle": "",
+      "tags": [],
+      "languages": []
     }
   ]
 }

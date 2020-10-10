@@ -1,0 +1,6 @@
+FSharp.Data
+FSharp.Json
+FsPickler
+NLog
+StackExchange.Redis
+FSharp.Core

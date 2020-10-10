@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>Vtuber.Zone.YT</RootNamespace>
@@ -15,8 +16,5 @@
     <Compile Include="RedisClient.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.47.0.2008" />
-    <PackageReference Include="Google.Protobuf" Version="3.12.3" />
-  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
