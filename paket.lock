@@ -443,10 +443,10 @@ NUGET
     xunit.runner.visualstudio (2.4)
       Microsoft.NET.Test.Sdk (>= 15.0) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp1.0)) (&& (== netstandard2.1) (>= netcoreapp1.0))
 GIT
-  remote: https://github.com/CoreTweet/CoreTweet.git
-     (7862fc2df56c61543f4b7a91887a7c721d80d0f8)
-      build: powershell ./build.ps1
+  remote: https://github.com/Splagoon/CoreTweet.git
+     (2a9ca21952afa4e832eaab755fe717a2ee9f72ed)
+      build: powershell ./build.ps1 -ExecuteTemplate
       os: windows
-     (7862fc2df56c61543f4b7a91887a7c721d80d0f8)
-      build: make
+     (2a9ca21952afa4e832eaab755fe717a2ee9f72ed)
+      build: make rest-apis
       os: mono
