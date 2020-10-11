@@ -2,7 +2,8 @@ module Vtuber.Zone.Twitter.Client
 
 open System
 open CoreTweet
-open CoreTweet.Streaming
+open CoreTweet.V2
+open FSharp.Control
 open Vtuber.Zone.Core
 
 type UserInfo = { Handle: string; Id: int64 }
@@ -14,7 +15,7 @@ type TweetInfo =
 
 type ITwitterClient =
     abstract GetUsers: string seq -> Async<Result<UserInfo seq, exn>>
-    abstract GetTweets: int64 seq -> TweetInfo seq
+    abstract GetTweets: string seq -> Async<Result<AsyncSeq<TweetInfo>, exn>>
 
 let private mergeBatchedResults batchedRes =
     let users, errs =
@@ -24,9 +25,11 @@ let private mergeBatchedResults batchedRes =
             | Ok d -> Seq.append data d, errs
             | Error e -> data, e :: errs) (Seq.empty, List.empty)
 
-    if Seq.isEmpty errs then Ok users else Result.Error(AggregateException(errs) :> exn)
+    if Seq.isEmpty errs
+    then Ok users
+    else Result.Error(AggregateException(errs) :> exn)
 
-let private getUsers (tokens: Tokens) (batchSize: int) (handles: string seq) =
+let private getUsers (tokens: OAuth2Token) (batchSize: int) (handles: string seq) =
     async {
         let! batchedRes =
             handles
@@ -36,14 +39,14 @@ let private getUsers (tokens: Tokens) (batchSize: int) (handles: string seq) =
                     try
                         Log.info "User batch %d: searching for %d handle(s)" (batchIdx + 1) batchHandles.Length
                         let! users =
-                            tokens.Users.LookupAsync(batchHandles)
+                            tokens.V2.UserLookupApi.GetUsersByUsernamesAsync
+                                (batchHandles, user_fields = Nullable(UserFields.Id ||| UserFields.Username))
                             |> Async.AwaitTask
-                        Log.info "User batch %d: got %d result(s)" (batchIdx + 1) users.Count
 
-                        return users
-                               |> Seq.map (fun u ->
-                                   { Handle = u.ScreenName
-                                     Id = u.Id.Value })
+                        Log.info "User batch %d: got %d result(s)" (batchIdx + 1) users.Data.Length
+
+                        return users.Data
+                               |> Seq.map (fun u -> { Handle = u.Username; Id = u.Id })
                                |> Ok
                     with err ->
                         Log.exn err "User batch %d: got error" (batchIdx + 1)
@@ -54,30 +57,75 @@ let private getUsers (tokens: Tokens) (batchSize: int) (handles: string seq) =
         return batchedRes |> mergeBatchedResults
     }
 
-let private getTweets (tokens: Tokens) userIds =
-    tokens.Streaming.Filter(follow = userIds)
-    |> Seq.choose (fun msg ->
-        match msg with
-        | :? StatusMessage as statusMsg when
-                isNull statusMsg.Status.RetweetedStatus
-                && not statusMsg.Status.InReplyToStatusId.HasValue
-                && not statusMsg.Status.InReplyToUserId.HasValue ->
-            Some
-                { AuthorHandle = statusMsg.Status.User.ScreenName
-                  Urls =
-                      statusMsg.Status.Entities.Urls
-                      |> Seq.map (fun u -> u.ExpandedUrl)
-                  Timestamp = statusMsg.Status.CreatedAt }
-        | _ -> None)
+let private getTweets (tokens: OAuth2Token) handles =
+    async {
+        try
+            // Clear out any existing rules
+            let! existingFilters =
+                tokens.V2.FilteredStreamApi.GetRulesAsync()
+                |> Async.AwaitTask
+
+            if existingFilters.Data.Length > 0 then
+                Log.info "Deleting %d filter(s)..." existingFilters.Data.Length
+
+                let filterIds =
+                    existingFilters.Data
+                    |> Array.map (fun it -> it.Id)
+
+                do! tokens.V2.FilteredStreamApi.DeleteRulesAsync(ids = filterIds)
+                    |> Async.AwaitTask
+                    |> Async.Ignore
+
+            // TODO: we can more efficiently pack usernames with Seq.takeWhile
+            let filters =
+                handles
+                |> Seq.chunkBySize 15
+                |> Seq.map
+                    (Array.map (sprintf "from:%s")
+                     >> String.concat " OR "
+                     >> sprintf "has:links -is:retweet -is:quote -is:reply (%s)"
+                     >> fun s -> FilterRule(Value = s))
+
+            Log.info "Creating %d filter(s)..." (Seq.length filters)
+            do! tokens.V2.FilteredStreamApi.CreateRulesAsync(add = filters)
+                |> Async.AwaitTask
+                |> Async.Ignore
+
+            let stream =
+                tokens.V2.FilteredStreamApi.Filter
+                    (expansions = Nullable(TweetExpansions.AuthorId),
+                     user_fields = Nullable(UserFields.Username),
+                     tweet_fields =
+                         Nullable
+                             (TweetFields.AuthorId
+                              ||| TweetFields.Entities
+                              ||| TweetFields.ReferencedTweets
+                              ||| TweetFields.CreatedAt))
+
+            return stream.StreamAsAsyncEnumerable(Threading.CancellationToken.None)
+                   |> AsyncSeq.ofAsyncEnum
+                   |> AsyncSeq.choose (fun tweet ->
+                       tweet.Includes.Users
+                       |> Seq.tryFind (fun user -> user.Id = tweet.Data.AuthorId.Value)
+                       |> Option.map (fun author ->
+                           { AuthorHandle = author.Username
+                             Urls =
+                                 tweet.Data.Entities.Urls
+                                 |> Seq.map (fun url -> url.ExpandedUrl)
+                             Timestamp = tweet.Data.CreatedAt.Value }))
+                   |> Ok
+        with err ->
+            Log.exn err "Error connecting to filtered Tweet stream"
+            return Result.Error err
+    }
 
 let getTwitterClient (secrets: TwitterSecrets) (batchSize: int) =
-    let tokens =
-        Tokens
+    let token =
+        OAuth2Token
             (ConsumerKey = secrets.ConsumerKey,
              ConsumerSecret = secrets.ConsumerSecret,
-             AccessToken = secrets.UserAccessToken,
-             AccessTokenSecret = secrets.UserAccessSecret)
+             BearerToken = secrets.BearerToken)
 
     { new ITwitterClient with
-        member __.GetUsers handles = getUsers tokens batchSize handles
-        member __.GetTweets userIds = getTweets tokens userIds }
+        member __.GetUsers handles = getUsers token batchSize handles
+        member __.GetTweets handles = getTweets token handles }

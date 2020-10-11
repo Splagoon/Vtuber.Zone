@@ -1,6 +1,6 @@
 ﻿module Vtuber.Zone.Twitter.Main
 
-open System
+open FSharp.Control
 open System.Text.RegularExpressions
 open Vtuber.Zone.Core
 open Vtuber.Zone.Twitter.Client
@@ -73,8 +73,6 @@ let main _ =
             Log.exn err "Error fetching user IDs"
             exit 2
 
-    let userIds = users |> Seq.map (fun u -> u.Id)
-
     let foundHandles =
         users |> Seq.map (fun u -> u.Handle.ToLower())
 
@@ -86,15 +84,23 @@ let main _ =
     if missingHandles |> Set.isEmpty |> not
     then Log.warn "Handle(s) not found: %s" (missingHandles |> String.concat ", ")
 
+    let tweetStream =
+        twitterClient.GetTweets twitterHandles
+        |> Async.RunSynchronously
+        |> function
+        | Ok stream -> stream
+        | Error _ -> exit 2
+
     Log.info "Now listening for tweets..."
 
     let rec loop () =
-        try
-            for tweet in twitterClient.GetTweets userIds do
-                readTweet tweet
-            Log.warn "Tweet stream stopped, restarting..."
-        with err -> Log.exn err "Got error reading Tweet stream, continuing..."
-        loop ()
+        async {
+            try
+                do! tweetStream |> AsyncSeq.iter readTweet
+                Log.warn "Tweet stream stopped, restarting..."
+            with err -> Log.exn err "Got error reading Tweet stream, continuing..."
+            return! loop ()
+        }
 
     loop () |> Async.RunSynchronously // does not return
     0 // return an integer exit code

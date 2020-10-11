@@ -6,11 +6,15 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
+    <ProjectReference Include="..\..\paket-files\github.com\CoreTweet\CoreTweet\CoreTweet\CoreTweet.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TwitterClient.fs" />
     <Compile Include="RedisClient.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Control.AsyncSeq" Version="3.0.2" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

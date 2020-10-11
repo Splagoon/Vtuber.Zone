@@ -5,8 +5,6 @@ NUGET
     Autofac (6.0)
       Microsoft.Bcl.AsyncInterfaces (>= 1.1) - restriction: || (&& (== netcoreapp3.1) (< netstandard2.1)) (== netstandard2.0)
       System.Diagnostics.DiagnosticSource (>= 4.7.1)
-    CoreTweet (1.0.0.483)
-      Newtonsoft.Json (>= 9.0.1)
     coverlet.collector (1.2)
     FSharp.Core (4.7.2)
     FSharp.Data (3.3.3)
@@ -444,3 +442,11 @@ NUGET
       xunit.extensibility.core (2.4.1)
     xunit.runner.visualstudio (2.4)
       Microsoft.NET.Test.Sdk (>= 15.0) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp1.0)) (&& (== netstandard2.1) (>= netcoreapp1.0))
+GIT
+  remote: https://github.com/CoreTweet/CoreTweet.git
+     (7862fc2df56c61543f4b7a91887a7c721d80d0f8)
+      build: powershell ./build.ps1
+      os: windows
+     (7862fc2df56c61543f4b7a91887a7c721d80d0f8)
+      build: make
+      os: mono

@@ -79,8 +79,7 @@ type YouTubeSecrets =
 type TwitterSecrets =
     { ConsumerKey: string
       ConsumerSecret: string
-      UserAccessToken: string
-      UserAccessSecret: string }
+      BearerToken: string }
 
 type RedisSecrets =
     { Url: string }

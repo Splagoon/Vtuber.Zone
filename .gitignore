@@ -34,3 +34,6 @@ bin
 .history
 
 /secrets.json
+
+### Paket ###
+paket-files/
