@@ -445,8 +445,8 @@ NUGET
 GIT
   remote: https://github.com/Splagoon/CoreTweet.git
      (2a9ca21952afa4e832eaab755fe717a2ee9f72ed)
-      build: powershell ./build.ps1 -ExecuteTemplate
+      build: powershell ./build.ps1 -Binary
       os: windows
      (2a9ca21952afa4e832eaab755fe717a2ee9f72ed)
-      build: make rest-apis
+      build: make binary-netstandard
       os: mono
