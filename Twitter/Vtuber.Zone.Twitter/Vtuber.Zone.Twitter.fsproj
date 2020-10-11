@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Vtuber.Zone.Core\Vtuber.Zone.Core.fsproj" />
-    <ProjectReference Include="..\..\paket-files\github.com\CoreTweet\CoreTweet\CoreTweet\CoreTweet.csproj" />
+    <ProjectReference Include="..\..\paket-files\github.com\Splagoon\CoreTweet\CoreTweet\CoreTweet.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TwitterClient.fs" />
