@@ -622,7 +622,6 @@
       ],
       "languages": [
         "id",
-        "ja",
         "en"
       ]
     },
@@ -5420,6 +5419,55 @@
         }
       ],
       "twitter_handle": "PLIN_sama",
+      "tags": [
+        "Indie"
+      ],
+      "languages": [
+        "ja"
+      ]
+    },
+    {
+      "name": "Syuwa Mineral",
+      "channels": [
+        {
+          "platform": "Youtube",
+          "id": "UCzEW1LP-uMB3KFgowzJUlVQ"
+        }
+      ],
+      "twitter_handle": "SyuwaMineral",
+      "tags": [
+        "Indie"
+      ],
+      "languages": [
+        "ja"
+      ]
+    },
+    {
+      "name": "Benizono Crim",
+      "channels": [
+        {
+          "platform": "Youtube",
+          "id": "UCe0MQ9LBeV2157gxQwmQt8Q"
+        }
+      ],
+      "twitter_handle": "CRIM_Benizono",
+      "tags": [
+        "Indie"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ]
+    },
+    {
+      "name": "Kagura Mea",
+      "channels": [
+        {
+          "platform": "Youtube",
+          "id": "UCWCc8tO-uUl_7SJXIKJACMw"
+        }
+      ],
+      "twitter_handle": "KaguraMea_VoV",
       "tags": [
         "Indie"
       ],
