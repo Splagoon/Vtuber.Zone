@@ -2,8 +2,8 @@ source https://api.nuget.org/v3/index.json
 
 storage: none
 framework: netcoreapp3.1, netstandard2.0, netstandard2.1
-git https://github.com/Splagoon/CoreTweet.git get-users-by-username-v2 build: "powershell ./build.ps1 -ExecuteTemplate", OS: windows
-git https://github.com/Splagoon/CoreTweet.git get-users-by-username-v2 build: "make rest-apis", OS: mono
+git https://github.com/Splagoon/CoreTweet.git get-users-by-username-v2 build: "powershell ./build.ps1 -Binary", OS: windows
+git https://github.com/Splagoon/CoreTweet.git get-users-by-username-v2 build: "make binary-netstandard", OS: mono
 nuget coverlet.collector 1.2.0
 nuget FSharp.Core
 nuget FSharp.Data 3.3.3
