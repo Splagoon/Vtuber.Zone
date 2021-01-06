@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@types/page": "^1.8.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "page": "^1.11.6",
     "rollup-plugin-scss": "^2.5.0",
     "sass": "^1.26.10",
