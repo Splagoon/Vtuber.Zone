@@ -2827,57 +2827,6 @@
       ]
     },
     {
-      "name": "Aadya",
-      "channels": [
-        {
-          "platform": "Youtube",
-          "id": "UC_aB_-PHLFHiP61djM0oOiQ"
-        }
-      ],
-      "twitter_handle": "Aadya_VTuber",
-      "tags": [
-        "Nijisanji",
-        "Nijisanji EN"
-      ],
-      "languages": [
-        "en"
-      ]
-    },
-    {
-      "name": "Noor",
-      "channels": [
-        {
-          "platform": "Youtube",
-          "id": "UC6oW4FXETgEGOFTxWmI2h5Q"
-        }
-      ],
-      "twitter_handle": "Noor_VTuber",
-      "tags": [
-        "Nijisanji",
-        "Nijisanji EN"
-      ],
-      "languages": [
-        "en"
-      ]
-    },
-    {
-      "name": "Vihaan",
-      "channels": [
-        {
-          "platform": "Youtube",
-          "id": "UC0lik9pHju6ONgkBh7N5wHw"
-        }
-      ],
-      "twitter_handle": "Vihaan_VTuber",
-      "tags": [
-        "Nijisanji",
-        "Nijisanji EN"
-      ],
-      "languages": [
-        "en"
-      ]
-    },
-    {
       "name": "Wiffy",
       "channels": [
         {
@@ -4237,23 +4186,6 @@
       ]
     },
     {
-      "name": "Taiga",
-      "channels": [
-        {
-          "platform": "Twitch",
-          "id": "bungotaiga"
-        }
-      ],
-      "twitter_handle": "bungotaiga",
-      "tags": [
-        "Indie",
-        "Sugar Crush"
-      ],
-      "languages": [
-        "en"
-      ]
-    },
-    {
       "name": "Yuni Luna",
       "channels": [
         {
@@ -5471,6 +5403,60 @@
         "Indie"
       ],
       "languages": [
+        "ja"
+      ]
+    },
+    {
+      "name": "Pomu Rainpuff",
+      "channels": [
+        {
+          "platform": "Youtube",
+          "id": "UCP4nMSTdwU1KqYWu3UH5DHQ"
+        }
+      ],
+      "twitter_handle": "PomuRainpuff",
+      "tags": [
+        "Nijisanji",
+        "Nijisanji EN"
+      ],
+      "languages": [
+        "en",
+        "ja"
+      ]
+    },
+    {
+      "name": "Elira Pendora",
+      "channels": [
+        {
+          "platform": "Youtube",
+          "id": "UCIeSUTOTkF9Hs7q3SGcO-Ow"
+        }
+      ],
+      "twitter_handle": "EliraPendora",
+      "tags": [
+        "Nijisanji",
+        "Nijisanji EN"
+      ],
+      "languages": [
+        "en",
+        "ja"
+      ]
+    },
+    {
+      "name": "Finana Ryugu",
+      "channels": [
+        {
+          "platform": "Youtube",
+          "id": "UCu-J8uIXuLZh16gG-cT1naw"
+        }
+      ],
+      "twitter_handle": "FinanaRyugu",
+      "tags": [
+        "Nijisanji",
+        "Nijisanji EN"
+      ],
+      "languages": [
+        "en",
         "ja"
       ]
     }
